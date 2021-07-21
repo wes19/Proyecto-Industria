@@ -1,0 +1,49 @@
+.btn-personalizado {
+    background: linear-gradient(180deg, #e46cb4 64%, #9b1f69 100%);
+    border: none;
+    width: 140px;
+}
+
+.caja-pedido{
+    background-color:#F2CEE3;
+    margin-top: 40px;
+}
+
+.bg-light {
+    background-color: #fff!important;
+    border-bottom: 2px solid #d258a1;
+    margin-bottom: 30px;
+    height: 65px;
+}
+
+.imgs{
+    width: 100px;
+    height: 100px;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+div{
+    font-family: 'Mulish';
+}
+
+#d-footer {
+    background-image: url(../img/footer.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 55px;
+}
+
+#l-footer {
+    height: 50px;
+    width: 50px;
+    margin-left: 45px;
+    margin-bottom: 25px;
+    margin-top: 20px;
+}
+
+.form-select {
+    background-color: rgba(210, 88, 191, 0.29) !important;
+    border: none !important;
+}

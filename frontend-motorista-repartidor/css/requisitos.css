@@ -1,0 +1,59 @@
+
+.logo-lo {
+    width: 100px;
+    height: 100px;
+    margin-top: 30px;
+    margin-left: 120px;
+}
+
+.titulo{
+    color: #D258A1;
+    margin-top: 2.7rem;
+    font-weight: 700px;
+    font-size: 32px;
+    margin-left: 3rem;
+}
+
+.titulo1{
+    color: #D258A1;
+    margin-top: 2.7rem;
+    font-weight: 400px;
+    font-size: 22px;
+    margin-left: 3rem;
+}
+
+.info{
+    margin-top: 1rem;
+    font-size: 17px;
+    margin-left: 3rem;
+}
+
+#d-footer {
+    background-image: url(../img/footer.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 55px;
+}
+
+#l-footer {
+    height: 50px;
+    width: 50px;
+    margin-left: 45px;
+    margin-bottom: 25px;
+    margin-top: 20px;
+}
+
+@media (max-width: 576px){
+    .titulo{
+        margin-left: 1.5rem;
+    }
+    
+    .titulo1{
+        margin-left: 1.5rem;
+    }
+    
+    .info{
+        margin-left: 1.5rem;
+    }
+}
