@@ -1,0 +1,16 @@
+img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 400;
+}
+
+.form-control {
+    background-color: rgba(210, 88, 191, 0.29) !important;
+    border: none;
+}

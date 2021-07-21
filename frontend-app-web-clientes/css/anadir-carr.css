@@ -1,0 +1,27 @@
+h1 {
+    text-align: center;
+    font-weight: 700;
+}
+
+b {
+    font-weight: revert;
+    font-size: x-large;
+}
+
+#txA-1 {
+    border-radius: 15px;
+    background-color: rgba(196, 196, 196, 0.56);
+}
+
+.btn-group {
+    background-color: #e46cb4;
+}
+
+.btn-outline-secondary {
+    border: none;
+    color: white;
+}
+
+i {
+    color: gray;
+}

@@ -1,0 +1,38 @@
+.btn-personalizado {
+    background: linear-gradient(180deg, #e46cb4 64%, #9b1f69 100%);
+    border: none;
+    width: 100px;
+}
+
+.btn-personalizado1 {
+    background: linear-gradient(180deg, #e46cb4 64%, #9b1f69 100%);
+    border: none;
+    width: 150px;
+    color: white;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.btn-primary {
+    color: #fff;
+    background: linear-gradient(180deg, #e46cb4 64%, #9b1f69 100%);
+    border: none;
+    width: 300px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.bg-light {
+    background-color: #ffffff!important;
+    border-bottom: 2px solid #d258a1;
+    margin-bottom: 30px;
+    height: 65px;
+}
+
+.logo-nav {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+}
