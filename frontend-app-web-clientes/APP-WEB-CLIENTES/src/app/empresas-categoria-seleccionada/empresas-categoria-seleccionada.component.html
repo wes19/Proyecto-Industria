@@ -1,0 +1,61 @@
+<body>
+
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+
+            <a class="navbar-brand">
+                <img src="../../assets/../../assets/../../assets/img/logo.png" class="logo-nav" alt="...">
+              </a>
+              <form class="d-flex">
+                <button type="button" id="btn-comenzar"
+                        class="btn btn-personalizado btn-secondary float-end rounded-pill" (click)="navegandoHaciaLanding()" >Salir</button>
+              </form>
+       </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1"><img src="../../assets/img/icons/lupa.png" class="reajuste1" alt="..."></span>
+            <input type="text" class="form-control" placeholder="Buscar" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+
+        <h1>Restaurantes</h1>
+
+        <div class="d-flex position-relative d-ajuste" (click)="navegandoHaciaMostrandoProductosEmpresasSeleccionada()">
+            <img src="../../assets/img/restaurantes/ludos.jpg" class="flex-shrink-0 me-3 rounded-circle conf-Img" alt="...">
+            <div class="div-ajuste">
+                <h5 class="mt-0">Ludo's Pizza</h5>
+                <div class="mb-0">
+                    <img src="../../assets/img/icons/tc.png" class="reajuste" alt="...">
+                    <p class="pAjuste">Pago Online</p>
+                </div>
+                <div class="mb-0">
+                    <img src="../../assets/img/logo.png" class="reajuste" alt="...">
+                    <p class="pAjuste">Entrega</p>
+                </div>
+                <p class="pAjuste">30-60 min</p>
+                <p class="pAjuste">Envío Lps. 60</p>
+            </div>
+        </div>
+
+        <div class="d-flex position-relative d-ajuste" >
+            <img src="../../assets/img/restaurantes/matambritas.jpg" class="flex-shrink-0 me-3 rounded-circle conf-Img" alt="...">
+            <div class="div-ajuste">
+                <h5 class="mt-0">Matambritas</h5>
+                <div class="mb-0">
+                    <img src="../../assets/img/icons/tc.png" class="reajuste" alt="...">
+                    <p class="pAjuste">Pago Online</p>
+                </div>
+                <div class="mb-0">
+                    <img src="../../assets/img/logo.png" class="reajuste" alt="...">
+                    <p class="pAjuste">Entrega</p>
+                </div>
+                <p class="pAjuste">30-60 min</p>
+                <p class="pAjuste">Envío Lps. 60</p>
+            </div>
+        </div>
+
+    </div>
+   
+</body>

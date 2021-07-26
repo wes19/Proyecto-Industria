@@ -13,4 +13,8 @@ export class RegistroClienteComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  navegandoHaciaLogin(){
+    this.router.navigate(['/login']);
+  }
+
 }
