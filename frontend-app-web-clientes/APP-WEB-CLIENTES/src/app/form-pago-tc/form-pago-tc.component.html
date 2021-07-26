@@ -1,1 +1,75 @@
-<p>form-pago-tc works!</p>
+<body>
+
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" >
+                <img src="../../assets/img/icons/atras.png" class="logo-nav" alt="..." (click)="navegandoHaciaAtras()">
+              </a>
+              <form class="d-flex">
+                <img src="../../assets/img/icons/carrito.png" class="logo-nav float-end" alt="...">
+              </form>
+       </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="center">
+            <img src="../../assets/img/icons/tc.png" style="position: inherit;" class="logo-nav center" alt="...">
+        </div>
+
+        <h1>Finalizá tu compra</h1>
+
+        <div class="container">
+
+            <label for="inputCity" class="form-label mt-5">Número de Tarjeta</label>
+
+            <div class="row g-3">
+
+
+                <div class="col-3">
+                    <input type="text" class="form-control" aria-label="State">
+                </div>
+
+                <div class="col-3">
+                    <input type="text" class="form-control" aria-label="State">
+                </div>
+
+                <div class="col-3">
+                    <input type="text" class="form-control" aria-label="State">
+                </div>
+
+                <div class="col-3">
+                    <input type="text" class="form-control" aria-label="State">
+                </div>
+
+            </div>
+
+            <div class="col mt-4">
+                <label for="inputCity" class="form-label">Nombre Completo</label>
+                <input type="text" class="form-control" id="inputCity">
+            </div>
+
+            <div class="row mt-4">
+
+                <div class="col-6">
+                    <label for="inputCity" class="form-label">Fecha Caducidad</label>
+                    <input type="text" class="form-control" id="inputCity">
+                </div>
+
+                <div class="col-6">
+                    <label for="inputCity" class="form-label">CVC</label>
+                    <input type="text" class="form-control" id="inputCity">
+                </div>
+
+            </div>
+
+
+            <div class="d-grid gap-2 mt-5 mx-auto center">
+                <button class="btn btn-primary rounded-pill center" style="font-weight: 700;" type="button" (click)="navegandoHaciaOrdenes()" >Confirmar mi compra</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>

@@ -11,6 +11,9 @@ import { LoginComponent } from './login/login.component';
 import { EmpresasCategoriaSeleccionadaComponent } from './empresas-categoria-seleccionada/empresas-categoria-seleccionada.component';
 import { ProductosEmpresaSeleccionadaComponent } from './productos-empresa-seleccionada/productos-empresa-seleccionada.component';
 import { AnadiendoProductoCarritoComponent } from './anadiendo-producto-carrito/anadiendo-producto-carrito.component';
+import { CarritoCompraComponent } from './carrito-compra/carrito-compra.component';
+import { DireccionClienteComponent } from './direccion-cliente/direccion-cliente.component';
+import { OrdenesClienteComponent } from './ordenes-cliente/ordenes-cliente.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { AnadiendoProductoCarritoComponent } from './anadiendo-producto-carrito/
     LoginComponent,
     EmpresasCategoriaSeleccionadaComponent,
     ProductosEmpresaSeleccionadaComponent,
-    AnadiendoProductoCarritoComponent
+    AnadiendoProductoCarritoComponent,
+    CarritoCompraComponent,
+    DireccionClienteComponent,
+    OrdenesClienteComponent
   ],
   imports: [
     BrowserModule,

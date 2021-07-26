@@ -17,4 +17,8 @@ export class AnadiendoProductoCarritoComponent implements OnInit {
     this.router.navigate(['/productos']);
   }
 
+  navegandoHaciaCarritoCompras(){
+    this.router.navigate(['/carrito-compras']);
+  }
+
 }

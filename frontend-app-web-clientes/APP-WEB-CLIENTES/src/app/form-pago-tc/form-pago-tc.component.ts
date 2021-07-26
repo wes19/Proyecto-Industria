@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-pago-tc',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormPagoTcComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  navegandoHaciaAtras(){
+    this.router.navigate(['/direccion-cliente']);
+  }
+
+  navegandoHaciaOrdenes(){
+  this.router.navigate(['/ordenes-cliente']);
   }
 
 }

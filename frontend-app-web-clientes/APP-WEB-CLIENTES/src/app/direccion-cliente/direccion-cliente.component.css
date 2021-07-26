@@ -1,3 +1,14 @@
+/* direccion*/
+.form-select {
+    background-color: rgba(210, 88, 191, 0.29) !important;
+    border: none !important;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 400;
+}
+
 /*common*/
 .btn-personalizado {
     background: linear-gradient(180deg, #e46cb4 64%, #9b1f69 100%);
@@ -35,49 +46,4 @@
 .logo-nav {
     width: 40px;
     height: 40px;
-}
-
-/*cat - sele*/
-.conf-Img {
-    height: 100px;
-    width: 100px;
-    margin-top: 15px;
-}
-
-.d-ajuste {
-    border-radius: 10px;
-    background-color: #e6e6e657;
-    padding: 15px;
-    margin-bottom: 20px;
-    margin-left: 30px;
-    margin-right: 30px;
-}
-
-h1 {
-    text-align: center;
-    margin-bottom: 50px;
-    margin-top: 20px;
-}
-
-p {
-    margin-bottom: 0px;
-}
-
-.reajuste {
-    height: 20px;
-    width: 20px;
-    position: absolute;
-}
-
-.reajuste1 {
-    height: 20px;
-    width: 20px;
-}
-
-.pAjuste {
-    margin-left: 30px;
-}
-
-.div-ajuste {
-    width: 200px;
 }

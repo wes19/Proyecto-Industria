@@ -1,0 +1,80 @@
+<body>
+
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+
+            <a class="navbar-brand" (click)="navegandoHaciaAtras()">
+                <img src="../../assets/img/icons/atras.png" class="logo-nav" alt="..." >
+              </a>
+              <form class="d-flex">
+                <img src="../../assets/img/icons/carrito.png" class="logo-nav float-end" alt="...">
+              </form>
+       </div>
+    </nav>
+
+    <div class="container">
+
+        <h1>Carrito de compras</h1>
+
+        <h2 class="ms-3 mt-4">Ludo's Pizza</h2>
+
+        <table class="table mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Precio (Lps)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Pizza de queso</td>
+                    <td>300</td>
+                </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Pizza 4 Estaciones</td>
+                    <td>300</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-6">
+                    <h3 class="ms-5 mt-4">Subtotal</h3>
+                </div>
+
+                <div class="col-6">
+                    <h3 class="float-start  mt-4">Lps. 900</h3>
+                </div>
+
+                <div class="col-6">
+                    <h3 class="ms-5 mt-4">Envío</h3>
+                </div>
+
+                <div class="col-6">
+                    <h3 class="float-start  mt-4">Lps. 60</h3>
+                </div>
+
+                <div class="col-6">
+                    <h2 class="ms-5 mt-4" style="color: #D258A1; font-weight: 800;">Total</h2>
+                </div>
+
+                <div class="col-6">
+                    <h2 class="float-start mt-4" style="color: #D258A1; font-weight: 800;">Lps. 960</h2>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="d-grid gap-2 mt-5 mx-auto center">
+            <button class="btn btn-primary rounded-pill center" style="font-weight: 700;" type="button" (click)="navegandoHaciaDireccion()">Finalizar mi compra</button>
+        </div>
+
+    </div>
+
+</body>
