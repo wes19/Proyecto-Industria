@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faUndoAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-factura',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./factura.component.css']
 })
 export class FacturaComponent implements OnInit {
+  faUndoAlt = faUndoAlt;
 
   constructor() { }
 

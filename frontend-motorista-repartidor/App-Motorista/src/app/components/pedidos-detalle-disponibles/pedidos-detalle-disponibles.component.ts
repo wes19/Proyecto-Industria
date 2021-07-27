@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faCreditCard, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faCreditCard, faMapMarkerAlt, faUndoAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-pedidos-detalle-disponibles',
@@ -9,6 +9,7 @@ import { faCreditCard, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 export class PedidosDetalleDisponiblesComponent implements OnInit {
   faCreditCard = faCreditCard;
   faMapMarkerAlt = faMapMarkerAlt;
+  faUndoAlt = faUndoAlt;
   constructor() { }
 
   ngOnInit(): void {

@@ -1,3 +1,12 @@
+<nav class="navbar navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse d-flex justify-content-end">
+            <fa-icon [icon]="faUndoAlt" style="font-size: 30px; margin-right: 140px;" (click)="navegandoPedidosP()"></fa-icon>
+            <button type="button" class="btn btn-personalizado1 btn-secondary float-end rounded-pill my-2">Cerrar Sesión</button>
+        </div>
+    </div>
+</nav>
+
 
    <div class="container-fluid">
         <div class="col-md-6 mt-4">
@@ -33,7 +42,7 @@
                         <label style="font-weight: bold; color:green">Estado: En el Origen</label>
                     </div>
                     <div>
-                        <button type="button" style="margin-left: 170px" class="btn btn-personalizado btn-secondary my-2" [routerLink]="['factura']">Factura</button>
+                        <button type="button" style="margin-left: 170px" class="btn btn-personalizado btn-secondary my-2" [routerLink]="['/factura']">Factura</button>
                     </div>
                 </div>
             </div>

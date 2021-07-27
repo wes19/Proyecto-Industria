@@ -1,5 +1,12 @@
+<nav class="navbar navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse d-flex justify-content-end">
+            <button type="button" class="btn btn-personalizado btn-secondary float-end rounded-pill my-2" [routerLink]="['/login']">Cerrar Sesión</button>
+        </div>
+    </div>
+</nav>
 
-<div class="caja-pedido" [routerLink]="['pedidos-detalle-progreso']" *ngFor="let pedidoP of pedidosProgreso">
+<div class="caja-pedido" [routerLink]="['/pedidos-detalle-progreso']" *ngFor="let pedidoP of pedidosProgreso">
     <div class="row">
 
         <div class="col-4">

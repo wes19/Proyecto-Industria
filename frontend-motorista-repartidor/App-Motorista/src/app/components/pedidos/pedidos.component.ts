@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pedidos.component.css']
 })
 export class PedidosComponent implements OnInit {
-categoriaSeleccionada: any;
+categoriaSeleccionada: any = 'disponibles'
 disponibles: any = 'disponibles';
 progreso: any = 'progreso';
 entregados: any = 'entregados';
@@ -16,5 +16,7 @@ entregados: any = 'entregados';
   ngOnInit(): void {
   }
 
-  Renderizado(){}
+  /*navegandoPedidosP(categoria: any){
+    this.categoriaSeleccionada = categoria;
+  }*/
 }

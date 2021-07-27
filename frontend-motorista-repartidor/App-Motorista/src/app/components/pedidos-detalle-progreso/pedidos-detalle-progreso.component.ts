@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { faCreditCard, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { faCreditCard, faMapMarkerAlt, faUndoAlt } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pedidos-detalle-progreso',
@@ -7,11 +8,19 @@ import { faCreditCard, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
   styleUrls: ['./pedidos-detalle-progreso.component.css']
 })
 export class PedidosDetalleProgresoComponent implements OnInit {
+  //@Output() onCategoriaSeleccionada = new EventEmitter();
   faCreditCard = faCreditCard;
   faMapMarkerAlt = faMapMarkerAlt;
-  constructor() { }
+  faUndoAlt = faUndoAlt;
+  categoriaSeleccionada: any = 'progreso'
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  navegandoPedidosP(){
+    //this.onCategoriaSeleccionada.emit(this.categoriaSeleccionada)
+    this.router.navigate(['/pedidos']);
+  }
 }
+
