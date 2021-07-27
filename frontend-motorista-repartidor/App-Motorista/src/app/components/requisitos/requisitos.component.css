@@ -40,4 +40,13 @@
     .info{
         margin-left: 1.5rem;
     }
+    
+    .bg-light {
+        background-color: #fff!important;
+        border-bottom: 2px solid #d258a1;
+        margin-bottom: 30px;
+        height: 65px;
+    }
+
+    
 }

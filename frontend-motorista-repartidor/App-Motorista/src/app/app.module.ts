@@ -6,10 +6,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ReactiveFormsModule } from '@angular/forms';
-import { LandingPageMotoristaComponent } from './pages/landing-page-motorista/landing-page-motorista.component';
-import { LoginComponent } from './pages/login/login.component';
-import { RequisitosComponent } from './pages/requisitos/requisitos.component';
-import { FormularioComponent } from './pages/formulario/formulario.component';
+import { LandingPageMotoristaComponent } from './components/landing-page-motorista/landing-page-motorista.component';
+import { LoginComponent } from './components/login/login.component';
+import { RequisitosComponent } from './components/requisitos/requisitos.component';
+import { FormularioComponent } from './components/formulario/formulario.component';
 import { FacturaComponent } from './components/factura/factura.component';
 import { PedidosComponent } from './components/pedidos/pedidos.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -19,7 +19,7 @@ import { PedidosDisponiblesComponent } from './components/pedidos-disponibles/pe
 import { PedidosDetalleDisponiblesComponent } from './components/pedidos-detalle-disponibles/pedidos-detalle-disponibles.component';
 import { PedidosDetalleProgresoComponent } from './components/pedidos-detalle-progreso/pedidos-detalle-progreso.component';
 import { FormsModule } from '@angular/forms';
-import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [

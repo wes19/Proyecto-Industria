@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faUndoAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-requisitos',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./requisitos.component.css']
 })
 export class RequisitosComponent implements OnInit {
-
+  faUndoAlt = faUndoAlt;
   constructor() { }
 
   ngOnInit(): void {
