@@ -1,0 +1,19 @@
+
+<div class="caja-pedido" [routerLink]="['pedidos-detalle-progreso']" *ngFor="let pedidoP of pedidosProgreso">
+    <div class="row">
+
+        <div class="col-4">
+            <img class="rounded imgs" src={{pedidoP.imagen}} alt="">
+        </div>
+
+        <div class="col-8 my-3">
+            <div style="font-size: 23px;" class="mx-2">{{pedidoP.empresa}} </div>
+            <div class="mx-2"><fa-icon [icon]="faCreditCard"></fa-icon>{{pedidoP.card}} </div>
+            <div class="my-2 mx-2"><fa-icon [icon]="faMapMarkerAlt"></fa-icon> {{pedidoP.ubicacion}} </div>
+        </div>
+        <div class="col-6 mb-2" style="text-align: center;">{{pedidoP.tiempoEstimado}} </div>
+        <div class="col-6 mb-2" style="text-align: center;">{{pedidoP.comisionMotorista}} </div>
+        <div class="mb-2 mx-5" style="text-align: center; color:green; font-weight: bold;">{{pedidoP.estado}} </div>
+    </div>
+</div>
+

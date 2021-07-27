@@ -1,0 +1,122 @@
+    
+    <nav class="navbar navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <img src="../assets/img/logo.png" class="logo-nav" alt="...">
+            <div class="collapse navbar-collapse d-flex justify-content-end">
+                <button type="button" class="btn btn-personalizado btn-secondary float-end rounded-pill" [routerLink]="['login']">Iniciar Sesión</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="header-info-mobile">
+                    <span>¿Quieres ser un Motorista/Repartidor?</span>
+                </div> 
+                <ngb-carousel >
+                    <ng-template ngbSlide>
+                      <div class="picsum-img-wrapper">
+                        <img class="img-fluid rounded-circle shadow mb-1 bg-body d-block w-100" src="../assets/img/imagen1.jpg" alt="">
+                      </div>
+                    </ng-template>
+                    <ng-template ngbSlide>
+                      <div class="picsum-img-wrapper">
+                        <img class="img-fluid rounded-circle shadow mb-1 bg-body d-block w-100" src="../assets/img/imagen2.jpg" alt="">
+                      </div>
+                    </ng-template>
+                    <ng-template ngbSlide>
+                      <div class="picsum-img-wrapper">
+                        <img class="img-fluid rounded-circle shadow mb-1 bg-body d-block w-100" src="../assets/img/imagen7.jpg" alt="">
+                      </div>
+                    </ng-template>
+                  </ngb-carousel> 
+            </div>
+            
+            <hr>
+            
+            <div class="col-md-4">
+                <div class="header-info-mobile my-2">
+                    <span>¡Aumenta tus ingresos!</span>
+                </div>
+
+                <p class="div-texto">
+                    ¡Si quieres contar con una segunda fuente de ingreso comienza 
+                    a trabajar ya con nosotros! Aplica en el siguiente formulario.
+                </p>
+          
+                <div style="text-align:center;">
+                    <button type="button" class="btn btn-personalizado1 btn-secondary" [routerLink]="['formulario']">Aplica a Izzy&Vite</button>
+                </div>
+
+                <div class="mt-5">
+                    <img src="../assets/img/imagen2.jpg" class="rounded-circle img-two mx-auto" alt="...">
+                </div>
+
+                <hr>
+
+                <div class="header-info-mobile my-2">
+                    <span>¿Por qué ser un motorista? ¡Cambia tu vida ya!</span>
+                </div>
+
+                <div class="mt-5">
+                    <img src="../assets/img/imagen3.png" class=" img-g" alt="...">
+                    <h2>BENEFICIOS</h2>
+                    <div class="div-texto">Al ser un Izzy&Vite podrás gozar <br> de incentivos e ingresos <br> atractivos. 
+                        ¡Las propinas son <br>sólo para ti! No nos quedamos <br> con nada, te lo aseguramos
+                    </div>
+                </div>
+
+                <div class="mt-5">
+                    <img src="../assets/img/imagen4.png" class="img-g" alt="...">
+                    <h2>HORARIO FLEXIBLE</h2>
+                    <div class="div-texto">Eres libre de elegir cuándo <br>repartir. Sólo tienes que <br> mostrarte como disponible 
+                        en la <br>app web para que <br> sepamos que podemos contar contigo
+                    </div>
+                </div>
+
+                <div class="mt-5">
+                    <img src="../assets/img/imagen5.png" class="img-g px-5" alt="...">
+                    <h2>SMARTPHONE</h2>
+                    <div class="div-texto">Somos una empresa totalmente <br> digital y por eso tu smartphone <br>  es tu herramienta principal 
+                        de<br>reparto. (Además de tu moto).
+                    </div>
+                </div>
+
+                <div style="text-align:center;" class="my-3">
+                    <button type="button" class="btn btn-personalizado1 btn-secondary" [routerLink]="['requisitos']" >Ver Requisitos</button>
+                </div>
+
+                <hr>
+
+                <div class="mt-5">
+                    <img src="../assets/img/imagen6.png" class="img-g" alt="...">
+                    <div class="header-info-mobile my-3">
+                        <span>Pedro</span>
+                    </div>
+                    <div class="div-texto">Con tener una moto y las ganas de salir<br> adelante, he aumentado mis ingresos sin <br>  tener que sacrificar mi vida personal,
+                        puedo<br>decir que Izzy&Vite realmente me ha <br> cambiado la vida!
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="mt-5">
+                    <img src="../assets/img/imagen7.jpg" class="img-g1" alt="...">
+                    <div class="header-info-mobile my-3">
+                        <span>¡Reparte con nosotros!</span>
+                    </div>
+                    <div class="div-texto">En Izzy&Vite nos especializamos<br> en entregar los mejores <br>  productos y servicios de la
+                        <br>ciudad con calidad. ¡Ayúdanos a<br> mejorar la visión del envío a <br>domicilio y reparte con nosotros.
+                    </div>
+                </div>
+
+                <hr>
+            
+            </div>
+        </div>
+    </div>
+
+<app-footer></app-footer>
+

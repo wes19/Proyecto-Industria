@@ -1,0 +1,33 @@
+.logo-lo {
+    width: 100px;
+    height: 100px;
+    margin-top: 30px;
+    margin-left: 120px;
+}
+
+.btn-primary{
+    color: #fff;
+    background: linear-gradient(180deg, #e46cb4 64%, #9b1f69 100%);
+    border: none;
+}
+
+h4{
+    font-family: 'Mulish';
+    font-weight:bold
+}
+
+.input-error{
+    border-color: #d30f23;
+}
+
+.error{
+    color:#d30f23;
+    font-size:1rem;
+    margin:10px;
+    margin-top: -15px;
+}
+
+select{
+    width: 320px;
+    height: 35px;
+}

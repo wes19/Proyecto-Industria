@@ -1,0 +1,33 @@
+
+<app-navbar></app-navbar>
+
+<div class="container-fluid">
+    <div class="col-md-6 mt-4">
+        <h1 style="color:#D258A1; margin-top: 80px; font-weight: bold;">Pedidos</h1>
+        <div>
+            <select class="form-select select-pedido" [(ngModel)]="categoriaSeleccionada" (change)="Renderizado()">
+                <option [ngValue]="disponibles">Disponibles</option>
+                <option [ngValue]="progreso">En Progreso</option>
+                <option [ngValue]="entregados">Entregados</option>
+
+            </select>
+        </div>
+
+        <div>
+            <app-pedidos-disponibles *ngIf="categoriaSeleccionada=='disponibles'"></app-pedidos-disponibles>
+        </div>
+        <div>
+            <app-pedidos-progreso *ngIf="categoriaSeleccionada=='progreso'"></app-pedidos-progreso>
+        </div>
+        <div>
+            <app-pedidos-entregados *ngIf="categoriaSeleccionada=='entregados'"></app-pedidos-entregados>
+        </div>
+       
+       
+    </div>
+</div>
+
+
+
+
+

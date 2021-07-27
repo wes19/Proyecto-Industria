@@ -1,0 +1,23 @@
+.imgD{
+    width: 140px;
+    height: 140px;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.caja-pedido{
+    background-color:#F2CEE3;
+    margin-top: 40px;
+}
+
+div{
+    font-family: 'Mulish';
+}
+
+.btn-personalizado {
+    background: linear-gradient(180deg, #20c93c 64%, #007B00 100%);
+    border: none;
+    width: 140px;
+    border-radius: 25px;
+}
+

@@ -1,0 +1,29 @@
+    
+    <div class="container">
+        <div class="mt-5 mb-5">
+            <img src="../assets/img/logo.png" class="logo-lo" alt="...">
+        </div>
+        <h1 class="mt-5 word-login">Iniciar Sesión</h1>
+
+        <div class="container">
+            <section [formGroup]="logear">
+                <input formControlName="usuario" [ngClass]="{'input-error':usuario?.invalid && (usuario?.dirty || usuario?.touched)}" class="form-control my-4" style="height: 50px;" type="text" placeholder="Correo Electrónico" required>
+                <div *ngIf="usuario?.invalid && (usuario?.dirty || usuario?.touched)" class="error">
+                    <span *ngIf="usuario?.errors?.required">Error el campo es obligatorio</span>
+                </div>
+                <div *ngIf="usuario?.touched" class="error">
+                    <span *ngIf="usuario?.errors?.pattern">Error Correo Electrónico incorrecto</span>
+                </div>
+
+                <input formControlName="password" [ngClass]="{'input-error':password?.invalid && (password?.dirty || password?.touched)}" class="form-control my-4" style="height: 50px;" type="password" placeholder="Password" required>
+                <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="error">
+                    <span *ngIf="password?.errors?.minlength">Error el tamaño minimo es de 8 carácteres</span>
+                </div>
+                <div class="d-grid my-4">
+                    <button [disabled]="!logear.valid" class="btn btn-primary rounded-pill" style="width: 310px;" type="button" (click)="Verificar()" [routerLink]="['pedidos']">SIGN IN</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
