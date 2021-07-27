@@ -1,17 +1,17 @@
 .btn-personalizado {
-    background: linear-gradient(180deg, #e46cb4 64%, #9b1f69 100%);
+    background: linear-gradient(180deg, #6ca0e4 64%, #3a1f9b 100%);
     border: none;
     width: 140px;
 }
 
 .caja-pedido{
-    background-color:#F2CEE3;
+    background-color:#b3d2fa;
     margin-top: 40px;
 }
 
 .bg-light {
     background-color: #fff!important;
-    border-bottom: 2px solid #d258a1;
+    border-bottom: 2px solid #3a1f9b;
     margin-bottom: 30px;
     height: 65px;
 }
@@ -27,12 +27,3 @@ div{
     font-family: 'Mulish';
 }
 
-.form-select {
-    background-color: rgba(210, 88, 191, 0.29) !important;
-    border: none !important;
-    width: 310px;
-    height: 50px;
-    font-size: 20px;
-    font-weight: bold;
-    color:#525051
-}

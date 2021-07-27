@@ -16,10 +16,10 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'requisitos', component: RequisitosComponent},
   { path: 'formulario', component: FormularioComponent},
-  { path: 'login/pedidos', component: PedidosComponent},
-  { path: 'login/pedidos/pedidos-detalle-disponibles', component: PedidosDetalleDisponiblesComponent},
-  { path: 'login/pedidos/pedidos-detalle-progreso', component: PedidosDetalleProgresoComponent},
-  { path: 'login/pedidos/pedidos-detalle-progreso/factura', component: FacturaComponent},
+  { path: 'pedidos', component: PedidosComponent},
+  { path: 'pedidos-detalle-disponibles', component: PedidosDetalleDisponiblesComponent},
+  { path: 'pedidos-detalle-progreso', component: PedidosDetalleProgresoComponent},
+  { path: 'factura', component: FacturaComponent},
   { path: '**', pathMatch: 'full', redirectTo:'login'},
 ];
 

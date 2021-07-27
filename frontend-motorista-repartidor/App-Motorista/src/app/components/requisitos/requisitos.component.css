@@ -7,7 +7,7 @@
 }
 
 .titulo{
-    color: #D258A1;
+    color: #3a1f9b;
     margin-top: 2.7rem;
     font-weight: 700px;
     font-size: 32px;
@@ -15,7 +15,7 @@
 }
 
 .titulo1{
-    color: #D258A1;
+    color: #3a1f9b;
     margin-top: 2.7rem;
     font-weight: 400px;
     font-size: 22px;
@@ -43,10 +43,9 @@
     
     .bg-light {
         background-color: #fff!important;
-        border-bottom: 2px solid #d258a1;
+        border-bottom: 2px solid #6ca0e4;
         margin-bottom: 30px;
         height: 65px;
     }
-
     
 }
