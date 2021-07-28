@@ -19,8 +19,7 @@ export class PedidosDetalleProgresoComponent implements OnInit {
   }
 
   navegandoPedidosP(){
-    //this.onCategoriaSeleccionada.emit(this.categoriaSeleccionada)
-    this.router.navigate(['/pedidos']);
+    this.router.navigate(['/pedidos', 'progreso']);
   }
 }
 

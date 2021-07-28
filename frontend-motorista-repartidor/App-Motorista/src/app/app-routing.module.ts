@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'requisitos', component: RequisitosComponent},
   { path: 'formulario', component: FormularioComponent},
   { path: 'pedidos', component: PedidosComponent},
+  { path: 'pedidos/:name', component: PedidosComponent},
   { path: 'pedidos-detalle-disponibles', component: PedidosDetalleDisponiblesComponent},
   { path: 'pedidos-detalle-progreso', component: PedidosDetalleProgresoComponent},
   { path: 'factura', component: FacturaComponent},

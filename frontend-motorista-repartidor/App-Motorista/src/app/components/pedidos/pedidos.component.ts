@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-pedidos',
@@ -6,17 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pedidos.component.css']
 })
 export class PedidosComponent implements OnInit {
-categoriaSeleccionada: any = 'disponibles'
+categoriaSeleccionada: any = ''
 disponibles: any = 'disponibles';
 progreso: any = 'progreso';
 entregados: any = 'entregados';
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) {
+    this.route.params.subscribe((params)=>{
+      if(params["name"]==null){
+        this.categoriaSeleccionada = 'disponibles'
+      }else{
+        this.categoriaSeleccionada = params["name"];
+      }
+    })  
+  }
 
   ngOnInit(): void {
   }
-
-  /*navegandoPedidosP(categoria: any){
-    this.categoriaSeleccionada = categoria;
-  }*/
+    
 }
