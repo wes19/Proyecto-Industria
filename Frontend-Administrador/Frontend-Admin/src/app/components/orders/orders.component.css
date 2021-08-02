@@ -1,0 +1,40 @@
+.btn-personalizado {
+    background: linear-gradient(180deg, #f5cf52 64%, #ffcc2a 100%);
+    border: none;
+    width: 140px;
+    margin-left: 300px;
+    margin-bottom: 10px;
+    border-radius: 25px;
+    color: white
+}
+
+.caja-pedido{
+    background-color:#96beec;
+    margin-top: 40px;
+}
+
+.imgs{
+    width: 100px;
+    height: 100px;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+div{
+    font-family: 'Mulish';
+}
+
+.bg-dark {
+    background-color: #16557f !important;
+}
+
+a {
+    color: white !important;
+}
+
+.reajuste1 {
+    height: 20px;
+    width: 20px;
+}
+
+

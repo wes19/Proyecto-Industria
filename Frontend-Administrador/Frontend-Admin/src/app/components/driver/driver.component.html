@@ -1,0 +1,230 @@
+<app-nav></app-nav>
+
+<div class="container">
+
+    <h1 class="mt-5">Motoristas Registrados</h1>
+
+    <table class="table mt-4">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">DNI</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Dirección</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Correo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>0801-1998-23456</td>
+                <td>Alex</td>
+                <td>Rodriguez</td>
+                <td>Col. Pedregal</td>
+                <td>98989796</td>
+                <td>alexRodriguez@gmail.com</td>
+                <td><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Modalver">Ver</button>
+                    <button type="button" class="btn btn-danger">Desactivar</button>
+                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#Modaleditar">Editar</button></td>
+            </tr>
+            <tr>
+                <th scope="row">1</th>
+                <td>0801-1998-23456</td>
+                <td>Alex</td>
+                <td>Rodriguez</td>
+                <td>Col. Pedregal</td>
+                <td>98989796</td>
+                <td>alexRodriguez@gmail.com</td>
+                <td><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Modalver">Ver</button>
+                    <button type="button" class="btn btn-danger">Desactivar</button>
+                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#Modaleditar">Editar</button></td>
+            </tr>
+            <tr>
+                <th scope="row">1</th>
+                <td>0801-1998-23456</td>
+                <td>Alex</td>
+                <td>Rodriguez</td>
+                <td>Col. Pedregal</td>
+                <td>98989796</td>
+                <td>alexRodriguez@gmail.com</td>
+                <td><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Modalver">Ver</button>
+                    <button type="button" class="btn btn-danger">Desactivar</button>
+                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#Modaleditar">Editar</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<div class="modal fade" id="Modalver" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ver Motorista</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row g-3 align-items-center mt-1">
+                    <div class="col">
+                        <label for="inputPassword6" class="col-form-label ms-4">Nombre</label>
+                    </div>
+                    <div class="col me-4">
+                        <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                    </div>
+                </div>
+                <div class="row g-3 align-items-center mt-1">
+                    <div class="col">
+                        <label for="inputPassword6" class="col-form-label ms-4">Dirección</label>
+                    </div>
+                    <div class="col me-4">
+                        <input type="password" id="inputPassword6" class="form-control me-2" aria-describedby="passwordHelpInline">
+                    </div>
+                </div>
+                
+                <div class="row g-3 align-items-center mt-1">
+                    <div class="col">
+                        <label for="inputPassword6" class="col-form-label ms-4">Fecha de Nacimiento</label>
+                    </div>
+                    <div class="col me-4">
+                        <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                    </div>
+                </div>
+                <div class="row g-3 align-items-center mt-1">
+                    <div class="col">
+                        <label for="inputPassword6" class="col-form-label ms-4">Estado Civil</label>
+                    </div>
+                    <div class="col me-4">
+                        <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                    </div>
+                </div>
+                <div class="row g-3 align-items-center mt-1">
+                    <div class="col">
+                        <label for="inputPassword6" class="col-form-label ms-4">Formación</label>
+                    </div>
+                    <div class="col me-4">
+                        <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                    </div>
+                </div>
+                <div class="row g-3 align-items-center mt-1">
+                    <div class="col">
+                        <label for="inputPassword6" class="col-form-label ms-4">Alguna Discapacidad</label>
+                    </div>
+                    <div class="col me-4">
+                        <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                    </div>
+                </div>
+                <div class="row g-3 align-items-center mt-1">
+                    <div class="col">
+                        <label for="inputPassword6" class="col-form-label ms-4">Pasado Profesional</label>
+                    </div>
+                    <div class="col me-4">
+                        <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="Modaleditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar Producto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row g-3 align-items-center mt-1">
+                    <div class="col">
+                        <label for="inputPassword6" class="col-form-label ms-4">DNI</label>
+                    </div>
+                    <div class="col me-4">
+                        <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                    </div>
+                </div>
+                <div class="row g-3 align-items-center mt-1">
+                    <div class="col">
+                        <label for="inputPassword6" class="col-form-label ms-4">Nombre</label>
+                    </div>
+                    <div class="col me-4">
+                        <input type="password" id="inputPassword6" class="form-control me-2" aria-describedby="passwordHelpInline">
+                    </div>
+                </div>
+                <div class="row g-3 align-items-center mt-1">
+                    <div class="col">
+                        <label for="inputPassword6" class="col-form-label ms-4">Apellido</label>
+                    </div>
+                    <div class="col me-4">
+                        <input type="password" id="inputPassword6" class="form-control me-2" aria-describedby="passwordHelpInline">
+                    </div>
+                </div>
+                <div class="row g-3 align-items-center mt-1">
+                    <div class="col">
+                        <label for="inputPassword6" class="col-form-label ms-4">Correo</label>
+                    </div>
+                    <div class="col me-4">
+                        <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                    </div>
+                </div>
+                <div class="row g-3 align-items-center mt-1">
+                    <div class="col">
+                        <label for="inputPassword6" class="col-form-label ms-4">Telefono</label>
+                    </div>
+                    <div class="col me-4">
+                        <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                    </div>
+                </div>
+                <div class="row g-3 align-items-center mt-1">
+                    <div class="col">
+                        <label for="inputPassword6" class="col-form-label ms-4">Dirección</label>
+                    </div>
+                    <div class="col me-4">
+                        <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                    </div>
+                </div>
+                <div class="row g-3 align-items-center mt-1">
+                    <div class="col">
+                        <label for="inputPassword6" class="col-form-label ms-4">Estado Civil</label>
+                    </div>
+                    <div class="col me-4">
+                        <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                    </div>
+                </div>
+                <div class="row g-3 align-items-center mt-1">
+                    <div class="col">
+                        <label for="inputPassword6" class="col-form-label ms-4">Formación</label>
+                    </div>
+                    <div class="col me-4">
+                        <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                    </div>
+                </div>
+                <div class="row g-3 align-items-center mt-1">
+                    <div class="col">
+                        <label for="inputPassword6" class="col-form-label ms-4">Sufre alguna discapacidad</label>
+                    </div>
+                    <div class="col me-4">
+                        <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                    </div>
+                </div>
+                <div class="row g-3 align-items-center mt-1">
+                    <div class="col">
+                        <label for="inputPassword6" class="col-form-label ms-4">Pasado Profesional</label>
+                    </div>
+                    <div class="col me-4">
+                        <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
