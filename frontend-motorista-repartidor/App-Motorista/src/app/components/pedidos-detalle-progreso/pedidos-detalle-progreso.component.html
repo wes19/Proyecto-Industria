@@ -1,0 +1,52 @@
+<nav class="navbar navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse d-flex justify-content-end">
+            <fa-icon [icon]="faUndoAlt" style="font-size: 30px; margin-right: 140px;" (click)="navegandoPedidosP()"></fa-icon>
+            <button type="button" class="btn btn-personalizado1 btn-secondary float-end rounded-pill my-2">Cerrar Sesión</button>
+        </div>
+    </div>
+</nav>
+
+
+   <div class="container-fluid">
+        <div class="col-md-6 mt-4">
+            <h1 style="color:#3a1f9b; margin-top: 80px; font-weight: bold;">Pedidos En Progreso</h1>
+
+            <div class="caja-pedido">
+                <div class="row">
+
+                    <div class="col-6">
+                        <img class="rounded imgD" src="../assets/img/img1.jpg" alt="">
+                    </div>
+
+                    <div class="col-6 my-3">
+                        <div style="font-size: 30px;">Asados el Churrasco</div> 
+                    </div>
+                    <div style="margin-left: 30px; margin-top: 5px;" class="col-10"><fa-icon [icon]="faCreditCard"></fa-icon> Acepta pago Online</div>
+                    <div style="margin-left: 30px;" class="my-2 col-10"><fa-icon [icon]="faMapMarkerAlt"></fa-icon> Ubicación</div>
+                    <div style="margin-left: 30px;" class="mb-2 col-10">30-45 Min</div>
+                    <div style="margin-left: 30px;" class="mb-2 col-10">Producto 1</div>
+                    <div style="margin-left: 30px;" class="mb-2 col-10">Producto 2</div>
+                    <div style="margin-left: 30px;" class="mb-2 col-10">Producto 3</div>
+                    <div style="margin-left: 30px;" class="mb-2 col-10">Total</div>
+                    <div style="margin-left: 30px;" class="mb-2 col-10">L. 70</div>
+
+                    <div class="col-6 my-3 mx-3">
+                        <select class="form-select select-pedido" style="width: 150px;">
+                            <option>En el Origen </option>
+                            <option>En Camino</option>
+                            <option>En el Destino</option>
+                        </select>
+                    </div>
+                    <div class="col-10 mx-3">
+                        <label style="font-weight: bold; color:green">Estado: En el Origen</label>
+                    </div>
+                    <div>
+                        <button type="button" style="margin-left: 170px" class="btn btn-personalizado btn-secondary my-2" [routerLink]="['/factura']">Factura</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-footer></app-footer>

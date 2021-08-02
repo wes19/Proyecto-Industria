@@ -1,0 +1,29 @@
+
+<nav class="navbar navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse d-flex justify-content-end">
+            <button type="button" class="btn btn-personalizado btn-secondary float-end rounded-pill my-2" [routerLink]="['/login']">Cerrar Sesión</button>
+        </div>
+    </div>
+</nav>
+
+        <div class="caja-pedido" [routerLink]="['/pedidos-detalle-disponibles']" *ngFor="let pedidoD of pedidosDisponibles">
+            <div class="row">
+
+                <div class="col-4">
+                    <img class="rounded imgs" src={{pedidoD.imagen}} alt="">
+                </div>
+
+                <div class="col-8 my-3">
+                    <div style="font-size: 23px;" class="mx-2">{{pedidoD.empresa}}</div>
+                    <div class="mx-2"><fa-icon [icon]="faCreditCard"></fa-icon>{{pedidoD.card}}</div>
+                    <div class="my-2 mx-2"><fa-icon [icon]="faMapMarkerAlt"></fa-icon>{{pedidoD.ubicacion}}</div>
+                </div>
+                <div class="col-6 mb-2" style="text-align: center;">{{pedidoD.tiempoEstimado}}</div>
+                <div class="col-6 mb-2" style="text-align: center;">{{pedidoD.comisionMotorista}}</div>
+            </div>
+        </div>
+
+
+
+

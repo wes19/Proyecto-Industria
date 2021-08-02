@@ -1,0 +1,38 @@
+.btn-personalizado {
+    background: linear-gradient(180deg, #6ca0e4 64%, #3a1f9b 100%);
+    border: none;
+    width: 140px;
+}
+
+.caja-pedido{
+    background-color:#F2CEE3;
+    margin-top: 40px;
+}
+
+.bg-light {
+    background-color: #fff!important;
+    border-bottom: 2px solid #3a1f9b;
+    margin-bottom: 30px;
+    height: 65px;
+}
+
+.imgs{
+    width: 100px;
+    height: 100px;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+div{
+    font-family: 'Mulish';
+}
+
+.form-select {
+    background-color: #b3d2fa !important;
+    border: none !important;
+    width: 310px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    color:#525051
+}

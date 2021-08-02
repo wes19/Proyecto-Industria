@@ -1,0 +1,51 @@
+
+.logo-lo {
+    width: 100px;
+    height: 100px;
+    margin-top: 30px;
+    margin-left: 120px;
+}
+
+.titulo{
+    color: #3a1f9b;
+    margin-top: 2.7rem;
+    font-weight: 700px;
+    font-size: 32px;
+    margin-left: 3rem;
+}
+
+.titulo1{
+    color: #3a1f9b;
+    margin-top: 2.7rem;
+    font-weight: 400px;
+    font-size: 22px;
+    margin-left: 3rem;
+}
+
+.info{
+    margin-top: 1rem;
+    font-size: 17px;
+    margin-left: 3rem;
+}
+
+@media (max-width: 576px){
+    .titulo{
+        margin-left: 1.5rem;
+    }
+    
+    .titulo1{
+        margin-left: 1.5rem;
+    }
+    
+    .info{
+        margin-left: 1.5rem;
+    }
+    
+    .bg-light {
+        background-color: #fff!important;
+        border-bottom: 2px solid #6ca0e4;
+        margin-bottom: 30px;
+        height: 65px;
+    }
+    
+}

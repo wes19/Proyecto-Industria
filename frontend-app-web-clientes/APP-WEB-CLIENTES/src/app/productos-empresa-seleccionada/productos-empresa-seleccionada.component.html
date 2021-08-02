@@ -1,0 +1,88 @@
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand">
+                <img src="../../assets/../../assets/../../assets/img/logo.png" class="logo-nav" alt="...">
+              </a>
+              <form class="d-flex">
+                <button type="button" id="btn-comenzar"
+                        class="btn btn-personalizado btn-secondary float-end rounded-pill" (click)="navegandoHaciaLanding()" >Salir</button>
+              </form>
+       </div>
+    </nav>
+
+
+    <div class="card bg-dark text-white">
+        <img src="../../assets/img/ludos/banner.jpg" class="card-img" alt="...">
+        <div class="card-img-overlay">
+            <h1 class="card-title">Ludo's Pizza</h1>
+            <span class="float-start c-span"><p class="pNew">30-60 min</p></span>
+            <span class="float-end c-span"><img src="../../assets/img/icons/star.png" style="height: 20px; position:absolute; right: 64px; margin-top: 3px;" alt="icon"><p class="pNew" style="margin-left: 6px;">4,0</p></span>
+        </div>
+    </div>
+
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Pizza</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Pasta</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Snack</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Extras</a>
+        </li>
+    </ul>
+
+    <div class="container">
+        <div class="row">
+            <div class="card col-6 tarjeta" style="width: 9rem;" (click)="navegandoHaciaAnadiendoAlCarrito()">
+                <div class="rounded-circle float-end btn-mas">
+                    <h2>+</h2>
+                </div>
+                <img src="../../assets/img/ludos/queso.jpg" class="card-img-top img-Prd" alt="...">
+                <div class="card-body">
+                    <p>Pizza de Queso</p>
+                    <b class="card-text">Lps. 150</b>
+                </div>
+            </div>
+
+            <div class="card col-6 tarjeta" style="width: 9rem;" (click)="navegandoHaciaAnadiendoAlCarrito()">
+                <div class="rounded-circle float-end btn-mas">
+                    <h2>+</h2>
+                </div>
+                <img src="../../assets/img/ludos/hawaiana.jpg" class="card-img-top img-Prd" alt="...">
+                <div class="card-body">
+                    <p>Pizza de Queso</p>
+                    <b class="card-text">Lps. 150</b>
+                </div>
+            </div>
+
+            <div class="card col-6 tarjeta" style="width: 9rem;" (click)="navegandoHaciaAnadiendoAlCarrito()">
+                <div class="rounded-circle float-end btn-mas">
+                    <h2>+</h2>
+                </div>
+                <img src="../../assets/img/ludos/queso.jpg" class="card-img-top img-Prd" alt="...">
+                <div class="card-body">
+                    <p>Pizza de Queso</p>
+                    <b class="card-text">Lps. 150</b>
+                </div>
+            </div>
+
+            <div class="card col-6 tarjeta" style="width: 9rem;" (click)="navegandoHaciaAnadiendoAlCarrito()">
+                <div class="rounded-circle float-end btn-mas">
+                    <h2>+</h2>
+                </div>
+                <img src="../../assets/img/ludos/hawaiana.jpg" class="card-img-top img-Prd" alt="...">
+                <div class="card-body">
+                    <p>Pizza de Queso</p>
+                    <b class="card-text">Lps. 150</b>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>

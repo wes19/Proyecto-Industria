@@ -1,0 +1,31 @@
+
+.logo-lo {
+    width: 100px;
+    height: 100px;
+    margin-top: 30px;
+    margin-left: 120px;
+}
+
+.word-login{
+    font-family:'Mulish';
+    color: #3a1f9b;
+    font-weight: bold;
+    text-align:center;
+}
+
+.btn-primary{
+    color: #fff;
+    background: linear-gradient(180deg, #6ca0e4 64%, #3a1f9b  100%);
+    border: none;
+}
+
+.error{
+    color:#d30f23;
+    font-size:1rem;
+    margin:10px;
+    margin-top: -15px;
+}
+
+.input-error{
+    border-color: #d30f23;
+}

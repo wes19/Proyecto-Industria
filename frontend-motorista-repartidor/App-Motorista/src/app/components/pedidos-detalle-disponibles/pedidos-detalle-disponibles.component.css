@@ -1,0 +1,40 @@
+.imgD{
+    width: 140px;
+    height: 140px;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.caja-pedido{
+    background-color:#b3d2fa;
+    margin-top: 40px;
+}
+
+div{
+    font-family: 'Mulish';
+}
+
+.btn-personalizado {
+    background: linear-gradient(180deg, #20c93c 64%, #007B00 100%);
+    border: none;
+    width: 140px;
+    border-radius: 25px;
+}
+
+.btn-personalizado1 {
+    background: linear-gradient(180deg, #6ca0e4 64%, #3a1f9b 100%);
+    border: none;
+    width: 140px;
+}
+
+
+.bg-light {
+    background-color: #fff!important;
+    border-bottom: 2px solid #3a1f9b;
+    margin-bottom: 30px;
+    height: 65px;
+}
+
+button{
+    font-family: 'Mulish';
+}

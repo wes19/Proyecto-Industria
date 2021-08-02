@@ -1,0 +1,92 @@
+<nav class="navbar navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse d-flex">
+            <fa-icon [icon]="faUndoAlt" style="font-size: 30px; margin-right: 140px;" [routerLink]="['/pedidos-detalle-progreso']"></fa-icon>
+        </div>
+    </div>
+</nav>
+
+
+   <div class="container-fluid">
+        <div class="col-md-6 mt-4">
+            <h1 style="color:#6ca0e4; margin-top: 80px; font-weight: bold;">Factura</h1>
+     
+            <div style="background-color:#b3d2fa">
+
+                <label class="col-6 my-2">#Fac-288746548422</label>
+
+                <label style="background-color:white" class="my-2 mx-2 col-6">12/12/2012</label>
+
+                <h3 class="mx-2 my-2">Cliente</h3>
+                <label style="background-color:white" class="mx-2 col-10">Pedro Motoa</label>
+
+                <table class="table mt-4">
+                    <thead>
+                        <tr>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col">Total (Lps)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Pizza de queso</td>
+                            <td>430</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Pizza 4 Estaciones</td>
+                            <td>430</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="container">
+
+                    <div class="row">
+        
+                        <div class="col-6">
+                            <h3 class="ms-5 mt-4">Comisión Administrativa</h3>
+                        </div>
+        
+                        <div class="col-6">
+                            <h3 class="float-start mt-4">Lps. 50</h3>
+                        </div>
+        
+                        <div class="col-6">
+                            <h3 class="ms-5 mt-4">Comisión Motorista</h3>
+                        </div>
+        
+                        <div class="col-6">
+                            <h3 class="float-start  mt-4">Lps. 50</h3>
+                        </div>
+
+                        <div class="col-6">
+                            <h3 class="ms-5 mt-4">ISV</h3>
+                        </div>
+        
+                        <div class="col-6">
+                            <h3 class="float-start  mt-4">Lps. 80</h3>
+                        </div>
+        
+                        <div class="col-6">
+                            <h2 class="ms-5 mt-4" style="font-weight: 800;">Total (Lps.)</h2>
+                        </div>
+        
+                        <div class="col-6">
+                            <h2 class="float-start mt-4" style="font-weight: 800;">Lps. 960</h2>
+                        </div>
+        
+                    </div>
+                </div>
+
+                <div>
+                    <button type="button" style="margin-left: 150px" class="btn btn-personalizado btn-secondary my-2">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-footer></app-footer>
+

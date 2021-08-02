@@ -1,0 +1,51 @@
+.logo-lo {
+    width: 100px;
+    height: 100px;
+    margin-top: 30px;
+    margin-left: 120px;
+}
+
+.btn-primary{
+    color: #fff;
+    background: linear-gradient(180deg, #6ca0e4 64%, #3a1f9b 100%);
+    border: none;
+}
+
+h4{
+    font-family: 'Mulish';
+    font-weight:bold
+}
+
+.input-error{
+    border-color: #d30f23;
+}
+
+.error{
+    color:#d30f23;
+    font-size:1rem;
+    margin:10px;
+    margin-top: -15px;
+}
+
+select{
+    width: 320px;
+    height: 35px;
+}
+
+.btn-personalizado {
+    background: linear-gradient(180deg, #6ca0e4 64%, #3a1f9b 100%);
+    border: none;
+    width: 140px;
+}
+
+
+.bg-light {
+    background-color: #fff!important;
+    border-bottom: 2px solid #3a1f9b;
+    margin-bottom: 30px;
+    height: 65px;
+}
+
+button{
+    font-family: 'Mulish';
+}

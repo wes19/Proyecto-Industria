@@ -1,0 +1,48 @@
+<body>
+
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" >
+                <img src="../../assets/img/icons/atras.png" class="logo-nav" alt="..." (click)=" navegandoHaciaAtras()">
+              </a>
+              <form class="d-flex">
+                <img src="../../assets/img/icons/carrito.png" class="logo-nav float-end" alt="...">
+              </form>
+       </div>
+    </nav>
+
+    <div class="container">
+
+        <h1>Dirección de Entrega</h1>
+
+        <div class="col-md-6 mt-4">
+            <label for="inputEmail4" class="form-label">Cuidad</label>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Seleccionar Cuidad</option>
+                <option value="1">Tegucigalpa</option>
+                <option value="2">San Pedro Sula</option>
+                <option value="3">La Ceiba</option>
+            </select>
+        </div>
+
+        <div class="col-md-6 mt-3">
+            <label for="inputEmail4" class="form-label">Zona</label>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Seleccionar Zona</option>
+                <option value="1">Carrizal</option>
+                <option value="2">Palmira</option>
+                <option value="3">Villa Vieja</option>
+            </select>
+        </div>
+
+        <div class="mt-2" style="width: 100%; height: 300px; background-color: #e46cb4; padding: 10px;">
+            <p>Aqui va un mapa donde tiene que seleccionar la ubicacion</p>
+        </div>
+
+        <div class="d-grid gap-2 mt-5 mx-auto center">
+            <button class="btn btn-primary rounded-pill center" style="font-weight: 700;" type="button" (click)="navegandoHaciaFormTC()">Ubicacion Lista</button>
+        </div>
+
+    </div>
+</body>
+

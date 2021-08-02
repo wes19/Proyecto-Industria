@@ -1,0 +1,14 @@
+#d-footer {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 55px;
+}
+
+#l-footer {
+    height: 50px;
+    width: 50px;
+    margin-left: 45px;
+    margin-bottom: 25px;
+    margin-top: 20px;
+}

@@ -1,0 +1,21 @@
+div{
+    font-family:'Mulish'
+}
+
+.btn-personalizado {
+    background: linear-gradient(180deg, #6ca0e4 64%, #3a1f9b 100%);
+    border: none;
+    width: 140px;
+    border-radius: 25px;
+}
+
+.bg-light {
+    background-color: #fff!important;
+    border-bottom: 2px solid #3a1f9b;
+    margin-bottom: 30px;
+    height: 65px;
+}
+
+button{
+    font-family: 'Mulish';
+}

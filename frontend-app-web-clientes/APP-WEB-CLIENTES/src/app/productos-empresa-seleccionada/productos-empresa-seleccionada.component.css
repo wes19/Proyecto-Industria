@@ -1,0 +1,132 @@
+/*common*/
+
+.btn-personalizado {
+    background: linear-gradient(180deg, #e46cb4 64%, #9b1f69 100%);
+    border: none;
+    width: 100px;
+}
+
+.btn-personalizado1 {
+    background: linear-gradient(180deg, #e46cb4 64%, #9b1f69 100%);
+    border: none;
+    width: 150px;
+    color: white;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.btn-primary {
+    color: #fff;
+    background: linear-gradient(180deg, #e46cb4 64%, #9b1f69 100%);
+    border: none;
+    width: 300px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.bg-light {
+    background-color: #ffffff!important;
+    border-bottom: 2px solid #d258a1;
+    margin-bottom: 30px;
+    height: 65px;
+}
+
+.logo-nav {
+    width: 40px;
+    height: 40px;
+}
+
+
+/* ins prod*/
+
+.c-span {
+    background-color: #d258a1c9;
+    color: white;
+    height: 30px;
+    width: 100px;
+    border-radius: 10px;
+    margin-top: 47px;
+    text-align: center;
+}
+
+.card-img-overlay {
+    padding: 0px;
+    background-color: #00000073;
+}
+
+h1 {
+    font-size: xxx-large;
+    text-align: center;
+    font-family: 'Mulish', sans-serif;
+    font-weight: revert;
+    padding-top: 69px;
+}
+
+.card {
+    border: none;
+}
+
+.bg-light {
+    margin-bottom: 0px;
+    border: none;
+}
+
+.tarjeta {
+    margin-top: 25px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: rgb(209, 209, 209);
+    padding: 0px !important;
+    border-radius: 20px;
+}
+
+.img-Prd {
+    border-radius: 10px;
+    height: 130px;
+    width: 144px;
+}
+
+p {
+    margin-bottom: 0px;
+    font-size: smaller;
+    font-weight: 400;
+}
+
+.card-body {
+    padding-left: 11px;
+    margin-bottom: 0px;
+    margin-top: 5px;
+    height: 50px;
+    padding-top: 0px;
+}
+
+.pNew {
+    /* font-size: smaller; */
+    font-weight: 400;
+    font-size: initial;
+    margin-top: 3px;
+}
+
+.btn-mas {
+    background-color: #d258a1;
+    color: white;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+}
+
+.container {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+a {
+    color: gray !important;
+    font-weight: bold;
+    font-size: larger;
+}
