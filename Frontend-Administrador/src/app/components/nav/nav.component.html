@@ -1,0 +1,26 @@
+<nav class="navbar navbar-dark bg-dark">
+    <ul class="nav">
+        <div class="input-group ms-3">
+            <span class="input-group-text" id="basic-addon1"><img src="../assets/img/icons/lupa.png" class="reajuste1" alt="..."></span>
+            <input type="text" class="form-control" placeholder="Buscar" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+    </ul>
+
+    <ul class="nav justify-content-end me-3">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" [routerLink]="['../../home']">Inicio</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['../empresas']">Empresa</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['../productos']">Productos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['../motoristas']">Motoristas</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['../../login']">Salir</a>
+        </li>
+    </ul>
+</nav>
