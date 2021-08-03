@@ -8,19 +8,19 @@
 
     <ul class="nav justify-content-end me-3">
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" [routerLink]="['../home']">Inicio</a>
+            <a class="nav-link active" aria-current="page" [routerLink]="['/home']">Inicio</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" [routerLink]="['empresas']">Empresa</a>
+            <a class="nav-link" [routerLink]="['/empresas']">Empresa</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" [routerLink]="['productos']">Productos</a>
+            <a class="nav-link" [routerLink]="['/productos']">Productos</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" [routerLink]="['motoristas']">Motoristas</a>
+            <a class="nav-link" [routerLink]="['/motoristas']">Motoristas</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" [routerLink]="['../login']">Salir</a>
+            <a class="nav-link" [routerLink]="['/login']">Salir</a>
         </li>
     </ul>
 </nav>
@@ -38,17 +38,17 @@
                 <h3>Tiendas</h3>
             </div>
 
-            <div class="col-5 mx-3 cuadro" [routerLink]="['productos']" style="background-color: #F58989;">
+            <div class="col-5 mx-3 cuadro" [routerLink]="['/productos']" style="background-color: #F58989;">
                 <img src="../assets/img/categorias/productos.png" class="cuadrado center" alt="matambritas">
                 <h3>Productos</h3>
             </div>
 
-            <div class="col-5 mx-3 cuadro" [routerLink]="['motoristas']" style="background-color: #AAE3EF;">
+            <div class="col-5 mx-3 cuadro" [routerLink]="['/motoristas']" style="background-color: #AAE3EF;">
                 <img src="../assets/img/categorias/motoristas.png" class="cuadrado center" alt="matambritas">
                 <h3>Motoristas</h3>
             </div>
 
-            <div class="col-5 mx-3 cuadro" [routerLink]="['pedidos']" style="background-color: #8DED7E;">
+            <div class="col-5 mx-3 cuadro" [routerLink]="['/pedidos']" style="background-color: #8DED7E;">
                 <img src=" ../assets/img/categorias/envios.png" class="cuadrado center" alt="matambritas ">
                 <h3>Pedidos</h3>
             </div>
@@ -64,7 +64,7 @@
             </div>
 
 
-            <div class="mt-5 mb-5 col-6" [routerLink]="['empleados']">
+            <div class="mt-5 mb-5 col-6">
                 <img src="../assets/img/admin.png" class="log mx-auto float-end" style="width: 190px;" alt="...">
             </div>
 

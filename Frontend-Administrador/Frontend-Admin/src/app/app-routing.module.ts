@@ -9,18 +9,14 @@ import { DriverComponent } from './components/driver/driver.component';
 import { EmployeesComponent } from './components/employees/employees.component';
 
 const routes: Routes = [
+  {path: '', component: HomeComponent },
   {path: 'login', component: LoginComponent },
   {path: 'home', component: HomeComponent },
-  {path: 'home/pedidos', component: OrdersComponent },
-  {path: 'home/productos', component: ProductsComponent },
-  {path: 'home/empresas', component: StoresComponent },
-  {path: 'home/motoristas', component: DriverComponent },
-  {path: 'home/empleados', component: EmployeesComponent },
-
-
-
-
-
+  {path: 'pedidos', component: OrdersComponent },
+  {path: 'productos', component: ProductsComponent },
+  {path: 'empresas', component: StoresComponent },
+  {path: 'motoristas', component: DriverComponent },
+  {path: 'empleados', component: EmployeesComponent },
 
 ];
 
