@@ -10,7 +10,7 @@
             <img src="../assets/img/logo.jpeg" style=" width: 15rem; height: 15rem;" class="center  mx-auto" alt="...">
         </div>
 
-        <div class="container-md">
+        <div class="container-md" [formGroup]="loginAdmin">
 
             <div class="input-group mb-2">
                 <span class="input-group-text" id="basic-addon1"><img src="../assets/img/icons/correo.png" style="height: 30px;" alt="icon"></span>
@@ -27,7 +27,7 @@
                 <span class="input-group-text" id="basic-addon1"><img src="../assets/img/icons/contrasenia.png" style="height: 30px;" alt="icon"></span>
                 <input type="text" formControlName="password" [ngClass]="{'input-error':password?.invalid && (password?.dirty || password?.touched)}" class="form-control" placeholder="Contraseña" aria-label="Contrasena" aria-describedby="basic-addon1">
             </div>
-            <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="error">
+            <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="error1">
                 <span *ngIf="password?.errors?.minlength">Error el tamaño minimo es de 8 carácteres</span>
             </div>
 

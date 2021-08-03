@@ -17,6 +17,7 @@ const routes: Routes = [
   {path: 'empresas', component: StoresComponent },
   {path: 'motoristas', component: DriverComponent },
   {path: 'empleados', component: EmployeesComponent },
+  { path: '**', pathMatch: 'full', redirectTo:'home'},
 
 ];
 

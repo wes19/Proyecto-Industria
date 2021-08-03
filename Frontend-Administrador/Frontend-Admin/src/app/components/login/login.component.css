@@ -77,10 +77,15 @@ p {
 .error{
     color:#d30f23;
     font-size:1rem;
-    margin:10px;
-    margin-top: -15px;
 }
 
 .input-error{
     border-color: #d30f23;
+}
+
+.error1{
+    color:#d30f23;
+    font-size:1rem;
+    margin: -40px;
+    margin-left: auto;
 }
