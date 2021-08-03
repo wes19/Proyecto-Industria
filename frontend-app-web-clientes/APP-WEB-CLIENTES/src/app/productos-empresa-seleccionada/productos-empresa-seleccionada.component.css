@@ -1,13 +1,13 @@
 /*common*/
 
 .btn-personalizado {
-    background: linear-gradient(180deg, #e46cb4 64%, #9b1f69 100%);
+    background: linear-gradient(180deg, #ffcc2a 64%, #e7b81b 100%);
     border: none;
     width: 100px;
 }
 
 .btn-personalizado1 {
-    background: linear-gradient(180deg, #e46cb4 64%, #9b1f69 100%);
+    background: linear-gradient(180deg, #ffcc2a 64%, #e7b81b 100%);
     border: none;
     width: 150px;
     color: white;
@@ -17,7 +17,7 @@
 
 .btn-primary {
     color: #fff;
-    background: linear-gradient(180deg, #e46cb4 64%, #9b1f69 100%);
+    background: linear-gradient(180deg, #ffcc2a 64%, #e7b81b 100%);
     border: none;
     width: 300px;
     align-items: center;
@@ -28,7 +28,7 @@
 
 .bg-light {
     background-color: #ffffff!important;
-    border-bottom: 2px solid #d258a1;
+    border-bottom: 2px solid #e7b81b;
     margin-bottom: 30px;
     height: 65px;
 }
@@ -42,7 +42,7 @@
 /* ins prod*/
 
 .c-span {
-    background-color: #d258a1c9;
+    background-color: #e7b81b;
     color: white;
     height: 30px;
     width: 100px;
@@ -110,7 +110,7 @@ p {
 }
 
 .btn-mas {
-    background-color: #d258a1;
+    background-color: #e7b81b;
     color: white;
     position: absolute;
     right: 5px;

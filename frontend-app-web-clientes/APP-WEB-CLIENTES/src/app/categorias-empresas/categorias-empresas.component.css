@@ -46,20 +46,20 @@ p {
 }
 
 #line {
-    background-color: #d258a1;
+    background-color: #ffcc2a;
     margin-top: 45px;
     border: 1px;
     opacity: 1;
 }
 /*common*/
 .btn-personalizado {
-    background: linear-gradient(180deg, #e46cb4 64%, #9b1f69 100%);
+    background: linear-gradient(180deg, #ffcc2a 64%, #ffcc2a 100%);
     border: none;
     width: 100px;
 }
 
 .btn-personalizado1 {
-    background: linear-gradient(180deg, #e46cb4 64%, #9b1f69 100%);
+    background: linear-gradient(180deg, #ffcc2a 64%, #ffcc2a 100%);
     border: none;
     width: 150px;
     color: white;
@@ -69,7 +69,7 @@ p {
 
 .btn-primary {
     color: #fff;
-    background: linear-gradient(180deg, #e46cb4 64%, #9b1f69 100%);
+    background: linear-gradient(180deg, #ffcc2a 64%, #ffcc2a 100%);
     border: none;
     width: 300px;
     align-items: center;
@@ -80,13 +80,11 @@ p {
 
 .bg-light {
     background-color: #ffffff!important;
-    border-bottom: 2px solid #d258a1;
+    border-bottom: 2px solid #ffcc2a;
     margin-bottom: 30px;
     height: 65px;
 }
 
 .logo-nav {
-    width: 40px;
-    height: 40px;
-    
+
 }

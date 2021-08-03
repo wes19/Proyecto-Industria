@@ -14,7 +14,7 @@ import { AnadiendoProductoCarritoComponent } from './anadiendo-producto-carrito/
 import { CarritoCompraComponent } from './carrito-compra/carrito-compra.component';
 import { DireccionClienteComponent } from './direccion-cliente/direccion-cliente.component';
 import { OrdenesClienteComponent } from './ordenes-cliente/ordenes-cliente.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +32,9 @@ import { OrdenesClienteComponent } from './ordenes-cliente/ordenes-cliente.compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
