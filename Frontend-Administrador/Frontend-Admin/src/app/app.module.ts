@@ -12,6 +12,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { StoresComponent } from './components/stores/stores.component';
 import { DriverComponent } from './components/driver/driver.component';
 import { EmployeesComponent } from './components/employees/employees.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { EmployeesComponent } from './components/employees/employees.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
