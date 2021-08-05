@@ -11,19 +11,66 @@ import { LoginComponent } from './login/login.component';
 import { OrdenesClienteComponent } from './ordenes-cliente/ordenes-cliente.component';
 import { ProductosEmpresaSeleccionadaComponent } from './productos-empresa-seleccionada/productos-empresa-seleccionada.component';
 import { RegistroClienteComponent } from './registro-cliente/registro-cliente.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
-  {path: '', component: LandingClienteComponent},
-  {path: 'registro-cliente', component: RegistroClienteComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'categorias-empresas', component: CategoriasEmpresasComponent},
-  {path: 'empresas-categorias-seleccionada', component: EmpresasCategoriaSeleccionadaComponent},
-  {path: 'productos', component: ProductosEmpresaSeleccionadaComponent},
-  {path: 'anadiendo-carrito', component: AnadiendoProductoCarritoComponent},
-  {path: 'carrito-compras', component: CarritoCompraComponent},
-  {path: 'direccion-cliente', component: DireccionClienteComponent},
-  {path: 'datos-tarjeta', component: FormPagoTcComponent},
-  {path: 'ordenes-cliente', component: OrdenesClienteComponent}
+  {
+    path: '',
+    redirectTo: '/landing',
+    pathMatch: 'full'
+  },
+  {
+    path: 'landing',
+    component: LandingClienteComponent
+  },
+  {
+    path: 'registro',
+    component: RegistroClienteComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'categorias', //privado
+    component: CategoriasEmpresasComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'empresas-categorias-seleccionada',
+    component: EmpresasCategoriaSeleccionadaComponent
+  },
+
+  {
+    path: 'productos',
+    component: ProductosEmpresaSeleccionadaComponent
+  },
+
+  {
+    path: 'anadiendo-carrito',
+    component: AnadiendoProductoCarritoComponent
+  },
+
+  {
+    path: 'carrito-compras',
+    component: CarritoCompraComponent
+  },
+
+  {
+    path: 'direccion-cliente',
+    component: DireccionClienteComponent
+  },
+
+  {
+    path: 'datos-tarjeta',
+    component: FormPagoTcComponent
+  },
+
+  {
+    path: 'ordenes-cliente',
+    component: OrdenesClienteComponent
+  }
+
 ];
 
 @NgModule({

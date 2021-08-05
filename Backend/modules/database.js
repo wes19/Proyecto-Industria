@@ -8,7 +8,7 @@ class Database{
         //Promesas
         mongoose.connect(`mongodb://${servidor}/${db}`)
         .then(()=>{
-            console.log('Se conecto a mongo');
+            console.log('La base de datos se conecto a mongo ;)');
         }).catch((error)=>{
             console.log(error);
         });

@@ -1,14 +1,21 @@
 var express = require('express');
 var cors = require('cors'); //Para gestionar politicas de dominios cruzados
 var bodyParser = require('body-parser');
-var database = require('./modules/database');
+var database = require('./modules/database');;
+var http = require('http');
 
 var app = express();
-
+const server = http.Server(app);
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.listen(8888, ()=>{
-    console.log('Servidor del backend levantado en 8888');
+var clientesRouter = require('./routes/clientes-router');
+app.use('/clientes',clientesRouter);
+
+
+// process.env.PORT: variable de entorno para escuchar el puerto que la plataforma a subir la app nos brinde
+app.set('port', process.env.PORT || 8888);
+server.listen(app.get('port'), function () {
+    console.log(`Servidor Backend en el puerto ${app.get('port')}`);
 });

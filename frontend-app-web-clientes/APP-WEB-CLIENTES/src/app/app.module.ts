@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingClienteComponent } from './landing-cliente/landing-cliente.component';
@@ -15,6 +14,12 @@ import { CarritoCompraComponent } from './carrito-compra/carrito-compra.componen
 import { DireccionClienteComponent } from './direccion-cliente/direccion-cliente.component';
 import { OrdenesClienteComponent } from './ordenes-cliente/ordenes-cliente.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthGuard } from './services/auth.guard';
+import { AuthService } from './services/auth.service';
+import { TokenInterceptorService } from './services/token-interceptor.service';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,9 +39,25 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot([
+      { path: '', component: LandingClienteComponent, data: { title: 'Delivery' } },
+      { path: 'login', component: LoginComponent, data: { title: 'Delivery - Login Cliente' } },
+      { path: 'registro', component: RegistroClienteComponent, data: { title: 'Delivery - Registro Cliente' } },
+
+    ])
   ],
-  providers: [],
+  providers: [
+    Title,
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    },
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

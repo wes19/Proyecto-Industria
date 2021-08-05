@@ -10,7 +10,7 @@
 
         <div class="container">
             
-            <form  [formGroup]="logear">
+            <form  [formGroup]="logear" (ngSubmit)="loginCliente()">
                 <span class="input-group-text" id="basic-addon1"><img src="../../assets/img/icons/correo.png" style="height: 30px;" alt="icon"></span>
 
                 
@@ -33,7 +33,7 @@
             </div>
 
             <div class="d-grid gap-2 mx-auto center mt-5">
-                <button [disabled]="!logear.valid" (click)="Verificar()" class="btn btn-primary rounded-pill center" type="button" (click)="navegandoHaciaCategoriasEmpresas()">Ingresar</button>
+                <button [disabled]="!logear.valid" (click)="Verificar()" class="btn btn-primary rounded-pill center" type="submit" >Ingresar</button>
             </div>
 
             </form>
