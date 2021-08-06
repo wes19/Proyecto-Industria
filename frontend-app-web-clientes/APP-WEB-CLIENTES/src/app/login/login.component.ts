@@ -57,6 +57,7 @@ export class LoginComponent implements OnInit {
             // Guardar token en localStorage
             localStorage.setItem('token', response.data.accessToken);
             localStorage.setItem('correoCliente', response.data.correoCliente);
+            localStorage.setItem('nombreCliente',response.data.nombreCliente);
             // Mensaje success
             Swal.fire({
               title: '',

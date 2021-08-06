@@ -38,37 +38,44 @@ const routes: Routes = [
   },
   {
     path: 'empresas-categorias-seleccionada',
-    component: EmpresasCategoriaSeleccionadaComponent
+    component: EmpresasCategoriaSeleccionadaComponent,
+    canActivate: [AuthGuard]
   },
 
   {
     path: 'productos',
-    component: ProductosEmpresaSeleccionadaComponent
+    component: ProductosEmpresaSeleccionadaComponent,
+    canActivate: [AuthGuard]
   },
 
   {
     path: 'anadiendo-carrito',
-    component: AnadiendoProductoCarritoComponent
+    component: AnadiendoProductoCarritoComponent,
+    canActivate: [AuthGuard]
   },
 
   {
     path: 'carrito-compras',
-    component: CarritoCompraComponent
+    component: CarritoCompraComponent,
+    canActivate: [AuthGuard]
   },
 
   {
     path: 'direccion-cliente',
-    component: DireccionClienteComponent
+    component: DireccionClienteComponent,
+    canActivate: [AuthGuard]
   },
 
   {
     path: 'datos-tarjeta',
-    component: FormPagoTcComponent
+    component: FormPagoTcComponent,
+    canActivate: [AuthGuard]
   },
 
   {
     path: 'ordenes-cliente',
-    component: OrdenesClienteComponent
+    component: OrdenesClienteComponent,
+    canActivate: [AuthGuard]
   }
 
 ];

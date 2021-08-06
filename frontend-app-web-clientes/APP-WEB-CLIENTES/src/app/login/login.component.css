@@ -80,3 +80,9 @@ a {
 p {
     margin-bottom: 0px;
 }
+
+.error{
+    color: red !important;
+    margin-top: -20px !important;
+    position: absolute;
+}

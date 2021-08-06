@@ -1,13 +1,88 @@
 <body>
+
     <div class="container">
         <h1 class="mt-5">Regístrate en Izzy&Vite</h1>
 
-        <h6 style="text-align: center;" class="mt-5">¿Tenés ya tu cuenta? <a (click)="navegandoHaciaLogin()">Iniciar Sesión</a></h6>
+        <h6 style="text-align: center; margin-top: -12px !important;" class="mt-5">¿Tenés ya tu cuenta? <a routerLink="/login">Iniciar Sesión</a></h6>
 
-        <div class="mt-5 mb-5">
+        <div class="mt-5 mb-5 " style="margin-top: -20px !important">
             <img src="../../assets/../../assets/img/logo.jpeg" class="center log mx-auto" alt="...">
         </div>
 
+       <div class="container text-center " style="margin-top: -60px;">
+        <form class="form-grup" [formGroup]="formularioRegistroCliente" (ngSubmit)='registrarCliente()'>
+            <h1 class="text-center titRegistro">
+                REGISTRO
+            </h1>
+            <div class=" w-100 classfor">
+                <!--Campo del Nombre-->
+                <label>
+                    <span>NOMBRE:</span>
+                    <input class="form-control"
+                    [ngClass]="{'form-input-error':nombreCliente.invalid && (nombreCliente.dirty || nombreCliente.touched)}"
+                    formControlName="nombreCliente" type="text"  require placeholder="Ej. Enoc Rivera">
+                    <i class="fas fa-user"></i>
+                    <div  *ngIf="nombreCliente.invalid && (nombreCliente.dirty || nombreCliente.touched)" class="form-error">
+                      <span style="color: red;" *ngIf="nombreCliente.errors.required">Por favor, ingrese su nombre.</span>
+                      <span style="color: red;" *ngIf="nombreCliente.errors.minlength">Su nombre debe ser mínimo de 4 caracteres.</span>
+                    </div>
+                    <div  *ngIf="!nombreCliente.invalid && (nombreCliente.dirty || nombreCliente.touched)" class="form-exito">
+                        <span><i class="fas fa-check-double"></i></span>
+                    </div>
+                </label><hr>
+                <!--Campo del correo-->
+                <label>
+                    <span>CORREO:</span>
+                    <input class="form-control"
+                      [ngClass]="{'form-input-error':correoCliente.invalid && (correoCliente.dirty || correoCliente.touched) }"
+                      formControlName="correoCliente" type="email" require placeholder="Ej. enoc.rivera@unah.hn" required>
+                    <i class="fas fa-envelope"></i>
+                    <div  *ngIf="correoCliente.invalid && (correoCliente.dirty || correoCliente.touched)" class="form-error">
+                      <span style="color: red;" *ngIf="correoCliente.errors.required">Por favor, ingrese su correo.</span>
+                      <span style="color: red;" *ngIf="correoCliente.errors.pattern">Ingrese un correo válido.</span>
+                    </div>
+                    <div  *ngIf="!correoClienteDuplicado && !correoCliente.invalid && (correoCliente.dirty || correoCliente.touched)" class="form-exito">
+                      <span><i class="fas fa-check-double"></i></span>
+                    </div>
+                   
+                  </label>
+                  <hr>
+                <!--campo de la contraseña-->
+                <label>
+                    <span>CONTRASEÑA:</span>
+                    <div class="text-right">
+                        <input class="form-control"
+                          [ngClass]="{'form-input-error':contrasenaCliente.invalid && (contrasenaCliente.dirty || contrasenaCliente.touched) }"
+                          formControlName="contrasenaCliente" #inputPassword type="password" placeholder="Ej. elgatoesnegro.125"
+                          >
+                        <i class="fas fa-eye-slash" (click)="cambiarInput(inputPassword)"
+                          *ngIf="inputPassword.type === 'password'"></i>
+                        <i class="fas fa-eye" (click)="cambiarInput(inputPassword)" *ngIf="inputPassword.type === 'text'"></i>
+                        </div>
+                        <div *ngIf="contrasenaCliente.invalid && (contrasenaCliente.dirty || contrasenaCliente.touched)" class="form-error text-left">
+                          <span style="color: red;" *ngIf="contrasenaCliente.errors.required">Por favor, ingrese una contraseña.</span>
+                          <span style="color: red;" *ngIf="contrasenaCliente.errors.minlength">La contraseña debe ser mínimo de 8 caracteres.</span>
+                        </div>
+                      <div  *ngIf="!contrasenaCliente.invalid && (contrasenaCliente.dirty || contrasenaCliente.touched)" class="form-exito">
+                        <span><i class="fas fa-check-double"></i></span>
+                      </div>
+                  </label>
+                  <hr>
+                <label>
+                    <button   [disabled]="formularioRegistroCliente.invalid" class="btn btn-success" type="submit">Enviar</button>
+                    <i class="fas fa-share-square"></i>
+                </label>
+                <div class="row text-center ">
+                    
+                    <div class="col-6 "><a routerLink="/landing"><i class="fas fa-undo-alt"></i></a>
+                    </div>
+                    <div class="col-6 "><a routerLink='/login'><i class="fas fa-sign-in-alt"></i></a></div>
+                   
+                </div>
+            </div>
+        </form>
+       </div>
+        <!--
         <div class="container">
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"><img src="../../assets/img/icons/perfil.png" style="height: 30px;" alt="icon"></span>
@@ -27,7 +102,7 @@
             <div class="d-grid gap-2 mx-auto center mt-5">
                 <button class="btn btn-primary rounded-pill center" type="button" (click)="navegandoHaciaLogin()">Registrarme</button>
             </div>
-        </div>
+        </div>-->
 
         <div class="mt-5 mb-5" style="text-align: center;">
             <p>Al registrarte, aceptas todas nuestras</p>

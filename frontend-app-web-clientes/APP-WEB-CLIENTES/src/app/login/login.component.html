@@ -1,45 +1,49 @@
 <body>
 
-    <div class="container">
+  <div class="container">
 
-        <h1 class="mt-5">Iniciar Sesión</h1>
+    <h1 class="mt-5">Iniciar Sesión</h1>
 
-        <div class="mt-5 mb-5">
-            <img src="../../assets/img/logo.jpeg" class="center log mx-auto" alt="...">
-        </div>
-
-        <div class="container">
-            
-            <form  [formGroup]="logear" (ngSubmit)="loginCliente()">
-                <span class="input-group-text" id="basic-addon1"><img src="../../assets/img/icons/correo.png" style="height: 30px;" alt="icon"></span>
-
-                
-            <div class="input-group mb-4">
-                <input type="text" formControlName="usuario" [ngClass]="{'input-error':usuario?.invalid && (usuario?.dirty || usuario?.touched)}" class="form-control" placeholder="Correo electrónico" aria-label="Correo electronico" aria-describedby="basic-addon1" required>
-            </div>
-            <div *ngIf="usuario?.invalid && (usuario?.dirty || usuario?.touched)" class="error">
-                <span *ngIf="usuario?.errors?.required">Error el campo es obligatorio</span>
-            </div>
-            <div *ngIf="usuario?.touched" class="error">
-                <span *ngIf="usuario?.errors?.pattern">Error Correo Electrónico incorrecto</span>
-            </div>
-
-            <div class="input-group mb-5">
-                <span class="input-group-text" id="basic-addon1"><img src="../../assets/img/icons/contrasenia.png" style="height: 30px;" alt="icon"></span>
-                <input type="password" formControlName="password" [ngClass]="{'input-error':password?.invalid && (password?.dirty || password?.touched)}" required type="text" class="form-control" placeholder="Contraseña" aria-label="Contrasena" aria-describedby="basic-addon1">
-            </div>
-            <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="error">
-                <span *ngIf="password?.errors?.minlength">Error el tamaño minimo es de 8 carácteres</span>
-            </div>
-
-            <div class="d-grid gap-2 mx-auto center mt-5">
-                <button [disabled]="!logear.valid" (click)="Verificar()" class="btn btn-primary rounded-pill center" type="submit" >Ingresar</button>
-            </div>
-
-            </form>
-        </div>
-
+    <div class="mt-5 mb-5">
+      <img src="../../assets/img/logo.jpeg" class="center log mx-auto" alt="...">
     </div>
 
-</body>
+    <div class="container">
 
+      <form [formGroup]="logear" (ngSubmit)="loginCliente()">
+        <div class="input-group mb-4">
+          <input type="text" formControlName="usuario"
+            [ngClass]="{'input-error':usuario?.invalid && (usuario?.dirty || usuario?.touched)}" class="form-control"
+            placeholder="Correo electrónico" aria-label="Correo electronico" aria-describedby="basic-addon1" required>
+             <span class="input-group-text" id="basic-addon1"><img src="../../assets/img/icons/correo.png"
+            style="height: 30px;" alt="icon"></span>
+        </div>
+        <div *ngIf="usuario?.invalid && (usuario?.dirty || usuario?.touched)" class="error">
+          <span *ngIf="usuario?.errors?.required">Error el campo es obligatorio</span>
+        </div>
+        <div *ngIf="usuario?.touched" class="error">
+          <span *ngIf="usuario?.errors?.pattern">Error Correo Electrónico incorrecto</span>
+        </div>
+        <br>
+        <div class="input-group mb-4">
+          <input type="password" formControlName="password"
+            [ngClass]="{'input-error':password?.invalid && (password?.dirty || password?.touched)}" required type="text"
+            class="form-control" placeholder="Contraseña" aria-label="Contrasena" aria-describedby="basic-addon1" required> 
+            <span class="input-group-text" id="basic-addon1"><img src="../../assets/img/icons/contrasenia.png"
+              style="height: 30px;" alt="icon"></span>
+        </div>
+        <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="error">
+          <span *ngIf="password?.errors?.minlength">Error el tamaño minimo es de 8 carácteres</span>
+        </div>
+
+        <div class="d-grid gap-2 mx-auto center mt-5">
+          <button [disabled]="!logear.valid" (click)="Verificar()" class="btn btn-primary rounded-pill center"
+            type="submit">Ingresar</button>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+
+</body>

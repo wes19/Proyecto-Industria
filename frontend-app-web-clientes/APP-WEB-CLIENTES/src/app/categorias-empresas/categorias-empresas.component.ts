@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from "../services/auth.service";
 
 @Component({
   selector: 'app-categorias-empresas',
@@ -8,16 +9,25 @@ import { Router } from '@angular/router';
 })
 export class CategoriasEmpresasComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  
+  constructor(
+    private router: Router,
+    private authService:AuthService
+    ) { }
+
+   nombreCliente: String | undefined;
 
   ngOnInit(): void {
+    this.nombreCliente = JSON.stringify(localStorage.getItem('nombreCliente'));
   }
 
-  navegandoHaciaLanding(){
-    this.router.navigate(['']);
-  }
+ salir(){
+   this.authService.logoutCliente();
+ }
 
   navegarHaciaMostrandoEmpresas(){
     this.router.navigate(['/empresas-categorias-seleccionada']);
   }
+
+  
 }

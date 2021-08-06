@@ -47,6 +47,47 @@ router.post('/registro/cliente', function (req, res) {
 });
 
 
+//Registrar un cliente
+//Ruta-> http://localhost:8888/clientes/registrandocliente
+router.post('/registro', function (req, res) {
+    let contrasenaCliente_hash = bcrypt.hashSync(req.body.contrasenaCliente, 10);
+    let nuevoCliente = new cliente({
+        nombreCliente: req.body.nombreCliente,
+        correoCliente: req.body.correoCliente,
+        contrasenaCliente: contrasenaCliente_hash,
+    });
+    //console.log(nuevoCliente);
+
+    nuevoCliente.save()
+        .then(result => {
+             // Success, inicia sesion con JWT
+            const expiresIn = 24 * 60 * 60;
+             const accessToken = jwt.sign({
+                 _id: result.id
+            }, SECRET_KEY, {
+                 expiresIn: expiresIn
+             });
+             const dataEnviar = {
+                 email: result.email,
+                 accessToken: accessToken,
+                 expiresIn: expiresIn
+             };
+             res.status(200).send({
+                 mensaje: 'Registrado',
+                 data: dataEnviar
+             });
+             res.end();
+        })
+        .catch(error => {
+            res.send({
+                error: error,
+                mensaje: "Error al guardar cliente"
+            });
+            res.end();
+        });
+});
+
+
 //Logear un cliente
 //Ruta -> http://localhost:8888/clientes/login
 router.post('/login', function (req, res) {
@@ -55,7 +96,8 @@ router.post('/login', function (req, res) {
         }, {
             _id: true,
             correoCliente: true,
-            contrasenaCliente: true
+            contrasenaCliente: true,
+            nombreCliente:true
         })
         .then(result => {
             // Comparar hash de password
@@ -70,6 +112,7 @@ router.post('/login', function (req, res) {
                 });
                 const dataEnviar = {
                     correoCliente: result.correoCliente,
+                    nombreCliente: result.nombreCliente,
                     accessToken: accessToken,
                     expiresIn: expiresIn
                 }
