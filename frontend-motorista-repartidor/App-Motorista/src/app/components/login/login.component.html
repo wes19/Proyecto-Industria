@@ -24,10 +24,23 @@
                     <span *ngIf="password?.errors?.minlength">Error el tamaño minimo es de 8 carácteres</span>
                 </div>
                 <div class="d-grid my-4">
-                    <button [disabled]="!logear.valid" class="btn btn-primary rounded-pill" style="width: 310px;" type="button" (click)="Verificar()" [routerLink]="['/pedidos']">SIGN IN</button>
+                    <button [disabled]="!logear.valid" class="btn btn-primary rounded-pill" style="width: 310px;" type="button" (click)="Verificar()">SIGN IN</button>
                 </div>
             </section>
         </div>
     </div>
+
+    <!-- Modal -->
+<ng-template #modalAdvertencia let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title"></h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body mx-4 my-4" style="height: 100px;">
+        Usuario/Contraseña Incorrectos
+    </div>
+  </ng-template>
 
 
