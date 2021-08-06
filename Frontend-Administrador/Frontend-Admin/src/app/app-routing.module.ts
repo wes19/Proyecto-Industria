@@ -9,7 +9,7 @@ import { DriverComponent } from './components/driver/driver.component';
 import { EmployeesComponent } from './components/employees/employees.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent },
+  {path: '', component: LoginComponent },
   {path: 'login', component: LoginComponent },
   {path: 'home', component: HomeComponent },
   {path: 'pedidos', component: OrdersComponent },

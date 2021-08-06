@@ -25,17 +25,31 @@
 
             <div class="input-group mb-5">
                 <span class="input-group-text" id="basic-addon1"><img src="../assets/img/icons/contrasenia.png" style="height: 30px;" alt="icon"></span>
-                <input type="text" formControlName="password" [ngClass]="{'input-error':password?.invalid && (password?.dirty || password?.touched)}" class="form-control" placeholder="Contraseña" aria-label="Contrasena" aria-describedby="basic-addon1">
+                <input type="password" formControlName="password" [ngClass]="{'input-error':password?.invalid && (password?.dirty || password?.touched)}" class="form-control" placeholder="Contraseña" aria-label="Contrasena" aria-describedby="basic-addon1">
             </div>
             <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="error1">
                 <span *ngIf="password?.errors?.minlength">Error el tamaño minimo es de 8 carácteres</span>
             </div>
 
             <div class="d-flex justify-content-center  mt-5">
-                <button [disabled]="!loginAdmin.valid" class="btn btn-primary rounded-pill center" [routerLink]="['/home']" type="button">Ingresar</button>
+                <button [disabled]="!loginAdmin.valid" class="btn btn-primary rounded-pill center" type="button" (click)="Verificar()">Ingresar</button>
             </div>
 
         </div>
 
     </div>
+
+    <!-- Modal -->
+<ng-template #modalAdvertencia let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title"></h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body mx-4 my-4" style="height: 100px;">
+        Usuario/Contraseña Incorrectos
+    </div>
+  </ng-template>
+  
 
