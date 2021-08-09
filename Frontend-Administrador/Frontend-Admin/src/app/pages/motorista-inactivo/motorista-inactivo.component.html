@@ -1,0 +1,310 @@
+<app-navbar></app-navbar>
+    <div class="container">
+        <div class="row">
+            <h1 class="mt-5 col-9">Motoristas Inactivos</h1>
+            <div class="col-3 mt-5">
+                <button type="button" class="btn btn-success" style="margin-left: 70px;" [routerLink]="['/motoristas']">Ir a Motoristas Activos</button>
+            </div>
+        </div>
+        
+        <table class="table mt-4">
+            <thead>
+                <tr>
+                    <th scope="col">Código</th>
+                    <th scope="col">DNI</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Dirección</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Correo</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let motorista of motoristas">
+                <tr>
+                    <th scope="row">{{motorista.codEmpleado}}</th>
+                    <td>{{motorista.dni}}</td>
+                    <td>{{motorista.nombre}}</td>
+                    <td>{{motorista.apellido}}</td>
+                    <td>{{motorista.direccion}}</td>
+                    <td>{{motorista.telefono}}</td>
+                    <td>{{motorista.correo}}</td>
+                    <td><button type="button" class="btn btn-success" (click)="abrirVerMotorista(Modalver, motorista)">Ver</button>
+                        <button type="button" class="btn btn-warning mx-2" (click)="abrirModalEditar(ModalEditar, motorista)">Editar</button>
+                        <button type="button" class="btn btn-danger" (click)="activar(motorista)">Activar</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+
+    <ng-template #Modalver let-modal>
+        <div class="modal-header" style="background-color: #16557f; color:#fff">
+            <h5 class="modal-title" id="exampleModalLabel">Ver Motorista</h5>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">DNI:</label>
+                </div>
+                <div class="col me-4">
+                    <label for="inputPassword6" class="form-control ms-4">{{motoristaModal.dni}}</label>
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Código Empleado:</label>
+                </div>
+                <div class="col me-4">
+                    <label for="inputPassword6" class="form-control ms-4">{{motoristaModal.codEmpleado}}</label>
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Nombre:</label>
+                </div>
+                <div class="col me-4">
+                    <label for="inputPassword6" class="form-control ms-4">{{motoristaModal.nombre}}</label>
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Apellido:</label>
+                </div>
+                <div class="col me-4">
+                    <label for="inputPassword6" class="form-control ms-4">{{motoristaModal.apellido}}</label>
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Dirección:</label>
+                </div>
+                <div class="col me-4">
+                    <label for="inputPassword6" class="form-control ms-4">{{motoristaModal.direccion}}</label>
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Teléfono:</label>
+                </div>
+                <div class="col me-4">
+                    <label for="inputPassword6" class="form-control ms-4">{{motoristaModal.telefono}}</label>
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Fecha de Nacimiento:</label>
+                </div>
+                <div class="col me-4">
+                    <label for="inputPassword6" class="form-control ms-4">{{motoristaModal.fechaNacimiento}}</label>
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Contraseña:</label>
+                </div>
+                <div class="col me-4">
+                    <label for="inputPassword6" class="form-control ms-4">{{motoristaModal.password}}</label>
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Estado Civil:</label>
+                </div>
+                <div class="col me-4">
+                    <label for="inputPassword6" class="form-control ms-4">{{motoristaModal.estadoCivil}}</label>
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Formación:</label>
+                </div>
+                <div class="col me-4">
+                    <div for="inputPassword6" class="form-control ms-4" style="height: 80px;">{{motoristaModal.formacion}}</div>
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Sufre Alguna Discapacidad:</label>
+                </div>
+                <div class="col me-4">
+                    <label for="inputPassword6" class="form-control ms-4">{{motoristaModal.discapacidad}}</label>
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Discapacidad Descripción:</label>
+                </div>
+                <div class="col me-4">
+                    <div for="inputPassword6" class="form-control ms-4" style="height: 80px;">{{motoristaModal.descripcion}}</div>
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Pasado Profesional:</label>
+                </div>
+                <div class="col me-4">
+                    <div for="inputPassword6" class="form-control ms-4" style="height: 80px;">{{motoristaModal.pasadoProfesional}}</div>
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Estado:</label>
+                </div>
+                <div class="col me-4">
+                    <label for="inputPassword6" class="form-control ms-4">{{motoristaModal.estado}}</label>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Cerrar</button>
+          </div>
+      </ng-template>
+
+
+
+    <ng-template #ModalEditar let-modal>
+        <div class="modal-header" style="background-color: #16557f; color:#fff">
+            <h5 class="modal-title" id="exampleModalLabel">Editar Motorista</h5>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">DNI:</label>
+                </div>
+                <div class="col me-4">
+                    <input #inputdni value={{motoristaModal.dni}} type="text" class="form-control" aria-describedby="passwordHelpInline">
+                </div>
+            </div>
+
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Código Empleado:</label>
+                </div>
+                <div class="col me-4">
+                    <input #inputCod value={{motoristaModal.codEmpleado}} type="text" class="form-control me-2" aria-describedby="passwordHelpInline">
+                </div>
+            </div>
+
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Nombre:</label>
+                </div>
+                <div class="col me-4">
+                    <input #inputNom value={{motoristaModal.nombre}} type="text" class="form-control me-2" aria-describedby="passwordHelpInline">
+                </div>
+            </div>
+
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Apellido:</label>
+                </div>
+                <div class="col me-4">
+                    <input #inputApe value={{motoristaModal.apellido}} type="text" class="form-control me-2" aria-describedby="passwordHelpInline">
+                </div>
+            </div>
+
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Correo:</label>
+                </div>
+                <div class="col me-4">
+                    <input #inputCor value={{motoristaModal.correo}} type="text" class="form-control" aria-describedby="passwordHelpInline">
+                </div>
+            </div>
+
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Teléfono:</label>
+                </div>
+                <div class="col me-4">
+                    <input #inputTel value={{motoristaModal.telefono}} type="text" class="form-control" aria-describedby="passwordHelpInline">
+                </div>
+            </div>
+
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Dirección:</label>
+                </div>
+                <div class="col me-4">
+                    <input #inputDir value={{motoristaModal.direccion}} type="text" class="form-control" aria-describedby="passwordHelpInline">
+                </div>
+            </div>
+
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Contraseña:</label>
+                </div>
+                <div class="col me-4">
+                    <input #inputPas value={{motoristaModal.password}} type="text" class="form-control" aria-describedby="passwordHelpInline">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Estado Civil:</label>
+                </div>
+                <div class="col me-4">
+                    <input #inputEst value={{motoristaModal.estadoCivil}} type="text" class="form-control" aria-describedby="passwordHelpInline">
+                </div>
+            </div>
+
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Formación:</label>
+                </div>
+                <div class="col me-4">
+                    <textarea #inputFor value={{motoristaModal.formacion}} type="text" class="form-control" aria-describedby="passwordHelpInline"></textarea>
+                </div> 
+            </div>
+
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Sufre alguna discapacidad:</label>
+                </div>
+                <div class="col me-4">
+                    <input #inputDis value={{motoristaModal.discapacidad}} type="text" class="form-control" aria-describedby="passwordHelpInline">
+                </div>
+            </div>
+
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Descripción Discapacidad:</label>
+                </div>
+                <div class="col me-4">
+                    <textarea #inputDes value={{motoristaModal.descripcion}} type="text" class="form-control" aria-describedby="passwordHelpInline"></textarea>
+                </div>
+            </div>
+
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Pasado Profesional</label>
+                </div>
+                <div class="col me-4">
+                    <textarea #inputPro value={{motoristaModal.pasadoProfesional}} type="text" class="form-control" aria-describedby="passwordHelpInline"></textarea>
+                </div>
+            </div>
+
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Estado</label>
+                </div>
+                <div class="col me-4">
+                    <select class="form-control" name="icono" id="icono" [(ngModel)]="estadoSeleccionado">
+                        <option [ngValue]="inactivo">Inactivo</option>
+                        <option [ngValue]="activo">Activo</option>
+                      </select>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" (click)="editarMotorista(inputdni,inputCod,inputNom,inputApe,inputCor,inputTel,inputDir,inputPas,
+          inputEst,inputFor,inputDis,inputDes,inputPro)">Guardar</button>
+        </div>
+      </ng-template>

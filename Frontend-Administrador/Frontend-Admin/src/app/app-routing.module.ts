@@ -1,23 +1,26 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './components/login/login.component';
-import { HomeComponent } from './components/home/home.component';
-import { OrdersComponent } from './components/orders/orders.component';
-import { ProductsComponent } from './components/products/products.component';
-import { StoresComponent } from './components/stores/stores.component';
-import { DriverComponent } from './components/driver/driver.component';
-import { EmployeesComponent } from './components/employees/employees.component';
+import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './pages/login/login.component';
+import { MenuComponent } from './pages/menu/menu.component';
+import { EmpresasComponent } from './pages/empresas/empresas.component';
+import { MotoristasComponent } from './pages/motoristas/motoristas.component';
+import { PedidosComponent } from './pages/pedidos/pedidos.component';
+import { PeticionesEmpleoComponent } from './pages/peticiones-empleo/peticiones-empleo.component';
+import { ProductosComponent } from './pages/productos/productos.component';
+import { MotoristaInactivoComponent } from './pages/motorista-inactivo/motorista-inactivo.component';
 
 const routes: Routes = [
-  {path: '', component: LoginComponent },
-  {path: 'login', component: LoginComponent },
-  {path: 'home', component: HomeComponent },
-  {path: 'pedidos', component: OrdersComponent },
-  {path: 'productos', component: ProductsComponent },
-  {path: 'empresas', component: StoresComponent },
-  {path: 'motoristas', component: DriverComponent },
-  {path: 'empleados', component: EmployeesComponent },
-  { path: '**', pathMatch: 'full', redirectTo:'home'},
+  
+  { path: '', component: LoginComponent},
+  { path: 'login', component: LoginComponent},
+  { path: 'menu', component: MenuComponent},
+  { path: 'empresas', component: EmpresasComponent},
+  { path: 'productos', component: ProductosComponent},
+  { path: 'motoristas', component: MotoristasComponent},
+  { path: 'pedidos', component: PedidosComponent},
+  { path: 'peticiones-empleo', component: PeticionesEmpleoComponent},
+  { path: 'motoristas-inactivo', component: MotoristaInactivoComponent},
+  { path: '**', pathMatch: 'full', redirectTo:''},
 
 ];
 

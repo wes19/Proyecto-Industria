@@ -1,0 +1,271 @@
+<app-navbar></app-navbar>
+    <div class="container">
+
+        <h1 class="mt-5">Mantenimiento Productos</h1>
+
+        <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Agregar Nuevo Producto</button>
+
+
+        <table class="table mt-4">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Empresa</th>
+                    <th scope="col">Sucursal</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let producto of productos">
+                <tr>
+                    <th scope="row">{{producto.id}}</th>
+                    <td>{{producto.empresa}}</td>
+                    <td>{{producto.sucursal}}</td>
+                    <td>{{producto.categoria}}</td>
+                    <td>{{producto.nombre}}</td>
+                    <td>{{producto.precio}}</td>
+                    <td>{{producto.estado}}</td>
+                    <td><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Modalver">Ver</button>
+                        <button type="button" class="btn btn-danger mx-2">Desactivar</button>
+                        <button type="button" class="btn btn-warning mx-2" data-bs-toggle="modal" data-bs-target="#Modaleditar">Editar</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar Nuevo Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-3 align-items-center mt-1">
+                        <div class="col">
+                            <label for="inputPassword6" class="col-form-label ms-4">Nombre Producto</label>
+                        </div>
+                        <div class="col me-4">
+                            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center mt-1">
+                        <div class="col">
+                            <label for="inputPassword6" class="col-form-label ms-4">Descripcion</label>
+                        </div>
+                        <div class="col me-4">
+                            <input type="password" id="inputPassword6" class="form-control me-2" aria-describedby="passwordHelpInline">
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center mt-1">
+                        <div class="col">
+                            <label for="inputPassword6" class="col-form-label ms-4">Precio</label>
+                        </div>
+                        <div class="col me-4">
+                            <input type="password" id="inputPassword6" class="form-control me-2" aria-describedby="passwordHelpInline">
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center mt-1">
+                        <div class="col">
+                            <label for="inputPassword6" class="col-form-label ms-4">Imagen de Referencia</label>
+                        </div>
+                        <div class="col me-4">
+                            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center mt-1">
+                        <div class="col">
+                            <label for="inputPassword6" class="col-form-label ms-4">Categoria</label>
+                        </div>
+                        <div class="col me-4">
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Categoria</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center mt-1">
+                        <div class="col">
+                            <label for="inputPassword6" class="col-form-label ms-4">Empresa</label>
+                        </div>
+                        <div class="col me-4">
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Empresa</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center mt-1">
+                        <div class="col">
+                            <label for="inputPassword6" class="col-form-label ms-4">Categoria de Producto</label>
+                        </div>
+                        <div class="col me-4">
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Categoria Producto</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="Modalver" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ver Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-3 align-items-center mt-1">
+                        <div class="col">
+                            <label for="inputPassword6" class="col-form-label ms-4">Nombre Producto</label>
+                        </div>
+                        <div class="col me-4">
+                            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center mt-1">
+                        <div class="col">
+                            <label for="inputPassword6" class="col-form-label ms-4">Descripcion</label>
+                        </div>
+                        <div class="col me-4">
+                            <input type="password" id="inputPassword6" class="form-control me-2" aria-describedby="passwordHelpInline">
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center mt-1">
+                        <div class="col">
+                            <label for="inputPassword6" class="col-form-label ms-4">Precio</label>
+                        </div>
+                        <div class="col me-4">
+                            <input type="password" id="inputPassword6" class="form-control me-2" aria-describedby="passwordHelpInline">
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center mt-1">
+                        <div class="col">
+                            <label for="inputPassword6" class="col-form-label ms-4">Imagen de Referencia</label>
+                        </div>
+                        <div class="col me-4">
+                            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center mt-1">
+                        <div class="col">
+                            <label for="inputPassword6" class="col-form-label ms-4">Categoria</label>
+                        </div>
+                        <div class="col me-4">
+                            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center mt-1">
+                        <div class="col">
+                            <label for="inputPassword6" class="col-form-label ms-4">Empresa</label>
+                        </div>
+                        <div class="col me-4">
+                            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center mt-1">
+                        <div class="col">
+                            <label for="inputPassword6" class="col-form-label ms-4">Categoria Producto</label>
+                        </div>
+                        <div class="col me-4">
+                            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="Modaleditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Editar Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-3 align-items-center mt-1">
+                        <div class="col">
+                            <label for="inputPassword6" class="col-form-label ms-4">Nombre Producto</label>
+                        </div>
+                        <div class="col me-4">
+                            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center mt-1">
+                        <div class="col">
+                            <label for="inputPassword6" class="col-form-label ms-4">Descripcion</label>
+                        </div>
+                        <div class="col me-4">
+                            <input type="password" id="inputPassword6" class="form-control me-2" aria-describedby="passwordHelpInline">
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center mt-1">
+                        <div class="col">
+                            <label for="inputPassword6" class="col-form-label ms-4">Precio</label>
+                        </div>
+                        <div class="col me-4">
+                            <input type="password" id="inputPassword6" class="form-control me-2" aria-describedby="passwordHelpInline">
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center mt-1">
+                        <div class="col">
+                            <label for="inputPassword6" class="col-form-label ms-4">Imagen de Referencia</label>
+                        </div>
+                        <div class="col me-4">
+                            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center mt-1">
+                        <div class="col">
+                            <label for="inputPassword6" class="col-form-label ms-4">Categoria</label>
+                        </div>
+                        <div class="col me-4">
+                            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center mt-1">
+                        <div class="col">
+                            <label for="inputPassword6" class="col-form-label ms-4">Empresa</label>
+                        </div>
+                        <div class="col me-4">
+                            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center mt-1">
+                        <div class="col">
+                            <label for="inputPassword6" class="col-form-label ms-4">Categoria Producto</label>
+                        </div>
+                        <div class="col me-4">
+                            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+

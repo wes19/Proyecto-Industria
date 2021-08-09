@@ -1,0 +1,23 @@
+.bg-dark {
+    background-color: #16557f !important;
+}
+
+a {
+    color: white !important;
+}
+
+.reajuste1 {
+    height: 20px;
+    width: 20px;
+}
+
+nav li:active{
+    font-weight: bold;
+    background-color:rgb(38, 35, 221) ;
+    border-radius: 25px;;
+}
+
+nav li:hover{
+    background-color:rgb(38, 35, 221);
+    border-radius: 25px;;
+}

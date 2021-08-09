@@ -1,0 +1,163 @@
+<app-navbar></app-navbar>
+
+    <div class="container">
+
+        <h1 class="mt-5">Solicitudes Empleos</h1>
+
+        <table class="table mt-4">
+            <thead>
+                <tr>
+                    <th scope="col">DNI</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Dirección</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Correo</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let peticion of peticiones">
+                <tr>
+                    <td>{{peticion.dni}}</td>
+                    <td>{{peticion.nombre}}</td>
+                    <td>{{peticion.apellido}}</td>
+                    <td>{{peticion.direccion}}</td>
+                    <td>{{peticion.telefono}}</td>
+                    <td>{{peticion.correo}}</td>
+                    <td><button type="button" class="btn btn-success" (click)="abrirVerPeticion(ModalVer, peticion)">Ver</button>
+                        <button type="button" class="btn btn-danger mx-2" (click)="rechazar(peticion)">Rechazar</button>
+                        
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+
+    <ng-template #ModalVer let-modal>
+        <div class="modal-header" style="background-color: #16557f; color:#fff">
+            <h5 class="modal-title" id="exampleModalLabel">Ver Solicitud Empleo</h5>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Código Empleado</label>
+                </div>
+                <div class="col me-4">
+                    <input #inputCod type="text" class="form-control" aria-describedby="passwordHelpInline">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">DNI</label>
+                </div>
+                <div class="col me-4">
+                    <label for="inputPassword6" class="form-control ms-4">{{peticionModal.dni}}</label>
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Nombre</label>
+                </div>
+                <div class="col me-4">
+                    <label for="inputPassword6" class="form-control ms-4">{{peticionModal.nombre}}</label>
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Apellido</label>
+                </div>
+                <div class="col me-4">
+                    <label for="inputPassword6" class="form-control ms-4">{{peticionModal.apellido}}</label>
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Correo</label>
+                </div>
+                <div class="col me-4">
+                    <label for="inputPassword6" class="form-control  ms-4">{{peticionModal.correo}}</label>
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Contraseña</label>
+                </div>
+                <div class="col me-4">
+                    <input #inputPas type="text" class="form-control" aria-describedby="passwordHelpInline">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Dirección</label>
+                </div>
+                <div class="col me-4">
+                    <label for="inputPassword6" class="form-control ms-4">{{peticionModal.direccion}}</label>
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Teléfono</label>
+                </div>
+                <div class="col me-4">
+                    <label for="inputPassword6" class="form-control  ms-4">{{peticionModal.telefono}}</label>
+                </div>
+            </div>
+            
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Fecha Nacimiento</label>
+                </div>
+                <div class="col me-4">
+                    <label for="inputPassword6" class="form-control ms-4">{{peticionModal.fechaNacimiento}}</label>
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Estado Civil</label>
+                </div>
+                <div class="col me-4">
+                    <label for="inputPassword6" class="form-control ms-4">{{peticionModal.estadoCivil}}</label>
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Formación</label>
+                </div>
+                <div class="col me-4">
+                    <div for="inputPassword6" class="form-control ms-4" Style="height: 80px;">{{peticionModal.formacion}}</div>
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Discapacidad</label>
+                </div>
+                <div class="col me-4">
+                    <label for="inputPassword6" class="form-control ms-4">{{peticionModal.discapacidad}}</label>
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Discapacidad Descripcion</label>
+                </div>
+                <div class="col me-4">
+                    <div for="inputPassword6" class="form-control ms-4" Style="height: 80px;">{{peticionModal.descripcion}}</div>
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col">
+                    <label for="inputPassword6" class="col-form-label ms-4">Pasado Profesional</label>
+                </div>
+                <div class="col me-4">
+                    <div for="inputPassword6" class="form-control ms-4" Style="height: 80px;">{{peticionModal.pasadoProfesional}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success" (click)="contratar(peticionModal, inputCod, inputPas)">Contratar</button>
+            <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Cerrar</button>
+        </div>
+      </ng-template>
+

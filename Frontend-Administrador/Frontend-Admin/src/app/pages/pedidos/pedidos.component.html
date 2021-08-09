@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+
+    <div class="container">
+
+        <h1 class="mt-5" style="font-weight: bold;">Motoristas Pedidos Disponibles</h1>
+
+            <div class="row">
+                <div class="caja-pedido col-5 mx-4 mt-4" *ngFor="let pedidosD of pedidosDisponibles">
+                    <div class="row">
+    
+                        <div class="col-4">
+                            <img class="rounded imgs" src={{pedidosD.imagen}} alt="">
+                        </div>
+    
+                        <div class="col-6 my-3">
+                            <div style="font-size: 23px;">{{pedidosD.empresa}}</div>
+                            <div>{{pedidosD.card}}</div>
+                            <div class="my-2">{{pedidosD.ubicacion}}</div>
+                        </div>
+                        <div class="col-6 mb-2" style="text-align: center;">{{pedidosD.tiempoEstimado}}</div>
+                        <div class="col-6 mb-2" style="text-align: center;">{{pedidosD.comisionMotorista}}</div>
+                    </div>
+                    <button type="button" class="btn btn-personalizado" (click)="abrirVerPedido(ModalVer)">Ver</button>
+                </div>
+
+    <ng-template #ModalVer let-modal>
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ver Pedidos Disponibles</h5>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+                    
+        </div>
+        <div class="modal-footer">
+            <select name="" id="">
+                <option>Pedro Motoa</option>
+            </select>     
+                <button type="button" class="btn btn-personalizado">Asignar</button>
+                <button type="button" class="btn btn-personalizado" (click)="modal.close('Save click')">Cerrar</button>
+        </div>
+        <div class="modal-footer">
+          
+        </div>
+      </ng-template>
