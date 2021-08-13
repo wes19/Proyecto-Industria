@@ -16,6 +16,11 @@ peticionModal:any= [];
   constructor(private modalService:NgbModal, private motoristasService:MotoristasService, private router: Router,) { }
 
   ngOnInit(): void {
+    let token = localStorage.getItem("idAdmin");
+    if(token == null){
+      this.router.navigate(['/login']);
+    }
+
     this.motoristasService.obtenerMotoristas().subscribe(
       res=>{
         this.peticionTemporal = res;

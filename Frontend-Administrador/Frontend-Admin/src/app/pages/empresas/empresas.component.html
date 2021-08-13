@@ -1,303 +1,301 @@
 <app-navbar></app-navbar>
 
-    <div class="container">
+<div class="container">
 
-        <h1 class="mt-5">Mantenimiento Empresas</h1>
+    <h1 class="mt-5">Mantenimiento Empresas</h1>
 
-        <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Agregar Nuevo Producto</button>
+    <select class="form-select mt-2" (ngModelChange)="selCat($event)" [(ngModel)]="categoriaSel" aria-label="Default select example">
+        <option selected>Seleccione la categoria a administrar</option>
+        <option *ngFor="let categoria of categorias" [ngValue]="categoria._id">{{categoria.nombreCategoria}}</option>
+      </select>
 
-        <table class="table mt-4">
-            <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Empresa</th>
-                    <th scope="col">Direccion</th>
-                    <th scope="col">Nombre Encargado</th>
-                    <th scope="col">Telefono</th>
-                    <th scope="col">Descripcion</th>
-                    <th scope="col">Estado</th>
-                    <th scope="col">Categoria</th>
-                    <th scope="col">Logotipo</th>
-                    <th scope="col">Banner</th>
-                    <th scope="col">Acciones</th>
-                </tr>
-            </thead>
-            <tbody *ngFor="let empresa of empresas">
-                <tr>
-                    <th scope="row">{{empresa.tienda}}</th>
-                    <td>{{empresa.tienda}}</td>
-                    <td>{{empresa.direccion}}</td>
-                    <td>{{empresa.nombreEncargado}}</td>
-                    <td>{{empresa.telefono}}</td>
-                    <td>{{empresa.descripcion}}</td>
-                    <td>{{empresa.estado}}</td>
-                    <td>{{empresa.categoria}}</td>
-                    <td>{{empresa.logotipo}}</td>
-                    <th>{{empresa.banner}}</th>
-                    <td><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Modalver">Ver</button>
-                        <button type="button" class="btn btn-danger mx-2">Desactivar</button>
-                        <button type="button" class="btn btn-warning mx-2" data-bs-toggle="modal" data-bs-target="#Modaleditar">Editar</button></td>
-                </tr>
-            </tbody>
-        </table>
+    <button style="float:right;" *ngIf="regionInvisible==false;" type="button" class="btn btn-primary mt-2 mb-2" (click)="open(nuevaEmpresa)">Agregar Nueva Empresa</button>
 
+    <table *ngIf="regionInvisible==false;" class="table mt-4">
+        <thead>
+            <tr>
+                <th scope="col">Empresa</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Nombre Encargado</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let empresa of empresas">
+            <tr>
+                <td>{{empresa.nombreEmpresa}}</td>
+                <td>{{empresa.direccion}}</td>
+                <td>{{empresa.nombreEncargado}}</td>
+                <td>{{empresa.telefono}}</td>
+                <td>{{empresa.estado}}</td>
+                <td><button type="button" class="btn btn-success" (click)="abrirProductos(productos, empresa.productos, empresa._id)">Productos</button>
+                    <button type="button" class="btn btn-warning my-2" (click)="editarEmpresaModal(editarEmpresa, empresa, empresa._id)">Editar</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<ng-template #nuevaEmpresa let-modal>
+    <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Agregar Nueva Empresa</h5>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Agregar Nueva Empresa</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row g-3 align-items-center mt-1">
-                        <div class="col">
-                            <label for="inputPassword6" class="col-form-label ms-4">Nombre Empresa</label>
-                        </div>
-                        <div class="col me-4">
-                            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-                        </div>
-                    </div>
-                    <div class="row g-3 align-items-center mt-1">
-                        <div class="col">
-                            <label for="inputPassword6" class="col-form-label ms-4">Direccion</label>
-                        </div>
-                        <div class="col me-4">
-                            <input type="password" id="inputPassword6" class="form-control me-2" aria-describedby="passwordHelpInline">
-                        </div>
-                    </div>
-                    <div class="row g-3 align-items-center mt-1">
-                        <div class="col">
-                            <label for="inputPassword6" class="col-form-label ms-4">Nombre Encargado</label>
-                        </div>
-                        <div class="col me-4">
-                            <input type="password" id="inputPassword6" class="form-control me-2" aria-describedby="passwordHelpInline">
-                        </div>
-                    </div>
-                    <div class="row g-3 align-items-center mt-1">
-                        <div class="col">
-                            <label for="inputPassword6" class="col-form-label ms-4">Telfono</label>
-                        </div>
-                        <div class="col me-4">
-                            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-                        </div>
-                    </div>
-                    <div class="row g-3 align-items-center mt-1">
-                        <div class="col">
-                            <label for="inputPassword6" class="col-form-label ms-4">Descripcion</label>
-                        </div>
-                        <div class="col me-4">
-                            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-                        </div>
-                    </div>
-                    <div class="row g-3 align-items-center mt-1">
-                        <div class="col">
-                            <label for="inputPassword6" class="col-form-label ms-4">Categoria</label>
-                        </div>
-                        <div class="col me-4">
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Categoria</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row g-3 align-items-center mt-1">
-                        <div class="col">
-                            <label for="inputPassword6" class="col-form-label ms-4">Logotipo</label>
-                        </div>
-                        <div class="col me-4">
-                            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-                        </div>
-                    </div>
-                    <div class="row g-3 align-items-center mt-1">
-                        <div class="col">
-                            <label for="inputPassword6" class="col-form-label ms-4">Banner</label>
-                        </div>
-                        <div class="col me-4">
-                            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Guardar</button>
-                </div>
+    <div class="modal-body">
+        <div class="row g-3 align-items-center mt-1">
+            <div class="col">
+                <label for="inputPassword6" class="col-form-label ms-4">Nombre Empresa</label>
+            </div>
+            <div class="col me-4">
+                <input type="text" [(ngModel)]="nombreEmpresa" class="form-control" aria-describedby="passwordHelpInline">
+            </div>
+        </div>
+        <div class="row g-3 align-items-center mt-1">
+            <div class="col">
+                <label for="inputPassword6" class="col-form-label ms-4">Direccion</label>
+            </div>
+            <div class="col me-4">
+                <input type="text" [(ngModel)]="direccionEmpresa" class="form-control me-2" aria-describedby="passwordHelpInline">
+            </div>
+        </div>
+        <div class="row g-3 align-items-center mt-1">
+            <div class="col">
+                <label for="inputPassword6" class="col-form-label ms-4">Nombre Encargado</label>
+            </div>
+            <div class="col me-4">
+                <input type="text" [(ngModel)]="nombreEncargado" class="form-control me-2" aria-describedby="passwordHelpInline">
+            </div>
+        </div>
+        <div class="row g-3 align-items-center mt-1">
+            <div class="col">
+                <label for="inputPassword6" class="col-form-label ms-4">Telefono</label>
+            </div>
+            <div class="col me-4">
+                <input type="number" [(ngModel)]="telEmpresa" class="form-control" aria-describedby="passwordHelpInline">
+            </div>
+        </div>
+        <div class="row g-3 align-items-center mt-1">
+            <div class="col">
+                <label for="inputPassword6" class="col-form-label ms-4">Logotipo</label>
+            </div>
+            <div class="col me-4">
+                <input type="text" [(ngModel)]="logotipoEmpresa" class="form-control" aria-describedby="passwordHelpInline">
+            </div>
+        </div>
+        <div class="row g-3 align-items-center mt-1">
+            <div class="col">
+                <label for="inputPassword6" class="col-form-label ms-4">Banner</label>
+            </div>
+            <div class="col me-4">
+                <input type="text" [(ngModel)]="bannerEmpresa" class="form-control" aria-describedby="passwordHelpInline">
             </div>
         </div>
     </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="guardarEmpresa(nuevaEmpresa)">Guardar</button>
+        <button type="button" class="btn btn-primary" aria-label="Close" (click)="modal.dismiss('Cross click')">Cerrar</button>
+    </div>
+</ng-template>
 
-    <div class="modal fade" id="Modalver" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ver Empresa</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="modal-body">
-                        <div class="row g-3 align-items-center mt-1">
-                            <div class="col">
-                                <label for="inputPassword6" class="col-form-label ms-4">Nombre Empresa</label>
-                            </div>
-                            <div class="col me-4">
-                                <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-                            </div>
-                        </div>
-                        <div class="row g-3 align-items-center mt-1">
-                            <div class="col">
-                                <label for="inputPassword6" class="col-form-label ms-4">Direccion</label>
-                            </div>
-                            <div class="col me-4">
-                                <input type="password" id="inputPassword6" class="form-control me-2" aria-describedby="passwordHelpInline">
-                            </div>
-                        </div>
-                        <div class="row g-3 align-items-center mt-1">
-                            <div class="col">
-                                <label for="inputPassword6" class="col-form-label ms-4">Nombre Encargado</label>
-                            </div>
-                            <div class="col me-4">
-                                <input type="password" id="inputPassword6" class="form-control me-2" aria-describedby="passwordHelpInline">
-                            </div>
-                        </div>
-                        <div class="row g-3 align-items-center mt-1">
-                            <div class="col">
-                                <label for="inputPassword6" class="col-form-label ms-4">Telfono</label>
-                            </div>
-                            <div class="col me-4">
-                                <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-                            </div>
-                        </div>
-                        <div class="row g-3 align-items-center mt-1">
-                            <div class="col">
-                                <label for="inputPassword6" class="col-form-label ms-4">Descripcion</label>
-                            </div>
-                            <div class="col me-4">
-                                <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-                            </div>
-                        </div>
-                        <div class="row g-3 align-items-center mt-1">
-                            <div class="col">
-                                <label for="inputPassword6" class="col-form-label ms-4">Categoria</label>
-                            </div>
-                            <div class="col me-4">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Categoria</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row g-3 align-items-center mt-1">
-                            <div class="col">
-                                <label for="inputPassword6" class="col-form-label ms-4">Logotipo</label>
-                            </div>
-                            <div class="col me-4">
-                                <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-                            </div>
-                        </div>
-                        <div class="row g-3 align-items-center mt-1">
-                            <div class="col">
-                                <label for="inputPassword6" class="col-form-label ms-4">Banner</label>
-                            </div>
-                            <div class="col me-4">
-                                <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Cerrar</button>
-                    </div>
-                </div>
+<ng-template #productos let-modal>
+    <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ver Productos</h5>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="modal-body">
+            <table *ngIf="regionInvisible==false;" class="table mt-4">
+                <thead>
+                    <tr>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Accion</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let producto of productosModal">
+                    <tr>
+                        <td>{{producto.nombreProducto}}</td>
+                        <td>{{producto.precio}}</td>
+                        <td>{{producto.estado}}</td>
+                        <td>
+                            <button type="button" class="btn btn-warning mx-2" (click)="editarProductoModal(editarProducto, producto, producto._id)">Editar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" (click)="agregarProducto(nuevoProducto)">Anadir un nuevo Producto</button>
+                <button type="button" class="btn btn-primary" aria-label="Close" (click)="modal.dismiss('Cross click')">Cerrar</button>
             </div>
         </div>
     </div>
+</ng-template>
 
-
-    <div class="modal fade" id="Modaleditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Editar Empresa</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row g-3 align-items-center mt-1">
-                        <div class="col">
-                            <label for="inputPassword6" class="col-form-label ms-4">Nombre Empresa</label>
-                        </div>
-                        <div class="col me-4">
-                            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-                        </div>
-                    </div>
-                    <div class="row g-3 align-items-center mt-1">
-                        <div class="col">
-                            <label for="inputPassword6" class="col-form-label ms-4">Direccion</label>
-                        </div>
-                        <div class="col me-4">
-                            <input type="password" id="inputPassword6" class="form-control me-2" aria-describedby="passwordHelpInline">
-                        </div>
-                    </div>
-                    <div class="row g-3 align-items-center mt-1">
-                        <div class="col">
-                            <label for="inputPassword6" class="col-form-label ms-4">Nombre Encargado</label>
-                        </div>
-                        <div class="col me-4">
-                            <input type="password" id="inputPassword6" class="form-control me-2" aria-describedby="passwordHelpInline">
-                        </div>
-                    </div>
-                    <div class="row g-3 align-items-center mt-1">
-                        <div class="col">
-                            <label for="inputPassword6" class="col-form-label ms-4">Telfono</label>
-                        </div>
-                        <div class="col me-4">
-                            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-                        </div>
-                    </div>
-                    <div class="row g-3 align-items-center mt-1">
-                        <div class="col">
-                            <label for="inputPassword6" class="col-form-label ms-4">Descripcion</label>
-                        </div>
-                        <div class="col me-4">
-                            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-                        </div>
-                    </div>
-                    <div class="row g-3 align-items-center mt-1">
-                        <div class="col">
-                            <label for="inputPassword6" class="col-form-label ms-4">Categoria</label>
-                        </div>
-                        <div class="col me-4">
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Categoria</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row g-3 align-items-center mt-1">
-                        <div class="col">
-                            <label for="inputPassword6" class="col-form-label ms-4">Logotipo</label>
-                        </div>
-                        <div class="col me-4">
-                            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-                        </div>
-                    </div>
-                    <div class="row g-3 align-items-center mt-1">
-                        <div class="col">
-                            <label for="inputPassword6" class="col-form-label ms-4">Banner</label>
-                        </div>
-                        <div class="col me-4">
-                            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Cerrar</button>
-                </div>
+<ng-template #editarEmpresa let-modal>
+    <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Empresa</h5>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="row g-3 align-items-center mt-1">
+            <div class="col">
+                <label for="inputPassword6" class="col-form-label ms-4">Nombre Empresa</label>
+            </div>
+            <div class="col me-4">
+                <input #nE type="text" value={{empresaModal.nombreEmpresa}} class="form-control" aria-describedby="passwordHelpInline">
+            </div>
+        </div>
+        <div class="row g-3 align-items-center mt-1">
+            <div class="col">
+                <label for="inputPassword6" class="col-form-label ms-4">Direccion</label>
+            </div>
+            <div class="col me-4">
+                <input #dir type="text" value={{empresaModal.direccion}} class="form-control me-2" aria-describedby="passwordHelpInline">
+            </div>
+        </div>
+        <div class="row g-3 align-items-center mt-1">
+            <div class="col">
+                <label for="inputPassword6" class="col-form-label ms-4">Nombre Encargado</label>
+            </div>
+            <div class="col me-4">
+                <input #nEE type="text" value={{empresaModal.nombreEncargado}} class="form-control me-2" aria-describedby="passwordHelpInline">
+            </div>
+        </div>
+        <div class="row g-3 align-items-center mt-1">
+            <div class="col">
+                <label for="inputPassword6" class="col-form-label ms-4">Telefono</label>
+            </div>
+            <div class="col me-4">
+                <input #tel type="number" value={{empresaModal.telefono}} class="form-control" aria-describedby="passwordHelpInline">
+            </div>
+        </div>
+        <div class="row g-3 align-items-center mt-1">
+            <div class="col">
+                <label for="inputPassword6" class="col-form-label ms-4">Logotipo</label>
+            </div>
+            <div class="col me-4">
+                <input #log type="text" value={{empresaModal.logotipo}} class="form-control" aria-describedby="passwordHelpInline">
+            </div>
+        </div>
+        <div class="row g-3 align-items-center mt-1">
+            <div class="col">
+                <label for="inputPassword6" class="col-form-label ms-4">Banner</label>
+            </div>
+            <div class="col me-4">
+                <input #ban type="text" value={{empresaModal.banner}} class="form-control" aria-describedby="passwordHelpInline">
+            </div>
+        </div>
+        <div class="row g-3 align-items-center mt-1">
+            <div class="col">
+                <label for="inputPassword6" class="col-form-label ms-4">Estado</label>
+            </div>
+            <div class="col me-4">
+                <select class="form-control" name="icono" id="icono" [(ngModel)]="estadoSeleccionado">
+                    <option [ngValue]="activo">Activo</option>
+                    <option [ngValue]="inactivo">Inactivo</option>
+                  </select>
             </div>
         </div>
     </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="guardarCambiosEmpresa(nE, dir, nEE, tel, log, ban, editarEmpresa)">Guardar Cambios</button>
+        <button type="button" class="btn btn-primary" aria-label="Close" (click)="modal.dismiss('Cross click')">Cerrar</button>
+    </div>
+</ng-template>
 
+<ng-template #editarProducto let-modal>
+    <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Producto</h5>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="row g-3 align-items-center mt-1">
+            <div class="col">
+                <label for="inputPassword6" class="col-form-label ms-4">Nombre Producto</label>
+            </div>
+            <div class="col me-4">
+                <input #nP type="text" value={{productoSel.nombreProducto}} class="form-control" aria-describedby="passwordHelpInline">
+            </div>
+        </div>
+        <div class="row g-3 align-items-center mt-1">
+            <div class="col">
+                <label for="inputPassword6" class="col-form-label ms-4">Precio</label>
+            </div>
+            <div class="col me-4">
+                <input #pre type="number" value={{productoSel.precio}} class="form-control" aria-describedby="passwordHelpInline">
+            </div>
+        </div>
+        <div class="row g-3 align-items-center mt-1">
+            <div class="col">
+                <label for="inputPassword6" class="col-form-label ms-4">Imagen de Referencia</label>
+            </div>
+            <div class="col me-4">
+                <input #imgRe type="text" value={{productoSel.imagenProducto}} class="form-control" aria-describedby="passwordHelpInline">
+            </div>
+        </div>
+        <div class="row g-3 align-items-center mt-1">
+            <div class="col">
+                <label for="inputPassword6" class="col-form-label ms-4">Estado</label>
+            </div>
+            <div class="col me-4">
+                <select class="form-control" name="icono" id="icono" [(ngModel)]="estadoSeleccionado">
+                    <option [ngValue]="activo">Activo</option>
+                    <option [ngValue]="inactivo">Inactivo</option>
+                  </select>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="guardarCambiosProducto(nP, pre, imgRe, productos)">Guardar Cambios</button>
+        <button type="button" class="btn btn-primary" aria-label="Close" (click)="modal.dismiss('Cross click')">Cerrar</button>
+    </div>
+</ng-template>
+
+<ng-template #nuevoProducto let-modal>
+    <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Agregar un nuevo Producto</h5>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="row g-3 align-items-center mt-1">
+            <div class="col">
+                <label for="inputPassword6" class="col-form-label ms-4">Nombre Producto</label>
+            </div>
+            <div class="col me-4">
+                <input type="text" [(ngModel)]="nombreProducto" class="form-control" aria-describedby="passwordHelpInline">
+            </div>
+        </div>
+        <div class="row g-3 align-items-center mt-1">
+            <div class="col">
+                <label for="inputPassword6" class="col-form-label ms-4">Precio</label>
+            </div>
+            <div class="col me-4">
+                <input type="number" [(ngModel)]="precioProducto" class="form-control" aria-describedby="passwordHelpInline">
+            </div>
+        </div>
+        <div class="row g-3 align-items-center mt-1">
+            <div class="col">
+                <label for="inputPassword6" class="col-form-label ms-4">Imagen de Referencia</label>
+            </div>
+            <div class="col me-4">
+                <input type="text" [(ngModel)]="imagenProducto" class="form-control" aria-describedby="passwordHelpInline">
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="guardarNuevoProducto(nuevoProducto)">Guardar Cambios</button>
+        <button type="button" class="btn btn-primary" aria-label="Close" (click)="modal.dismiss('Cross click')">Cerrar</button>
+    </div>
+</ng-template>
+    

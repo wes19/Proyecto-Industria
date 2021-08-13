@@ -14,7 +14,6 @@ export class LoginComponent implements OnInit {
   @ViewChild ('modalAdvertencia') modalAdvertencia: any;
   faUndoAlt = faUndoAlt;
   motoristas: any = [];
-  temporal: any = '';
 
   EmailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   logear = new FormGroup({
@@ -24,8 +23,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private motoristasService:MotoristasService, private router: Router, private modalService: NgbModal) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   get usuario(){
     return this.logear.get('usuario');
@@ -37,22 +35,24 @@ export class LoginComponent implements OnInit {
 
   Verificar(){
     if (this.logear.valid) {
-      this.motoristasService.obtenerMotoristas().subscribe(
+      this.motoristasService.obtenerMotoristasCorreo(this.logear.controls['usuario'].value).subscribe(
         res=>{
-          this.motoristas = res;
-          for(let i = 0; i < this.motoristas.length; i++){
-            if(this.motoristas[i].correo == this.logear.controls['usuario'].value && this.motoristas[i].password == this.logear.controls['password'].value 
-            && this.motoristas[i].estado=="Activo"){
-              this.router.navigate(['/pedidos']);
-              this.temporal = "ok"
-            }
-          }
-          if(this.temporal == ''){
+          if(res == null){
             this.modalService.open(this.modalAdvertencia, {size: 'sm', centered:true});
-          } 
+          }else if(this.logear.controls['usuario'].value == res.correo && this.logear.controls['password'].value == res.password 
+            && res.estado == "Activo"){
+              //this.motoristasService.motoristaCre  = this.motoristas[i]._id;
+              localStorage.setItem("idMotorista", res._id);
+              this.router.navigate(['/pedidos']);
+            }
         },
         error=>console.log(error)
       )
     }
   }
+
+    
+
+
+
 }

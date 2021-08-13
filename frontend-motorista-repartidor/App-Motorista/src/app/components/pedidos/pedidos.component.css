@@ -5,7 +5,7 @@
 }
 
 .caja-pedido{
-    background-color:#F2CEE3;
+    background-color:#8fb3e2;
     margin-top: 40px;
 }
 
@@ -28,7 +28,7 @@ div{
 }
 
 .form-select {
-    background-color: #b3d2fa !important;
+    background-color: rgba(210, 88, 191, 0.29) !important;
     border: none !important;
     width: 310px;
     height: 50px;

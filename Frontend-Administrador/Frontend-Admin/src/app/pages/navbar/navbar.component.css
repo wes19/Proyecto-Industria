@@ -1,5 +1,5 @@
 .bg-dark {
-    background-color: #16557f !important;
+    background-color: #3a1f9b !important;
 }
 
 a {
@@ -13,11 +13,11 @@ a {
 
 nav li:active{
     font-weight: bold;
-    background-color:rgb(38, 35, 221) ;
+    background-color:#21077c;
     border-radius: 25px;;
 }
 
 nav li:hover{
-    background-color:rgb(38, 35, 221);
+    background-color:#21077c;
     border-radius: 25px;;
 }

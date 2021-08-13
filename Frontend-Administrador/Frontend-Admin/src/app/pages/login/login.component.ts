@@ -34,18 +34,14 @@ export class LoginComponent implements OnInit {
 
   Verificar(){
       if (this.loginAdmin.valid) {
-      this.administradoresService.obtenerAdministradores().subscribe(
+      this.administradoresService.obtenerAdminCorreo(this.loginAdmin.controls['correo'].value).subscribe(
         res=>{
-          this.administradores = res;
-          for(let i = 0; i < this.administradores.length; i++){
-            if(this.administradores[i].correo == this.loginAdmin.controls['correo'].value && this.administradores[i].password == this.loginAdmin.controls['password'].value){
-              this.router.navigate(['/menu']);
-              this.temporal = "ok";
-            }
-          }
-          if(this.temporal == ''){
+          if(res == null){
             this.modalService.open(this.modalAdvertencia, {size: 'sm', centered:true});
-          } 
+          }else if(this.loginAdmin.controls['correo'].value == res.correo && this.loginAdmin.controls['password'].value == res.password){
+            localStorage.setItem("idAdmin", res._id);
+            this.router.navigate(['/menu']);
+          }  
         },
         error=>console.log(error)
       )

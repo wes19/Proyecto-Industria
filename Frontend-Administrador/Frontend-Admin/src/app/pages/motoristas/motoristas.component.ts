@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { MotoristasService } from 'src/app/services/motoristas.service';
 
@@ -15,9 +16,14 @@ estadoSeleccionado:any='Activo';
 activo:any='Activo';
 inactivo:any='Inactivo';
 
-  constructor(private modalService:NgbModal,private motoristasService:MotoristasService) { }
+  constructor(private modalService:NgbModal, private motoristasService:MotoristasService, private router: Router) { }
 
   ngOnInit(): void {
+    let token = localStorage.getItem("idAdmin");
+    if(token == null){
+      this.router.navigate(['/login']);
+    }
+
     this.motoristasService.obtenerMotoristas().subscribe(
       res=>{
         this.motoristas = [];
@@ -104,7 +110,6 @@ inactivo:any='Inactivo';
     this.motoristasService.actualizarMotoristas(data).subscribe(
       res=>{
         if(res.ok==1){
-          console.log(res.ok)
           this.ngOnInit();
           this.modalService.dismissAll(); 
         }

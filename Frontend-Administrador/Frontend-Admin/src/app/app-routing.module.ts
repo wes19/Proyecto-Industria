@@ -6,7 +6,7 @@ import { EmpresasComponent } from './pages/empresas/empresas.component';
 import { MotoristasComponent } from './pages/motoristas/motoristas.component';
 import { PedidosComponent } from './pages/pedidos/pedidos.component';
 import { PeticionesEmpleoComponent } from './pages/peticiones-empleo/peticiones-empleo.component';
-import { ProductosComponent } from './pages/productos/productos.component';
+//import { ProductosComponent } from './pages/productos/productos.component';
 import { MotoristaInactivoComponent } from './pages/motorista-inactivo/motorista-inactivo.component';
 
 const routes: Routes = [
@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'menu', component: MenuComponent},
   { path: 'empresas', component: EmpresasComponent},
-  { path: 'productos', component: ProductosComponent},
+  //{ path: 'productos', component: ProductosComponent},
   { path: 'motoristas', component: MotoristasComponent},
   { path: 'pedidos', component: PedidosComponent},
   { path: 'peticiones-empleo', component: PeticionesEmpleoComponent},

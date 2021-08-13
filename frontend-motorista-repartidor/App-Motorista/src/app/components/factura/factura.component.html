@@ -11,33 +11,28 @@
         <div class="col-md-6 mt-4">
             <h1 style="color:#6ca0e4; margin-top: 80px; font-weight: bold;">Factura</h1>
      
-            <div style="background-color:#b3d2fa">
+            <div style="background-color:#F2CEE3">
 
-                <label class="col-6 my-2">#Fac-288746548422</label>
+                <label class="col-6 my-2">#Fac-{{pedido._id}}</label>
 
-                <label style="background-color:white" class="my-2 mx-2 col-6">12/12/2012</label>
+                <label style="background-color:white" class="my-2 mx-2 col-6">{{jstoday}}</label>
 
                 <h3 class="mx-2 my-2">Cliente</h3>
-                <label style="background-color:white" class="mx-2 col-10">Pedro Motoa</label>
+                <label style="background-color:white" class="mx-2 col-10">{{pedido.nombreCliente}}</label>
 
                 <table class="table mt-4">
                     <thead>
                         <tr>
                             <th scope="col">Cantidad</th>
                             <th scope="col">Descripción</th>
-                            <th scope="col">Total (Lps)</th>
+                            <th scope="col">Precio (Lps)</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Pizza de queso</td>
-                            <td>430</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Pizza 4 Estaciones</td>
-                            <td>430</td>
+                        <tr *ngFor="let datos of arregloPedidos" >
+                            <th scope="row">{{datos.cantidadProducto}}</th>
+                            <td>{{datos.nombreProducto}}</td>
+                            <td>{{datos.precioProducto}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -46,43 +41,51 @@
 
                     <div class="row">
         
-                        <div class="col-6">
-                            <h3 class="ms-5 mt-4">Comisión Administrativa</h3>
+                        <div class="col-8">
+                            <h4 class="ms-5 mt-4">Comisión Administrativa Lps.</h4>
                         </div>
         
-                        <div class="col-6">
-                            <h3 class="float-start mt-4">Lps. 50</h3>
+                        <div class="col-4">
+                            <h4 class="float-start mt-4">{{pedido.comisionAdministracion}}</h4>
                         </div>
         
-                        <div class="col-6">
-                            <h3 class="ms-5 mt-4">Comisión Motorista</h3>
+                        <div class="col-8">
+                            <h4 class="ms-5 mt-4">Comisión Motorista Lps.</h4>
                         </div>
         
-                        <div class="col-6">
-                            <h3 class="float-start  mt-4">Lps. 50</h3>
+                        <div class="col-4">
+                            <h4 class="float-start  mt-4">{{pedido.comisionMotorista}}</h4>
                         </div>
 
-                        <div class="col-6">
-                            <h3 class="ms-5 mt-4">ISV</h3>
+                        <div class="col-8">
+                            <h4 class="ms-5 mt-4">ISV:</h4>
                         </div>
         
-                        <div class="col-6">
-                            <h3 class="float-start  mt-4">Lps. 80</h3>
+                        <div class="col-4">
+                            <h3 class="float-start  mt-4"> {{pedido.isv}}</h3>
+                        </div>
+
+                        <div class="col-8">
+                            <h4 class="ms-5 mt-4" style="color: #3a1f9b; font-weight: 800;">Sub-Total (Lps.)</h4>
                         </div>
         
-                        <div class="col-6">
-                            <h2 class="ms-5 mt-4" style="font-weight: 800;">Total (Lps.)</h2>
+                        <div class="col-4">
+                            <h4 class="float-start mt-4" style="color: #3a1f9b; font-weight: 800;">{{pedido.subtotal}}</h4>
                         </div>
         
-                        <div class="col-6">
-                            <h2 class="float-start mt-4" style="font-weight: 800;">Lps. 960</h2>
+                        <div class="col-7">
+                            <h3 class="ms-5 mt-4" style="color: #3a1f9b; font-weight: 800;">Total (Lps.)</h3>
+                        </div>
+        
+                        <div class="col-5">
+                            <h2 class="float-start mt-4" style="color: #3a1f9b; font-weight: 800;">{{pedido.total}}</h2>
                         </div>
         
                     </div>
                 </div>
 
                 <div>
-                    <button type="button" style="margin-left: 150px" class="btn btn-personalizado btn-secondary my-2">Guardar</button>
+                    <button type="button" style="margin-left: 150px" class="btn btn-personalizado btn-secondary my-2" (click)="guardarFactura()">Guardar</button>
                 </div>
             </div>
         </div>
@@ -90,3 +93,15 @@
 
     <app-footer></app-footer>
 
+    <ng-template #modalAdvertencia let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title"></h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body mx-4 my-4" style="height: 100px;">
+            El Pedido Ha Sido Entregado!
+        </div>
+    </ng-template>
+      

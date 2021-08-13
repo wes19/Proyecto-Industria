@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'pedidos-detalle-disponibles', component: PedidosDetalleDisponiblesComponent},
   { path: 'pedidos-detalle-progreso', component: PedidosDetalleProgresoComponent},
   { path: 'factura', component: FacturaComponent},
-  { path: '**', pathMatch: 'full', redirectTo:'login'},
+  { path: '**', pathMatch: 'full', redirectTo:''},
 ];
 
 @NgModule({

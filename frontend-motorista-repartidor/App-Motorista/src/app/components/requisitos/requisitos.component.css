@@ -7,7 +7,7 @@
 }
 
 .titulo{
-    color: #3a1f9b;
+    color: #6ca0e4;
     margin-top: 2.7rem;
     font-weight: 700px;
     font-size: 32px;
@@ -15,7 +15,7 @@
 }
 
 .titulo1{
-    color: #3a1f9b;
+    color: #6ca0e4;
     margin-top: 2.7rem;
     font-weight: 400px;
     font-size: 22px;
@@ -47,5 +47,6 @@
         margin-bottom: 30px;
         height: 65px;
     }
+
     
 }

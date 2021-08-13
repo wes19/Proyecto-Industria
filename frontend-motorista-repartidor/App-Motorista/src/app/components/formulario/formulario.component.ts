@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { faUndoAlt } from '@fortawesome/free-solid-svg-icons';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { MotoristasService } from 'src/app/services/motoristas.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario',
@@ -8,6 +11,7 @@ import { faUndoAlt } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent implements OnInit {
+  @ViewChild ('modalAdvertencia') modalAdvertencia: any;
   faUndoAlt = faUndoAlt;
 
   EmailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -23,9 +27,10 @@ export class FormularioComponent implements OnInit {
     estadoCivil : new FormControl('', [Validators.required]),
     formacion : new FormControl('', [Validators.required]),
     discapacidad : new FormControl(''),
+    descripcionDiscapacidad : new FormControl(''),
     pasadoProfesional : new FormControl(''),
   })
-  constructor() { }
+  constructor(private modalService: NgbModal,private motoristasService:MotoristasService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -40,11 +45,36 @@ export class FormularioComponent implements OnInit {
   get estadoCivil(){return this.formularioPeticion.get('estadoCivil')}
   get formacion(){return this.formularioPeticion.get('formacion')}
   get discapacidad(){return this.formularioPeticion.get('discapacidad')}
+  get descripcionDiscapacidad(){return this.formularioPeticion.get('descripcionDiscapacidad')}
   get pasadoProfesional(){return this.formularioPeticion.get('pasadoProfesional')}
-
-  EnviarFormulario(){
-    console.log(this.formularioPeticion.value)
-    console.log(this.formularioPeticion.valid)
+    
+  enviarFormulario() {
+    console.log('guardar');
+    const data = {
+      dni : this.formularioPeticion.controls['dni'].value,
+      nombre : this.formularioPeticion.controls['nombre'].value,
+      apellido : this.formularioPeticion.controls['apellido'].value,
+      correo : this.formularioPeticion.controls['correo'].value,
+      telefono : this.formularioPeticion.controls['telefono'].value,
+      fechaNacimiento : this.formularioPeticion.controls['fechaNacimiento'].value,
+      direccion : this.formularioPeticion.controls['direccion'].value,
+      estadoCivil : this.formularioPeticion.controls['estadoCivil'].value,
+      formacion : this.formularioPeticion.controls['formacion'].value,
+      discapacidad : this.formularioPeticion.controls['discapacidad'].value,
+      descripcionDiscapacidad : this.formularioPeticion.controls['descripcionDiscapacidad'].value,
+      pasadoProfesional : this.formularioPeticion.controls['pasadoProfesional'].value
+    }
+    console.log(data)
+    if (this.formularioPeticion.valid) {
+    this.motoristasService.guardarMotorista(data
+    ).subscribe(
+      res=>{
+        console.log(res);
+        this.modalService.open(this.modalAdvertencia, {size: 'sm', centered:true});
+        this.router.navigate(['/']);  
+      },
+      error=>console.log(error)
+    ) 
+    }
   }
-
 }

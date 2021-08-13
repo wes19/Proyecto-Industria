@@ -8,14 +8,14 @@
 
 .word-login{
     font-family:'Mulish';
-    color: #3a1f9b;
+    color: #6ca0e4;
     font-weight: bold;
     text-align:center;
 }
 
 .btn-primary{
     color: #fff;
-    background: linear-gradient(180deg, #6ca0e4 64%, #3a1f9b  100%);
+    background: linear-gradient(180deg, #6ca0e4 64%, #3a1f9b 100%);
     border: none;
 }
 

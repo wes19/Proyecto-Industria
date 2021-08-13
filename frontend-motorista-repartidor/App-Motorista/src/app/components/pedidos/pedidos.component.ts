@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-pedidos',
@@ -12,7 +12,7 @@ disponibles: any = 'disponibles';
 progreso: any = 'progreso';
 entregados: any = 'entregados';
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private router: Router) {
     this.route.params.subscribe((params)=>{
       if(params["name"]==null){
         this.categoriaSeleccionada = 'disponibles'
@@ -23,6 +23,10 @@ entregados: any = 'entregados';
   }
 
   ngOnInit(): void {
+    let token = localStorage.getItem("idMotorista");
+    if(token == null){
+      this.router.navigate(['/login']);
+    }
   }
     
 }

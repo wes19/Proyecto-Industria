@@ -6,7 +6,7 @@
 }
 
 .caja-pedido{
-    background-color:#b3d2fa;
+    background-color:#8fb3e2;
     margin-top: 40px;
 }
 
@@ -15,14 +15,14 @@ div{
 }
 
 .btn-personalizado {
-    background: linear-gradient(180deg, #6ca0e4 64%, #3a1f9b  100%);
+    background: linear-gradient(180deg, #6ca0e4 64%, #3a1f9b 100%);
     border: none;
     width: 140px;
     border-radius: 25px;
 }
 
 .btn-personalizado1 {
-    background: linear-gradient(180deg, #6ca0e4 64%, #3a1f9b  100%);
+    background: linear-gradient(180deg, #6ca0e4 64%, #3a1f9b 100%);
     border: none;
     width: 140px;
 }

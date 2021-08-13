@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="collapse navbar-collapse d-flex justify-content-end">
             <fa-icon [icon]="faUndoAlt" style="font-size: 30px; margin-right: 140px;" (click)="navegandoPedidosP()"></fa-icon>
-            <button type="button" class="btn btn-personalizado1 btn-secondary float-end rounded-pill my-2">Cerrar Sesión</button>
+            <button type="button" class="btn btn-personalizado1 btn-secondary float-end rounded-pill my-2" (click)="salir()">Cerrar Sesión</button>
         </div>
     </div>
 </nav>
@@ -10,39 +10,38 @@
 
    <div class="container-fluid">
         <div class="col-md-6 mt-4">
-            <h1 style="color:#3a1f9b; margin-top: 80px; font-weight: bold;">Pedidos En Progreso</h1>
+            <h1 style="color:#6ca0e4; margin-top: 80px; font-weight: bold;">Pedidos En Progreso</h1>
 
             <div class="caja-pedido">
                 <div class="row">
 
                     <div class="col-6">
-                        <img class="rounded imgD" src="../assets/img/img1.jpg" alt="">
+                        <img class="rounded imgD" src={{pedidosDetalles.logotipo}} alt="">
                     </div>
 
                     <div class="col-6 my-3">
-                        <div style="font-size: 30px;">Asados el Churrasco</div> 
+                        <div style="font-size: 30px;">{{pedidosDetalles.nombreEmpresa}}</div> 
                     </div>
-                    <div style="margin-left: 30px; margin-top: 5px;" class="col-10"><fa-icon [icon]="faCreditCard"></fa-icon> Acepta pago Online</div>
-                    <div style="margin-left: 30px;" class="my-2 col-10"><fa-icon [icon]="faMapMarkerAlt"></fa-icon> Ubicación</div>
-                    <div style="margin-left: 30px;" class="mb-2 col-10">30-45 Min</div>
-                    <div style="margin-left: 30px;" class="mb-2 col-10">Producto 1</div>
-                    <div style="margin-left: 30px;" class="mb-2 col-10">Producto 2</div>
-                    <div style="margin-left: 30px;" class="mb-2 col-10">Producto 3</div>
-                    <div style="margin-left: 30px;" class="mb-2 col-10">Total</div>
-                    <div style="margin-left: 30px;" class="mb-2 col-10">L. 70</div>
+                    <div style="margin-left: 30px; margin-top: 5px;" class="col-10"><fa-icon [icon]="faCreditCard"></fa-icon>  <b> Acepta pago Online</b></div>
+                    <div style="margin-left: 30px;" class="my-2 col-10"><fa-icon [icon]="faMapMarkerAlt"></fa-icon>  {{pedidosDetalles.direccion}}</div>
+                    <div style="margin-left: 30px;" class="mb-2 col-10"><b>Telefono:</b> {{pedidosDetalles.telefono}}</div>
+                    <div style="margin-left: 30px;" class="mb-2 col-10"><b>Tiempo Estimado: 30-45 Min</b></div>
+                    <div style="margin-left: 30px;" class="mb-2 col-10" *ngFor="let pedido of pedidosDetalles.producto; let indice=index"><b>{{indice+1}}</b> {{pedido}}</div>
+                    <div style="margin-left: 30px;" class="mb-2 col-10"><b>Total: Lps. {{pedidosDetalles.total}}</b></div>
+                    <div style="margin-left: 30px;" class="mb-2 col-10"><b>Comisión: Lps. {{pedidosDetalles.comisionMotorista}}</b></div>
 
                     <div class="col-6 my-3 mx-3">
-                        <select class="form-select select-pedido" style="width: 150px;">
+                        <select class="form-select select-pedido" style="width: 150px; height: 35px;" [(ngModel)]="estadoSeleccionado" (change)="cambioEstado(pedidosDetalles)">
                             <option>En el Origen </option>
                             <option>En Camino</option>
                             <option>En el Destino</option>
                         </select>
                     </div>
                     <div class="col-10 mx-3">
-                        <label style="font-weight: bold; color:green">Estado: En el Origen</label>
+                        <label style="font-weight: bold; color:green">Estado: {{estadoSeleccionado}}</label>
                     </div>
                     <div>
-                        <button type="button" style="margin-left: 170px" class="btn btn-personalizado btn-secondary my-2" [routerLink]="['/factura']">Factura</button>
+                        <button type="button" style="margin-left: 170px" class="btn btn-personalizado btn-secondary my-2" (click)="irFactura()">Factura</button>
                     </div>
                 </div>
             </div>

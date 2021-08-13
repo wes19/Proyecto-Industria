@@ -1,26 +1,26 @@
 <nav class="navbar navbar-light bg-light fixed-top">
     <div class="container-fluid">
         <div class="collapse navbar-collapse d-flex justify-content-end">
-            <button type="button" class="btn btn-personalizado btn-secondary float-end rounded-pill my-2" [routerLink]="['/login']">Cerrar Sesión</button>
+            <button type="button" class="btn btn-personalizado btn-secondary float-end rounded-pill my-2" (click)="salir()">Cerrar Sesión</button>
         </div>
     </div>
 </nav>
 
-<div class="caja-pedido" [routerLink]="['/pedidos-detalle-progreso']" *ngFor="let pedidoP of pedidosProgreso">
+<div class="caja-pedido" (click)="irPedidosDetalles(pedido)" *ngFor="let pedido of pedidos">
     <div class="row">
 
         <div class="col-4">
-            <img class="rounded imgs" src={{pedidoP.imagen}} alt="">
+            <img class="rounded imgs" src={{pedido.logotipo}} alt="">
         </div>
 
         <div class="col-8 my-3">
-            <div style="font-size: 23px;" class="mx-2">{{pedidoP.empresa}} </div>
-            <div class="mx-2"><fa-icon [icon]="faCreditCard"></fa-icon>{{pedidoP.card}} </div>
-            <div class="my-2 mx-2"><fa-icon [icon]="faMapMarkerAlt"></fa-icon> {{pedidoP.ubicacion}} </div>
+            <div style="font-size: 23px;" class="mx-2">{{pedido.nombreEmpresa}} </div>
+            <div class="mx-2"><fa-icon [icon]="faCreditCard"></fa-icon> Pago Online</div>
+            <div class="my-2 mx-2"><fa-icon [icon]="faMapMarkerAlt"></fa-icon> {{pedido.direccion}} </div>
         </div>
-        <div class="col-6 mb-2" style="text-align: center;">{{pedidoP.tiempoEstimado}} </div>
-        <div class="col-6 mb-2" style="text-align: center;">{{pedidoP.comisionMotorista}} </div>
-        <div class="mb-2 mx-5" style="text-align: center; color:green; font-weight: bold;">{{pedidoP.estado}} </div>
+        <div class="col-6 mb-2" style="text-align: center;"> 20-30 Min</div>
+        <div class="col-6 mb-2" style="text-align: center;">Lps. {{pedido.comisionMotorista}} </div>
+        <div class="mb-2 mx-5" style="text-align: center; color:green; font-weight: bold;">Estado: {{pedido.estado}} </div>
     </div>
 </div>
 

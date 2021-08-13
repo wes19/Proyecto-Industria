@@ -9,6 +9,10 @@ export class CategoriasService {
 
   constructor(private httpClient:HttpClient) { }
 
+  obtenerCategorias() :Observable<any>{
+    return this.httpClient.get(`http://localhost:8888/categorias`,{});
+  }
+
   obtenerEmpresas(idCategoria:any):Observable<any>{
     return this.httpClient.get(`http://localhost:8888/categorias/${idCategoria}/empresas`,{});
   }
@@ -23,19 +27,19 @@ export class CategoriasService {
       direccion: data.direccion,
       nombreEncargado: data.nombreEncargado,
       telefono: data.calificacion,
-      estado: data.descargas,
-      logotipo: data.precio,
-      banner: data.desarrollador,
-      calificacion: data.desarrollador
+      estado: data.estado,
+      logotipo: data.logotipo,
+      banner: data.banner,
+      calificacion: data.calificacion
     });
   }
 
   agregarProducto(data: any):Observable<any>{
-    return this.httpClient.post(`http://localhost:8888/categorias/${data.idCategoria}/empresa/${data.idEmpresa}/productos`,{
-      imagenProducto: data.nombreEmpresa,
-      nombreProducto: data.direccion,
-      precio: data.nombreEncargado,
-      estado: data.calificacion,
+    return this.httpClient.post(`http://localhost:8888/categorias/${data.idCategoria}/empresas/${data.idEmpresa}/productos`,{
+      imagenProducto: data.imagenProducto,
+      nombreProducto: data.nombreProducto,
+      precio: data.precio,
+      estado: data.estado,
     });
   }
 
@@ -44,20 +48,20 @@ export class CategoriasService {
       nombreEmpresa: data.nombreEmpresa,
       direccion: data.direccion,
       nombreEncargado: data.nombreEncargado,
-      telefono: data.calificacion,
-      estado: data.descargas,
-      logotipo: data.precio,
-      banner: data.desarrollador,
-      calificacion: data.desarrollador
+      telefono: data.telefono,
+      estado: data.estado,
+      logotipo: data.logotipo,
+      banner: data.banner,
+      calificacion: data.calificacion
     });
   }
 
   actualizarProducto(data: any):Observable<any>{
-    return this.httpClient.post(`http://localhost:8888/categorias/${data.idCategoria}/empresa/${data.idEmpresa}/productos/${data.idProducto}`,{
-      imagenProducto: data.nombreEmpresa,
-      nombreProducto: data.direccion,
-      precio: data.nombreEncargado,
-      estado: data.calificacion,
+    return this.httpClient.post(`http://localhost:8888/categorias/${data.idCategoria}/empresas/${data.idEmpresa}/productos/${data.idProducto}`,{
+      imagenProducto: data.imagenReferencia,
+      nombreProducto: data.nombreProducto,
+      precio: data.precio,
+      estado: data.estado,
     });
   }
 

@@ -5,42 +5,68 @@
         <h1 class="mt-5" style="font-weight: bold;">Motoristas Pedidos Disponibles</h1>
 
             <div class="row">
-                <div class="caja-pedido col-5 mx-4 mt-4" *ngFor="let pedidosD of pedidosDisponibles">
+                <div class="caja-pedido col-12 col-sm-5 mx-4 mt-4" *ngFor="let pedido of pedidos">
                     <div class="row">
     
                         <div class="col-4">
-                            <img class="rounded imgs" src={{pedidosD.imagen}} alt="">
+                            <img class="rounded imgs" src={{pedido.logotipo}} alt="">
                         </div>
     
-                        <div class="col-6 my-3">
-                            <div style="font-size: 23px;">{{pedidosD.empresa}}</div>
-                            <div>{{pedidosD.card}}</div>
-                            <div class="my-2">{{pedidosD.ubicacion}}</div>
+                        <div class="col-8 my-3">
+                            <div style="font-size: 35px;"><b>{{pedido.nombreEmpresa}}</b></div>
+                            <div><fa-icon [icon]="faCreditCard"></fa-icon><b> Pago Online</b></div>
+                            <div class="my-2"><fa-icon [icon]="faMapMarkerAlt"></fa-icon> {{pedido.direccion}}</div>
                         </div>
-                        <div class="col-6 mb-2" style="text-align: center;">{{pedidosD.tiempoEstimado}}</div>
-                        <div class="col-6 mb-2" style="text-align: center;">{{pedidosD.comisionMotorista}}</div>
+                        <div class="col-6 mb-2" style="text-align: center;"><b>Tiempo Estimado: 20-30 Min</b></div>
+                        <div class="col-6 mb-2" style="text-align: center;"><b>Comisión: Lps. {{pedido.comisionMotorista}}</b></div>
+                        <button type="button" class="btn btn-personalizado" (click)="abrirVerPedido(ModalVer, pedido)">Ver</button>
                     </div>
-                    <button type="button" class="btn btn-personalizado" (click)="abrirVerPedido(ModalVer)">Ver</button>
+                    
                 </div>
+            </div>
+    </div>
 
     <ng-template #ModalVer let-modal>
-        <div class="modal-header">
+        <div class="modal-header" style="background-color: #D258A1; color:#fff">
             <h5 class="modal-title" id="exampleModalLabel">Ver Pedidos Disponibles</h5>
             <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
         <div class="modal-body">
-                    
-        </div>
+            <div class="row">
+                <div class="col-4">
+                    <img class="rounded imgs" src={{order.logotipo}} alt="">
+                </div>
+                <div class="col-8 my-3">
+                    <div style="font-size: 35px;"><b>{{order.nombreEmpresa}}</b></div>
+                    <div><fa-icon [icon]="faCreditCard"></fa-icon><b> Pago Online</b></div>
+                    <div class="my-2"><fa-icon [icon]="faMapMarkerAlt"></fa-icon> {{order.direccion}}</div>
+                </div>
+                <div class="col-6 mb-2" style="text-align: center;"><b>Tiempo Estimado: 20-30 Min</b></div>
+                <div class="col-6 mb-2" style="text-align: center;"><b>Comisión: Lps. {{order.comisionMotorista}}</b></div>
+                <div class="col-12 mb-2"><b> Productos: </b></div>
+                <div class="col-12 mb-2" *ngFor="let ord of order.producto; let indice=index"><b>{{indice+1}}</b> - {{ord}}</div>
+            </div>
+        </div>      
         <div class="modal-footer">
-            <select name="" id="">
-                <option>Pedro Motoa</option>
-            </select>     
-                <button type="button" class="btn btn-personalizado">Asignar</button>
-                <button type="button" class="btn btn-personalizado" (click)="modal.close('Save click')">Cerrar</button>
-        </div>
-        <div class="modal-footer">
-          
+           <b>Motorista: </b><select (change)="cargarMotoristas()" [(ngModel)]="motoristaSeleccionado" class="form-select">
+                <option *ngFor="let motorista of motoristas" [ngValue]="motorista._id">{{motorista.nombre}} {{motorista.apellido}}</option>
+            </select>
+            <button type="button" class="btn btn-success" (click)="asignar()">Asignar</button>
+            <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Cerrar</button>
         </div>
       </ng-template>
+
+      <!-- Modal -->
+<ng-template #modalAdvertencia let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title"></h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body mx-4 my-4" style="height: 100px;">
+        Pedido Asignado Exitosamente!
+    </div>
+</ng-template>

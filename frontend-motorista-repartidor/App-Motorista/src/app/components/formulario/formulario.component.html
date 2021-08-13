@@ -90,13 +90,13 @@
                 </select>
 
                 <h4 class="my-4">Si su respuesta es "Si", indique cual. Si es "No" pase a la siguiente pregunta</h4>
-                <input class="form-control" type="text">
-
-                <h4 class="mt-4">Pasado Profesional</h4>
                 <input formControlName="pasadoProfesional" class="form-control" type="text">
 
+                <h4 class="mt-4">Pasado Profesional</h4>
+                <input formControlName="descripcionDiscapacidad" class="form-control" type="text">
+
                 <div class="d-grid mt-5">
-                    <button [disabled]="!formularioPeticion.valid" class="btn btn-primary rounded-pill" type="button" style="width: 310px;" (click)="EnviarFormulario()">ENVIAR</button>
+                    <button [disabled]="!formularioPeticion.valid" class="btn btn-primary rounded-pill" type="button" style="width: 310px;" (click)="enviarFormulario()">ENVIAR</button>
                 </div>
 
             </section>
@@ -106,3 +106,16 @@
  
     <app-footer></app-footer>
             
+<!-- Modal -->
+<ng-template #modalAdvertencia let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title"></h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body mx-4 my-4" style="height: 100px;">
+        Ha Enviado Su solicitud Correctamente
+    </div>
+  </ng-template>
+  

@@ -1,23 +1,23 @@
 <nav class="navbar navbar-light bg-light fixed-top">
     <div class="container-fluid">
         <div class="collapse navbar-collapse d-flex justify-content-end">
-            <button type="button" class="btn btn-personalizado btn-secondary float-end rounded-pill my-2" [routerLink]="['/login']">Cerrar Sesión</button>
+            <button type="button" class="btn btn-personalizado btn-secondary float-end rounded-pill my-2" (click)="salir()">Cerrar Sesión</button>
         </div>
     </div>
 </nav>
 
-        <div class="caja-pedido" *ngFor="let pedidoE of pedidosEntregado">
+        <div class="caja-pedido" *ngFor="let pedido of pedidos">
             <div class="row">
 
                 <div class="col-4">
-                    <img class="rounded imgs" src={{pedidoE.imagen}} alt="">
+                    <img class="rounded imgs" src={{pedido.logotipo}} alt="">
                 </div>
 
                 <div class="col-8 my-3">
-                    <div style="font-size: 23px;" class="mx-2">{{pedidoE.empresa}}</div>
-                    <div class="my-2 mx-2"><fa-icon [icon]="faMapMarkerAlt"></fa-icon> {{pedidoE.ubicacion}} </div>
+                    <div style="font-size: 23px;" class="mx-2">{{pedido.nombreEmpresa}}</div>
+                    <div class="my-2 mx-2"><fa-icon [icon]="faMapMarkerAlt"></fa-icon> {{pedido.direccion}} </div>
                 </div>
-                <div class="col-4 mb-2" style="text-align: center;">{{pedidoE.comisionMotorista}}</div>
-                <div class="col-8 mb-2" style="text-align: center; color:rgb(226, 21, 21); font-weight:bold">{{pedidoE.estado}}</div>
+                <div class="col-4 mb-2" style="text-align: center;"><b>Comisión: Lps.</b> {{pedido.comisionMotorista}}</div>
+                <div class="col-8 mb-2" style="text-align: center; color:rgb(226, 21, 21); font-weight:bold">Estado: {{pedido.estado}}</div>
             </div>
         </div>
