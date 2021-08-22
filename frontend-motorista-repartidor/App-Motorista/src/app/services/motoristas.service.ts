@@ -7,19 +7,20 @@ import { Observable } from 'rxjs';
 })
 export class MotoristasService {
 
-  //public motoristaCre: any;
+  backendWeb: string = 'https://deliveryhnbackend.herokuapp.com';
+
   constructor(private httpClient:HttpClient) { }
 
   obtenerMotoristas():Observable<any>{
-    return this.httpClient.get('http://localhost:8888/motoristas', {});
+    return this.httpClient.get(`${this.backendWeb}/motoristas`, {});
   }
 
   obtenerMotoristasCorreo(correo: any):Observable<any>{
-    return this.httpClient.get(`http://localhost:8888/motoristas/${correo}`, {});
+    return this.httpClient.get(`${this.backendWeb}/motoristas/${correo}`, {});
   }
 
   guardarMotorista(data : any):Observable<any>{
-    return this.httpClient.post('http://localhost:8888/motoristas', {
+    return this.httpClient.post(`${this.backendWeb}/motoristas`, {
       dni : data.dni,
       nombre : data.nombre,
       apellido : data.apellido,
@@ -30,7 +31,7 @@ export class MotoristasService {
       estadoCivil : data.estadoCivil,
       formacion : data.formacion,
       discapacidad : data.discapacidad,
-      descripcionDiscapacidad : data.descripcionDiscapacidad,
+      descripcion : data.descripcion,
       pasadoProfesional : data.pasadoProfesional
     });
   }

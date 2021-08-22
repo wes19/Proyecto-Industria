@@ -3,7 +3,7 @@ div{
 }
 
 .btn-personalizado {
-    background: linear-gradient(180deg, #6ca0e4 64%, #3a1f9b 100%);
+    background: linear-gradient(180deg, #5c6b80 64%, #2d1c68 100%);
     border: none;
     width: 140px;
     border-radius: 25px;
@@ -11,7 +11,7 @@ div{
 
 .bg-light {
     background-color: #fff!important;
-    border-bottom: 2px solid #3a1f9b;
+    border-bottom: 2px solid #2d1c68;
     margin-bottom: 30px;
     height: 65px;
 }

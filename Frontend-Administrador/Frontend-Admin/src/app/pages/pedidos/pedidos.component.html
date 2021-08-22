@@ -9,13 +9,13 @@
                     <div class="row">
     
                         <div class="col-4">
-                            <img class="rounded imgs" src={{pedido.logotipo}} alt="">
+                            <img class="rounded imgs" src={{pedido.logoEmpresa}} alt="">
                         </div>
     
                         <div class="col-8 my-3">
                             <div style="font-size: 35px;"><b>{{pedido.nombreEmpresa}}</b></div>
                             <div><fa-icon [icon]="faCreditCard"></fa-icon><b> Pago Online</b></div>
-                            <div class="my-2"><fa-icon [icon]="faMapMarkerAlt"></fa-icon> {{pedido.direccion}}</div>
+                            <div class="my-2" *ngFor="let ubicacion of pedido.direccion"><fa-icon [icon]="faMapMarkerAlt"></fa-icon> {{ubicacion.lat}} {{ubicacion.lng}}</div>
                         </div>
                         <div class="col-6 mb-2" style="text-align: center;"><b>Tiempo Estimado: 20-30 Min</b></div>
                         <div class="col-6 mb-2" style="text-align: center;"><b>Comisión: Lps. {{pedido.comisionMotorista}}</b></div>
@@ -27,7 +27,7 @@
     </div>
 
     <ng-template #ModalVer let-modal>
-        <div class="modal-header" style="background-color: #D258A1; color:#fff">
+        <div class="modal-header" style="background-color: #3842c5; color:#fff">
             <h5 class="modal-title" id="exampleModalLabel">Ver Pedidos Disponibles</h5>
             <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
                 <span aria-hidden="true">&times;</span>
@@ -36,12 +36,12 @@
         <div class="modal-body">
             <div class="row">
                 <div class="col-4">
-                    <img class="rounded imgs" src={{order.logotipo}} alt="">
+                    <img class="rounded imgs" src={{order.logoEmpresa}} alt="">
                 </div>
                 <div class="col-8 my-3">
                     <div style="font-size: 35px;"><b>{{order.nombreEmpresa}}</b></div>
                     <div><fa-icon [icon]="faCreditCard"></fa-icon><b> Pago Online</b></div>
-                    <div class="my-2"><fa-icon [icon]="faMapMarkerAlt"></fa-icon> {{order.direccion}}</div>
+                    <div class="my-2" *ngFor="let ubicacion of order.direccion"><fa-icon [icon]="faMapMarkerAlt"></fa-icon> {{ubicacion.lat}} {{ubicacion.lng}}</div>
                 </div>
                 <div class="col-6 mb-2" style="text-align: center;"><b>Tiempo Estimado: 20-30 Min</b></div>
                 <div class="col-6 mb-2" style="text-align: center;"><b>Comisión: Lps. {{order.comisionMotorista}}</b></div>

@@ -1,12 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "7da3f63a-ab9e-4185-9f14-d0079b1c1f36"
+    "analytics": "f3a96dcc-39d5-486f-8fed-93516a3ae3b1"
   },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Frontend-Administrador": {
+    "Delivery-Hn-Admin": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -20,20 +20,23 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Frontend-Administrador",
+            "outputPath": "dist/Delivery-Hn-Admin",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "serviceWorker": true,
+            "ngswConfigPath": "ngsw-config.json"
           },
           "configurations": {
             "production": {
@@ -72,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Frontend-Administrador:build:production"
+              "browserTarget": "Delivery-Hn-Admin:build:production"
             },
             "development": {
-              "browserTarget": "Frontend-Administrador:build:development"
+              "browserTarget": "Delivery-Hn-Admin:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Frontend-Administrador:build"
+            "browserTarget": "Delivery-Hn-Admin:build"
           }
         },
         "test": {
@@ -95,7 +98,8 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "src/styles.css"
@@ -106,5 +110,5 @@
       }
     }
   },
-  "defaultProject": "Frontend-Administrador"
+  "defaultProject": "Delivery-Hn-Admin"
 }

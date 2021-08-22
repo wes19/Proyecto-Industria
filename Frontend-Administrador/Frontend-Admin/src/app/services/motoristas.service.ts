@@ -7,14 +7,16 @@ import { Observable } from 'rxjs';
 })
 export class MotoristasService {
 
+  backendWeb: string = 'https://deliveryhnbackend.herokuapp.com';
+
   constructor(private httpClient:HttpClient) { }
 
   obtenerMotoristas():Observable<any>{
-    return this.httpClient.get('http://localhost:8888/motoristas',{});
+    return this.httpClient.get(`${this.backendWeb}/motoristas`,{});
   }
 
   actualizarMotoristas(data: any):Observable<any>{
-    return this.httpClient.post(`http://localhost:8888/motoristas/${data.idMotorista}`, {
+    return this.httpClient.post(`${this.backendWeb}/motoristas/${data.idMotorista}`, {
       codEmpleado : data.codEmpleado,
       dni : data.dni,
       nombre : data.nombre,
@@ -27,14 +29,14 @@ export class MotoristasService {
       estadoCivil : data.estadoCivil,
       formacion : data.formacion,
       discapacidad : data.discapacidad,
-      descripcionDiscapacidad : data.descripcionDiscapacidad,
+      descripcion : data.descripcion,
       pasadoProfesional : data.pasadoProfesional,
       estado : data.estado
     });
   }
 
   eliminarMotoristas(idPeticion: any):Observable<any>{
-    return this.httpClient.delete(`http://localhost:8888/motoristas/${idPeticion}`,{});
+    return this.httpClient.delete(`${this.backendWeb}/motoristas/${idPeticion}`,{});
   }
 
 }

@@ -13,11 +13,11 @@ a {
 
 nav li:active{
     font-weight: bold;
-    background-color:#21077c;
+    background-color:#2d1c68;
     border-radius: 25px;;
 }
 
 nav li:hover{
-    background-color:#21077c;
+    background-color:#2d1c68;
     border-radius: 25px;;
 }

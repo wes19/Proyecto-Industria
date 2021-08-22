@@ -15,15 +15,15 @@
             <div class="row">
 
                 <div class="col-6">
-                    <img class="rounded imgD" src={{pedidosDetalles.logotipo}} alt="">
+                    <img class="rounded imgD" src={{pedidosDetalles.logoEmpresa}} alt="">
                 </div>
 
                 <div class="col-6 my-3">
                     <div style="font-size: 30px;">{{pedidosDetalles.nombreEmpresa}}</div> 
                 </div>
                 <div style="margin-left: 30px; margin-top: 5px;" class="col-10"><fa-icon [icon]="faCreditCard"></fa-icon>  <b> Acepta pago Online</b></div>
-                <div style="margin-left: 30px;" class="my-2 col-10"><fa-icon [icon]="faMapMarkerAlt"></fa-icon>  {{pedidosDetalles.direccion}}</div>
-                <div style="margin-left: 30px;" class="mb-2 col-10"><b>Estimado Destino: 20-35 Min</b></div>
+                <div style="margin-left: 30px;" class="my-2 col-10"  *ngFor="let ubicacion of pedidosDetalles.direccion"><fa-icon [icon]="faMapMarkerAlt"></fa-icon>  {{ubicacion.lat}} {{ubicacion.lng}}</div>
+                <div style="margin-left: 30px;" class="mb-2 col-10"><b>Estimado Destino: 20-30 Min</b></div>
                 <div style="margin-left: 30px;" class="mb-2 col-10" *ngFor="let producto of pedidosDetalles.producto; let indice=index"><b>{{indice+1}}</b> - {{producto}}</div>
                 <div style="margin-left: 30px;" class="mb-2 col-10"><b>Total: Lps. {{pedidosDetalles.total}}</b></div>
                 <div style="margin-left: 30px;" class="mb-2 col-10"><b>Comisión: Lps. {{pedidosDetalles.comisionMotorista}}</b></div>

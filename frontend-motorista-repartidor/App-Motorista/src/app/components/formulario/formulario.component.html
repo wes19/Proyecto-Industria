@@ -55,7 +55,7 @@
                 </div>
 
                 <h4 class="mt-4">Fecha Nacimiento</h4>
-                <input formControlName="fechaNacimiento" [ngClass]="{'input-error':fechaNacimiento?.invalid && (fechaNacimiento?.dirty || fechaNacimiento?.touched)}"  class="form-control" type="date" required>
+                <input formControlName="fechaNacimiento" [ngClass]="{'input-error':fechaNacimiento?.invalid && (fechaNacimiento?.dirty || fechaNacimiento?.touched)}"  class="form-control" type="text" required>
                 <div *ngIf="fechaNacimiento?.invalid && (fechaNacimiento?.dirty || fechaNacimiento?.touched)" class="error my-2">
                     <span *ngIf="fechaNacimiento?.errors?.required">Error el campo es obligatorio</span>
                 </div>
@@ -90,10 +90,10 @@
                 </select>
 
                 <h4 class="my-4">Si su respuesta es "Si", indique cual. Si es "No" pase a la siguiente pregunta</h4>
-                <input formControlName="pasadoProfesional" class="form-control" type="text">
+                <input formControlName="descripcion" class="form-control" type="text">
 
                 <h4 class="mt-4">Pasado Profesional</h4>
-                <input formControlName="descripcionDiscapacidad" class="form-control" type="text">
+                <input formControlName="pasadoProfesional" class="form-control" type="text">
 
                 <div class="d-grid mt-5">
                     <button [disabled]="!formularioPeticion.valid" class="btn btn-primary rounded-pill" type="button" style="width: 310px;" (click)="enviarFormulario()">ENVIAR</button>

@@ -93,14 +93,14 @@ export class MotoristaInactivoComponent implements OnInit {
   activar(motorista: any){
     let data = {
       idMotorista : motorista._id,
-      codEmpleado : motorista.value,
+      codEmpleado : motorista.codEmpleado,
       dni : motorista.dni,
       nombre : motorista.nombre,
       apellido : motorista.apellido,
       correo : motorista.correo,
       telefono : motorista.telefono,
       direccion : motorista.direccion,
-      password : motorista.value,
+      password : motorista.password,
       estadoCivil : motorista.estadoCivil,
       formacion : motorista.formacion,
       discapacidad : motorista.discapacidad,

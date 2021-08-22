@@ -27,7 +27,7 @@ export class FormularioComponent implements OnInit {
     estadoCivil : new FormControl('', [Validators.required]),
     formacion : new FormControl('', [Validators.required]),
     discapacidad : new FormControl(''),
-    descripcionDiscapacidad : new FormControl(''),
+    descripcion : new FormControl(''),
     pasadoProfesional : new FormControl(''),
   })
   constructor(private modalService: NgbModal,private motoristasService:MotoristasService, private router: Router) { }
@@ -45,8 +45,10 @@ export class FormularioComponent implements OnInit {
   get estadoCivil(){return this.formularioPeticion.get('estadoCivil')}
   get formacion(){return this.formularioPeticion.get('formacion')}
   get discapacidad(){return this.formularioPeticion.get('discapacidad')}
-  get descripcionDiscapacidad(){return this.formularioPeticion.get('descripcionDiscapacidad')}
+  get descripcion(){return this.formularioPeticion.get('descripcion')}
   get pasadoProfesional(){return this.formularioPeticion.get('pasadoProfesional')}
+
+
     
   enviarFormulario() {
     console.log('guardar');
@@ -61,7 +63,7 @@ export class FormularioComponent implements OnInit {
       estadoCivil : this.formularioPeticion.controls['estadoCivil'].value,
       formacion : this.formularioPeticion.controls['formacion'].value,
       discapacidad : this.formularioPeticion.controls['discapacidad'].value,
-      descripcionDiscapacidad : this.formularioPeticion.controls['descripcionDiscapacidad'].value,
+      descripcion : this.formularioPeticion.controls['descripcion'].value,
       pasadoProfesional : this.formularioPeticion.controls['pasadoProfesional'].value
     }
     console.log(data)

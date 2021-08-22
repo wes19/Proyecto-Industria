@@ -17,11 +17,15 @@ router.post('/', function(req, res) {
         producto: req.body.producto,
         precio: req.body.precio,
         cantidad: req.body.cantidad,
-        comisionMotorista: req.body.envio,
+        comisionMotorista: req.body.comisionMotorista,
+        comisionAdmin: req.body.comisionAdmin,
         subtotal: req.body.subtotal,
         isv: req.body.isv,
         total: req.body.total,
-        estado: "pendiente",
+        estado: req.body.estado,
+        logoEmpresa: req.body.logoEmpresa,
+        fecha: req.body.fecha,
+        hora: req.body.hora,
         idMotorista: ""
     })
     p.save()
@@ -67,5 +71,17 @@ router.get('/', function (req,res){
         res.end();
     });
 });
+
+router.get('/:idCliente/:fecha', function(req, res) {
+    pedido.find({ idCliente: req.params.idCliente, fecha: req.params.fecha }, {})
+        .then(result => {
+            res.send(result);
+            res.end();
+        })
+        .catch(error => {
+            res.send(error);
+            res.end();
+        })
+})
 
 module.exports = router;

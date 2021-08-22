@@ -12,11 +12,14 @@ var esquema = new mongoose.Schema({
     precio: Array,
     cantidad: Array,
     comisionMotorista: Number,
-    comisionAdministracion: Number,
+    comisionAdmin: Number,
     subtotal: Number,
     isv: Number,
     total: Number,
     estado: String,
+    logoEmpresa: String,
+    fecha: String,
+    hora: String,
     idMotorista: String
 });
 

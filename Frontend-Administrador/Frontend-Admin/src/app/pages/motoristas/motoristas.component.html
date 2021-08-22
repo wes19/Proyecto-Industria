@@ -30,7 +30,7 @@
                     <td>{{motorista.correo}}</td>
                     <td><button type="button" class="btn btn-success" (click)="abrirVerMotorista(Modalver, motorista)">Ver</button>
                         <button type="button" class="btn btn-warning mx-2" (click)="abrirModalEditar(ModalEditar, motorista)">Editar</button>
-                        <button type="button" class="btn btn-danger" (click)="inactivar(motorista)">Inactivar</button></td>
+                        <button type="button" class="btn btn-danger my-2" (click)="inactivar(motorista)">Inactivar</button></td>
                 </tr>
             </tbody>
         </table>
@@ -39,7 +39,7 @@
 
 
     <ng-template #Modalver let-modal>
-        <div class="modal-header" style="background-color: #D258A1; color:#fff">
+        <div class="modal-header" style="background-color: #2d1c68; color:#fff">
             <h5 class="modal-title" id="exampleModalLabel">Ver Motorista</h5>
             <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
                 <span aria-hidden="true">&times;</span>
@@ -168,7 +168,7 @@
 
 
     <ng-template #ModalEditar let-modal>
-        <div class="modal-header" style="background-color: #D258A1; color:#fff">
+        <div class="modal-header" style="background-color: #2d1c68; color:#fff">
             <h5 class="modal-title" id="exampleModalLabel">Editar Motorista</h5>
             <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
                 <span aria-hidden="true">&times;</span>

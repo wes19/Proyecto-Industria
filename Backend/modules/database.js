@@ -6,7 +6,7 @@ var db = 'delivery';
 class Database{
     constructor(){
         //Promesas
-        mongoose.connect(`mongodb://${servidor}/${db}`)
+        mongoose.connect(process.env.MONGO_URI)
         .then(()=>{
             console.log('Se conecto a mongo');
         }).catch((error)=>{

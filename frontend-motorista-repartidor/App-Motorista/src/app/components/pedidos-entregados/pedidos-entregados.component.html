@@ -10,12 +10,12 @@
             <div class="row">
 
                 <div class="col-4">
-                    <img class="rounded imgs" src={{pedido.logotipo}} alt="">
+                    <img class="rounded imgs" src={{pedido.logoEmpresa}} alt="">
                 </div>
 
                 <div class="col-8 my-3">
                     <div style="font-size: 23px;" class="mx-2">{{pedido.nombreEmpresa}}</div>
-                    <div class="my-2 mx-2"><fa-icon [icon]="faMapMarkerAlt"></fa-icon> {{pedido.direccion}} </div>
+                    <div class="my-2 mx-2" *ngFor="let ubicacion of pedido.direccion"><fa-icon [icon]="faMapMarkerAlt"></fa-icon> {{ubicacion.lat}} {{ubicacion.lng}} </div>
                 </div>
                 <div class="col-4 mb-2" style="text-align: center;"><b>Comisión: Lps.</b> {{pedido.comisionMotorista}}</div>
                 <div class="col-8 mb-2" style="text-align: center; color:rgb(226, 21, 21); font-weight:bold">Estado: {{pedido.estado}}</div>

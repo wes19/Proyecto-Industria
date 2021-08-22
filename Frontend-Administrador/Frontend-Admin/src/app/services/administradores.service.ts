@@ -6,15 +6,17 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AdministradoresService {
+   
+   backendWeb: string = 'https://deliveryhnbackend.herokuapp.com';
 
   constructor(private httpClient:HttpClient) { }
 
   obtenerAdministradores():Observable<any>{
-    return this.httpClient.get('http://localhost:8888/administradores', {});
+    return this.httpClient.get(`${this.backendWeb}/administradores`, {});
   }
 
   obtenerAdminCorreo(correo: any):Observable<any>{
-    return this.httpClient.get(`http://localhost:8888/administradores/${correo}`, {});
+    return this.httpClient.get(`${this.backendWeb}/administradores/${correo}`, {});
   }
 
 }

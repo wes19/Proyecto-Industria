@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
-var categorias = require('../models/categorias');
+var categoria = require('../models/categorias');
 var mongoose = require('mongoose');
 
 //OBTENER LAs CATEGORIAS PARA LA SELECCION
 router.get('/', function(req, res) {
-    categorias.find({}, { nombreCategoria: true })
+    categoria.find({}, {})
         .then(result => {
             res.send(result);
             res.end();
@@ -16,10 +16,21 @@ router.get('/', function(req, res) {
         })
 });
 
+router.get('/categoria', function(req, res) {
+    categoria.find({}, { _id: true })
+        .then(result => {
+            res.send(result[0]);
+            res.end();
+        })
+        .catch(error => {
+            res.send(error);
+            res.end();
+        })
+});
 
 //OBTENER NEGOCIO POR CATEGORIA
 router.get('/:idCategoria/empresas', function(req, res) {
-    categorias.find({ _id: req.params.idCategoria }, { empresas: true, nombreCategoria: true })
+    categoria.find({ _id: req.params.idCategoria }, { empresas: true, nombreCategoria: true })
         .then(result => {
             res.send(result[0]);
             res.end();
@@ -32,7 +43,7 @@ router.get('/:idCategoria/empresas', function(req, res) {
 
 //OBTENER UNA CATEGORIA
 router.get('/:idCategoria', function(req, res) {
-    categorias.find({ _id: req.params.idCategoria }, { nombreCategoria: true, empresas: true })
+    categoria.find({ _id: req.params.idCategoria }, { nombreCategoria: true, empresas: true })
         .then(result => {
             res.send(result[0]);
             res.end();
@@ -50,7 +61,8 @@ router.get('/:idCategoria/empresas/:idEmpresa/productos', function(req, res) {
             "empresas.nombreEmpresa": true,
             "empresas.banner": true,
             "empresas.calificacion": true,
-            "empresas.direccion": true
+            "empresas.direccion": true,
+            "empresas.logotipo": true
         })
         .then(result => {
             res.send(result[0]);
@@ -74,7 +86,6 @@ router.get('/:idCategoria/empresa/:nombre', function(req, res) {
             res.end();
         })
 })
-
 
 //ANADIR UNA EMPRESA
 router.post('/:idCategoria/empresas', function(req, res) {
@@ -132,7 +143,6 @@ router.post('/:idCategoria/empresas/:idEmpresa/productos', function(req, res) {
         });
 });
 
-
 //ACTUALIZAR UN PRODUCTO
 router.post('/:idCategorias/empresas/:idEmpresas/productos/:idProductos', function(req, res) {
     categoria.updateOne({
@@ -140,7 +150,7 @@ router.post('/:idCategorias/empresas/:idEmpresas/productos/:idProductos', functi
         }, {
             $set: {
                 "empresas.$[emp].productos.$[pro].nombreProducto": req.body.nombreProducto,
-                "empresas.$[emp].productos.$[pro].imagenProducto": req.body.imagenReferencia,
+                "empresas.$[emp].productos.$[pro].imagenProducto": req.body.imagenProducto,
                 "empresas.$[emp].productos.$[pro].precio": req.body.precio,
                 "empresas.$[emp].productos.$[pro].estado": req.body.estado
             },
@@ -191,4 +201,5 @@ router.post('/:idCategoria/empresas/:idEmpresa', function(req, res) {
             res.end();
         })
 })
+
 module.exports = router;

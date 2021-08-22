@@ -19,6 +19,6 @@ app.use('/categorias', categoriasRouter);
 app.use('/pedidos', pedidosRouter);
 //app.use('/usuarios', usuariosRouter);
 
-app.listen(8888, ()=>{
+app.listen(process.env.PORT || 8888, ()=>{
     console.log('Servidor del backend levantado en 8888');
 });

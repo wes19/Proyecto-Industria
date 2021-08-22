@@ -128,7 +128,7 @@ export class EmpresasComponent implements OnInit {
       idProducto : this.idProductoSel,
       nombreProducto : nP.value,
       precio : pre.value,
-      imagenProducto: '../assets/images/'+'/'+imgRe.value,
+      imagenProducto: imgRe.value,
       estado : this.estadoSeleccionado,
     }
     //console.log(jsonProducto);
@@ -181,7 +181,7 @@ export class EmpresasComponent implements OnInit {
       idEmpresa : this.idEmpresaSel,
       nombreProducto : this.nombreProducto,
       precio : this.precioProducto,
-      imagenProducto: this.imagenProducto,
+      imagenProducto: '../assets/images/'+this.imagenProducto,
       estado : "Activo",
     }
     this.categoriasServices.agregarProducto(jsonNuevoProducto).subscribe(

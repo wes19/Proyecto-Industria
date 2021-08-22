@@ -1,22 +1,12 @@
-.bg-dark {
-    background-color: #3a1f9b !important;
-    height: 50px;
-}
 
-.container-md {
-    padding-left: 250px;
-    padding-right: 250px;
-}
-
-.btn-personalizado {
-    background: linear-gradient(180deg, #6ca0e4 64%, #3a1f9b 100%);
-    border: none;
-    width: 100px;
+.container-md{
+    padding-left: 350px;
+    padding-right: 350px;
 }
 
 .btn-primary {
     color: #fff;
-    background: linear-gradient(180deg, #6ca0e4 64%, #3a1f9b 100%);
+    background: linear-gradient(180deg, #6770eb 64%, #2d1c68 100%);
     border: none;
     width: 620px;
     align-items: center;
@@ -50,6 +40,11 @@ h4 {
     margin-top: 30px;
 }
 
+.btn-login{
+    padding-left: 350px;
+    padding-right: 350px;
+}
+
 img.center {
     display: block;
     margin-left: auto;
@@ -58,7 +53,7 @@ img.center {
 }
 
 a {
-    color: #3a1f9b !important;
+    color: #D258A1 !important;
 }
 
 p {
@@ -74,4 +69,29 @@ p {
 
 .input-error{
     border-color: #d30f23;
+}
+
+@media (max-width: 576px){
+    .container-md{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .log {
+        width: 100px;
+        height: 100px;
+        margin-top: 30px;
+        margin-left: 120px;
+    }
+
+    .btn-login{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .btn-primary {
+        width: 320px;
+        margin-left: -5px;
+    }
+
 }

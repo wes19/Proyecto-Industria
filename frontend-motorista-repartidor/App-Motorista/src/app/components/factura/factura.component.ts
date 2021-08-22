@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { faUndoAlt } from '@fortawesome/free-solid-svg-icons';
 import { PedidosService } from 'src/app/services/pedidos.service';
-import {formatDate } from '@angular/common';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 
@@ -12,8 +11,6 @@ import { Router } from '@angular/router';
 })
 export class FacturaComponent implements OnInit {
   @ViewChild ('modalAdvertencia') modalAdvertencia: any;
-  today = new Date();
-  jstoday: any = '';
   faUndoAlt = faUndoAlt;
   pedido: any = [];
   arregloPedidos: any = [];
@@ -30,8 +27,6 @@ export class FacturaComponent implements OnInit {
     }
 
     this.pedido = this.pedidosService.grabarPedido;
-    this.jstoday = formatDate(this.today, 'dd-MM-yyyy hh:mm:ss a', 'en-US', '+0530');
-    
     this.arrCantidad = this.pedido.cantidad;
     this.arrNombreproducto = this.pedido.producto;
     this.arrPrecioproducto = this.pedido.precio;

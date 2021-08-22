@@ -7,26 +7,28 @@ import { Observable } from 'rxjs';
 })
 export class CategoriasService {
 
+  backendWeb: string = 'https://deliveryhnbackend.herokuapp.com';
+
   constructor(private httpClient:HttpClient) { }
 
   obtenerCategorias() :Observable<any>{
-    return this.httpClient.get(`http://localhost:8888/categorias`,{});
+    return this.httpClient.get(`${this.backendWeb}/categorias`,{});
   }
 
   obtenerEmpresas(idCategoria:any):Observable<any>{
-    return this.httpClient.get(`http://localhost:8888/categorias/${idCategoria}/empresas`,{});
+    return this.httpClient.get(`${this.backendWeb}/categorias/${idCategoria}/empresas`,{});
   }
 
   obtenerProductos(idCategoria:any,idEmpresa:any):Observable<any>{
-    return this.httpClient.get(`http://localhost:8888/categorias/${idCategoria}/empresa/${idEmpresa}/productos`,{});
+    return this.httpClient.get(`${this.backendWeb}/categorias/${idCategoria}/empresa/${idEmpresa}/productos`,{});
   }
 
   agregarEmpresa(data: any):Observable<any>{
-    return this.httpClient.post(`http://localhost:8888/categorias/${data.idCategoria}/empresas`,{
+    return this.httpClient.post(`${this.backendWeb}/categorias/${data.idCategoria}/empresas`,{
       nombreEmpresa: data.nombreEmpresa,
       direccion: data.direccion,
       nombreEncargado: data.nombreEncargado,
-      telefono: data.calificacion,
+      telefono: data.telefono,
       estado: data.estado,
       logotipo: data.logotipo,
       banner: data.banner,
@@ -35,7 +37,7 @@ export class CategoriasService {
   }
 
   agregarProducto(data: any):Observable<any>{
-    return this.httpClient.post(`http://localhost:8888/categorias/${data.idCategoria}/empresas/${data.idEmpresa}/productos`,{
+    return this.httpClient.post(`${this.backendWeb}/categorias/${data.idCategoria}/empresas/${data.idEmpresa}/productos`,{
       imagenProducto: data.imagenProducto,
       nombreProducto: data.nombreProducto,
       precio: data.precio,
@@ -44,7 +46,7 @@ export class CategoriasService {
   }
 
   actualizarEmpresa(data: any):Observable<any>{
-    return this.httpClient.post(`http://localhost:8888/categorias/${data.idCategoria}/empresas/${data.idEmpresa}`,{
+    return this.httpClient.post(`${this.backendWeb}/categorias/${data.idCategoria}/empresas/${data.idEmpresa}`,{
       nombreEmpresa: data.nombreEmpresa,
       direccion: data.direccion,
       nombreEncargado: data.nombreEncargado,
@@ -57,8 +59,8 @@ export class CategoriasService {
   }
 
   actualizarProducto(data: any):Observable<any>{
-    return this.httpClient.post(`http://localhost:8888/categorias/${data.idCategoria}/empresas/${data.idEmpresa}/productos/${data.idProducto}`,{
-      imagenProducto: data.imagenReferencia,
+    return this.httpClient.post(`${this.backendWeb}/categorias/${data.idCategoria}/empresas/${data.idEmpresa}/productos/${data.idProducto}`,{
+      imagenProducto: data.imagenProducto,
       nombreProducto: data.nombreProducto,
       precio: data.precio,
       estado: data.estado,

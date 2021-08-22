@@ -33,9 +33,7 @@ export class PedidosDetalleDisponiblesComponent implements OnInit {
   }
 
   tomarOrden(order: any){
-    //this.idMotorista = this.motoristasService.motoristaCre;
     this.idMotorista = localStorage.getItem("idMotorista");
-    console.log("punto de control: "+this.idMotorista)
     order.estado = "Tomada"; 
     this.pedidosService.actualizarPedido(order._id, order.estado, this.idMotorista).subscribe(
       res=>{

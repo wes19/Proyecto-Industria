@@ -41,9 +41,10 @@ export class LoginComponent implements OnInit {
             this.modalService.open(this.modalAdvertencia, {size: 'sm', centered:true});
           }else if(this.logear.controls['usuario'].value == res.correo && this.logear.controls['password'].value == res.password 
             && res.estado == "Activo"){
-              //this.motoristasService.motoristaCre  = this.motoristas[i]._id;
               localStorage.setItem("idMotorista", res._id);
               this.router.navigate(['/pedidos']);
+            }else{
+              this.modalService.open(this.modalAdvertencia, {size: 'sm', centered:true});
             }
         },
         error=>console.log(error)

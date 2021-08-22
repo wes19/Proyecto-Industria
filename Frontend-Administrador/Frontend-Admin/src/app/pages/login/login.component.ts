@@ -41,6 +41,8 @@ export class LoginComponent implements OnInit {
           }else if(this.loginAdmin.controls['correo'].value == res.correo && this.loginAdmin.controls['password'].value == res.password){
             localStorage.setItem("idAdmin", res._id);
             this.router.navigate(['/menu']);
+          }else{
+            this.modalService.open(this.modalAdvertencia, {size: 'sm', centered:true});
           }  
         },
         error=>console.log(error)

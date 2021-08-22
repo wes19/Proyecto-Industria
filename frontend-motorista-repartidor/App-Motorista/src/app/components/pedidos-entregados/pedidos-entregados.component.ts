@@ -15,13 +15,6 @@ export class PedidosEntregadosComponent implements OnInit {
   pedidosTemporal: any = [];
   idMotoristaTemporal: any;
   
-  pedidosEntregado: any = [{
-    imagen: "../assets/img/img1.jpg",
-    empresa: "Asados el Churrasco",
-    ubicacion: "Cerro Grande",
-    comisionMotorista: "Lps. 70",
-    estado: "Pedido Entregado"
-  }]
   constructor(private pedidosService:PedidosService, private router: Router) { }
 
   ngOnInit(): void {

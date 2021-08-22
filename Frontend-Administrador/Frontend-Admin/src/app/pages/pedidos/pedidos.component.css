@@ -1,5 +1,5 @@
 .btn-personalizado {
-    background: linear-gradient(180deg, #6ca0e4 64%, #3a1f9b 100%);
+    background: linear-gradient(180deg, #6770eb 64%, #2d1c68 100%);
     border: none;
     width: 140px;
     margin-left: 300px;
@@ -9,7 +9,7 @@
 }
 
 .caja-pedido{
-    background-color:#8fb3e2;
+    background-color:#939afd;
     margin-top: 40px;
 }
 

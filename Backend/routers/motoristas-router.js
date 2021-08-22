@@ -16,6 +16,19 @@ router.get('/', function (req,res){
     });
 });
 
+// Obtener Motoristas por Correo
+router.get('/:correo', function (req,res){
+    motoristas.find({correo: req.params.correo},{_id: true ,correo: true, password: true, estado: true})
+    .then(result=>{
+        res.send(result[0]);
+        res.end();
+    })
+    .catch(error=>{
+        res.send(error);
+        res.end();
+    });
+});
+
 // Eliminar Motoristas
 router.delete('/:idMotorista', function (req,res){
     motoristas.remove({_id: req.params.idMotorista})
@@ -46,7 +59,7 @@ router.post('/', function (req,res){
                 estadoCivil: req.body.estadoCivil,
                 formacion: req.body.formacion,
                 discapacidad: req.body.discapacidad,
-                descripcionDiscapacidad: req.body.descripcionDiscapacidad,
+                descripcion: req.body.descripcion,
                 pasadoProfesional: req.body.pasadoProfesional,
                 estado: "Pendiente"
             }
@@ -75,12 +88,11 @@ router.post('/:idMotorista', function (req,res){
         correo: req.body.correo,
         telefono: req.body.telefono,
         direccion: req.body.direccion,
-        fechaNacimiento: req.body.fechaNacimiento,
         password: req.body.password,
         estadoCivil: req.body.estadoCivil,
         formacion: req.body.formacion,
         discapacidad: req.body.discapacidad,
-        descripcionDiscapacidad: req.body.descripcionDiscapacidad,
+        descripcion: req.body.descripcion,
         pasadoProfesional: req.body.pasadoProfesional,
         estado: req.body.estado
     })

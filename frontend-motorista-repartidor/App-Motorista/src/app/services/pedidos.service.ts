@@ -9,14 +9,16 @@ export class PedidosService {
 
   public storage : any;
   public grabarPedido : any;
+  backendWeb: string = 'https://deliveryhnbackend.herokuapp.com';
+
   constructor(private httpClient:HttpClient) { }
 
   obtenerPedidos():Observable<any>{
-    return this.httpClient.get('http://localhost:8888/pedidos', {});
+    return this.httpClient.get(`${this.backendWeb}/pedidos`, {});
   }
 
   actualizarPedido(idPedido: any, estado: any, idMotorista: any):Observable<any>{
-    return this.httpClient.post(`http://localhost:8888/pedidos/${idPedido}`, {
+    return this.httpClient.post(`${this.backendWeb}/pedidos/${idPedido}`, {
       estado: estado,
       idMotorista: idMotorista
     });

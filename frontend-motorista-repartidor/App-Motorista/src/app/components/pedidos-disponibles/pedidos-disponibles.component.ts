@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { faCreditCard, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faCreditCard, faExchangeAlt, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { PedidosService } from 'src/app/services/pedidos.service';
 
 
@@ -22,8 +22,9 @@ export class PedidosDisponiblesComponent implements OnInit {
     this.pedidosService.obtenerPedidos().subscribe(
       res=>{
         this.pedidosTemporal = res;
+        console.log(this.pedidosTemporal)
         for(let i = 0; i < this.pedidosTemporal.length; i++){
-          if(this.pedidosTemporal[i].estado == "pendiente"){
+          if(this.pedidosTemporal[i].estado == "Pendiente"){
             this.pedidos.push(this.pedidosTemporal[i]);
           }
         }
@@ -37,27 +38,17 @@ export class PedidosDisponiblesComponent implements OnInit {
 
     this.pedidosService.storage = {
       _id : pedido._id,
-      logotipo : pedido.logotipo,
+      logoEmpresa : pedido.logoEmpresa,
       nombreEmpresa : pedido.nombreEmpresa,
       direccion : pedido.direccion,
       producto : pedido.producto,
-      subtotal : pedido.subtotal,
       total : pedido.total,
       comisionMotorista : pedido.comisionMotorista,
-      nombreCliente : pedido.nombreCliente,
-      telefono : pedido.telefono,
-      precio : pedido.precio,
-      cantidad : pedido.cantidad,
-      comisionAdministracion : pedido.comisionAdministracion,
-      isv : pedido.isv,
       estado : pedido.estado,
-      idMotorista: pedido.idMotorista
+      idMotorista: pedido.idMotorista,
     }
-    console.log("primer control (nada)"+pedido.idMotorista)
-
     this.router.navigate(['/pedidos-detalle-disponibles']);
   }
-
 
   salir(){
     localStorage.removeItem("idMotorista");

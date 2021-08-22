@@ -11,8 +11,9 @@ var esquema = new mongoose.Schema(
         fechaNacimiento: String,
         password: String,
         estadoCivil: String,
+        formacion: String,
         discapacidad: String,
-        descripcionDiscapacidad: String,
+        descripcion: String,
         pasadoProfesional: String,
         estado: String
     }

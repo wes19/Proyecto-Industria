@@ -25,7 +25,6 @@ export class PedidosComponent implements OnInit {
     private motoristasService:MotoristasService, private router: Router) {
     this.motoristasService.obtenerMotoristas().subscribe(
       res=>{
-        //this.motoristas = [];
         this.motoristasTemporal = res;
         for(let i = 0; i < this.motoristasTemporal.length; i++){
           if(this.motoristasTemporal[i].estado == 'Activo'){
@@ -48,7 +47,7 @@ export class PedidosComponent implements OnInit {
         this.pedidos = [];
         this.pedidosTemporal = res;
         for(let i = 0; i < this.pedidosTemporal.length; i++){
-          if(this.pedidosTemporal[i].estado == "pendiente"){
+          if(this.pedidosTemporal[i].estado == "Pendiente"){
             this.pedidos.push(this.pedidosTemporal[i]);
           }
         }

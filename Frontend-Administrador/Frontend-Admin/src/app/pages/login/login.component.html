@@ -28,7 +28,7 @@
                 <span *ngIf="password?.errors?.minlength">Error el tamaño minimo es de 8 carácteres</span>
             </div>
 
-            <div class="mx-auto center mt-5" >
+            <div class="input-group mb-5 mx-3">
                 <button [disabled]="!loginAdmin.valid" class="btn btn-primary rounded-pill center" type="button" (click)="Verificar()">Ingresar</button>
             </div>
 

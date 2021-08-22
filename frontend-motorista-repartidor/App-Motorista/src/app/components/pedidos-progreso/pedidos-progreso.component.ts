@@ -21,7 +21,6 @@ export class PedidosProgresoComponent implements OnInit {
     this.pedidosService.obtenerPedidos().subscribe(
       res=>{
         this.pedidosTemporal = res;
-        //this.idMotoristaTemporal = this.motoristasService.motoristaCre;
         this.idMotoristaTemporal = localStorage.getItem("idMotorista");
         for(let i = 0; i < this.pedidosTemporal.length; i++){
           if(this.pedidosTemporal[i].estado == "Tomada" || this.pedidosTemporal[i].estado == "En Camino" 
@@ -46,7 +45,7 @@ export class PedidosProgresoComponent implements OnInit {
     
     this.pedidosService.grabarPedido = {
       _id : pedido._id,
-      logotipo : pedido.logotipo,
+      logoEmpresa : pedido.logoEmpresa,
       nombreEmpresa : pedido.nombreEmpresa,
       direccion : pedido.direccion,
       producto : pedido.producto,
@@ -57,10 +56,12 @@ export class PedidosProgresoComponent implements OnInit {
       telefono : pedido.telefono,
       precio : pedido.precio,
       cantidad : pedido.cantidad,
-      comisionAdministracion : pedido.comisionAdministracion,
+      comisionAdmin : pedido.comisionAdmin,
       isv : pedido.isv,
       estado : pedido.estado,
-      idMotorista: pedido.idMotorista
+      idMotorista: pedido.idMotorista,
+      fecha : pedido.fecha,
+      hora : pedido.hora
     }
     this.router.navigate(['/pedidos-detalle-progreso']);
   }
